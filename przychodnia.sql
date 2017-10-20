@@ -52,9 +52,9 @@ Create table leki (
 
 Create table wizyta (
 	id_wizyta Int NOT NULL,
-	id_godz Int NOT NULL,
 	indeks Char(20) NOT NULL,
 	id_pacjent Int NOT NULL,
+	id_godz Int NOT NULL,
 	data_wizyty Date NOT NULL,
 	diagnoza Text,
 	UNIQUE (id_wizyta),
