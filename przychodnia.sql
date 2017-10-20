@@ -1,6 +1,6 @@
 /*
 Created		11.04.2017
-Modified		04.10.2017
+Modified		20.10.2017
 Project		
 Model		
 Company		
@@ -52,11 +52,10 @@ Create table leki (
 
 Create table wizyta (
 	id_wizyta Int NOT NULL,
+	id_godz Int NOT NULL,
 	indeks Char(20) NOT NULL,
 	id_pacjent Int NOT NULL,
-	id_lekarz Int NOT NULL,
 	data_wizyty Date NOT NULL,
-	id_godz_przyj Int NOT NULL,
 	diagnoza Text,
 	UNIQUE (id_wizyta),
  Primary Key (id_wizyta)) ENGINE = MyISAM;
@@ -85,19 +84,24 @@ Create table godz_przyj (
  Primary Key (id_godz_przyj)) ENGINE = MyISAM;
 
 Create table lekarz_godz_przyj (
-	id_lekarz Int NOT NULL,
+	id_godz Int NOT NULL,
 	id_godz_przyj Int NOT NULL,
- Primary Key (id_lekarz,id_godz_przyj)) ENGINE = MyISAM;
+	id_lekarz Int NOT NULL,
+	UNIQUE (id_godz),
+ Primary Key (id_godz)) ENGINE = MyISAM;
 
 Create table lekarz_urlopy (
-	id_lekarz Int NOT NULL,
+	id_data Int NOT NULL,
 	data_urlop Date NOT NULL,
- Primary Key (id_lekarz,data_urlop)) ENGINE = MyISAM;
+	id_lekarz Int NOT NULL,
+	UNIQUE (id_data),
+ Primary Key (id_data)) ENGINE = MyISAM;
 
 
 ALTER TABLE wizyta ADD CONSTRAINT dataNieUrlop CHECK ((SELECT data_urlop FROM lekarz_urlopy WHERE (wizyta.id_lekarz=lekarz_urlopy.id_lekarz AND wizyta.data_wizyty=lekarz_urlopy.data_urlop)) IS NULL);
 ALTER TABLE lekarz_urlopy ADD CONSTRAINT dataNieUrlopTwo CHECK ((SELECT data_wizyty FROM wizyta WHERE (wizyta.id_lekarz=lekarz_urlopy.id_lekarz AND wizyta.data_wizyty=lekarz_urlopy.data_urlop)) IS NULL);
 ALTER TABLE godz_przyj ADD CONSTRAINT sprawdzGodz CHECK (godz_pocz < godz_koniec);
+ALTER TABLE godz_przyj ADD CONSTRAINT chkGodz CHECK (godz_pocz < godz_koniec);
 
 
 Alter table lekarz_specjalizacja add Foreign Key (id_lekarz) references lekarz (id_lekarz) on delete  restrict on update  restrict;
@@ -108,7 +112,7 @@ Alter table wizyta_leki add Foreign Key (id_lek) references leki (id_lek) on del
 Alter table wizyta_leki add Foreign Key (id_wizyta) references wizyta (id_wizyta) on delete  restrict on update  restrict;
 Alter table lekarz_specjalizacja add Foreign Key (id_specjalizacja) references specializacja (id_specjalizacja) on delete  restrict on update  restrict;
 Alter table lekarz_godz_przyj add Foreign Key (id_godz_przyj) references godz_przyj (id_godz_przyj) on delete  restrict on update  restrict;
-Alter table wizyta add Foreign Key (id_lekarz,id_godz_przyj) references lekarz_godz_przyj (id_lekarz,id_godz_przyj) on delete  restrict on update  restrict;
+Alter table wizyta add Foreign Key (id_godz) references lekarz_godz_przyj (id_godz) on delete  restrict on update  restrict;
 
 
 /* Users permissions */
