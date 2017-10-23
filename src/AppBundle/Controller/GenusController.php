@@ -32,7 +32,7 @@ class GenusController extends Controller
             'notes' => $notes
         ));
     }
-    /*   public function showAction($genusName)
+/*   public function showAction($genusName)
     {
         $notes = [
             'Octopus asked me a riddle, outsmarted me',
@@ -45,5 +45,5 @@ class GenusController extends Controller
             'notes' => $notes
         ));
     }
- */
+*/
 }
