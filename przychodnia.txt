@@ -11,7 +11,7 @@ Database		mySQL 5
 
 
 drop table IF EXISTS lekarz_godz_przyj;
-drop table IF EXISTS lekarz_urlopy;
+drop table IF EXISTS data_urlop_lekarz;
 drop table IF EXISTS godz_przyj;
 drop table IF EXISTS lekarz_specjalizacja;
 drop table IF EXISTS specializacja;
@@ -27,6 +27,7 @@ Create table lekarz (
 	imie Char(50) NOT NULL,
 	nazwisko Char(50) NOT NULL,
 	tytul Char(50),
+	specjalizacja Int,
 	UNIQUE (id_lekarz),
  Primary Key (id_lekarz)) ENGINE = MyISAM;
 
@@ -55,17 +56,15 @@ Create table wizyta (
 	indeks Char(20) NOT NULL,
 	id_pacjent Int NOT NULL,
 	data_wizyty Date NOT NULL,
+	id_lekarz_godz_przyj Int NOT NULL,
+	leki Int,
 	diagnoza Text,
-	id_godz_przyj Int NOT NULL,
-	id_lekarz Int NOT NULL,
 	UNIQUE (id_wizyta),
  Primary Key (id_wizyta)) ENGINE = MyISAM;
 
 Create table wizyta_leki (
 	id_wizyta Int NOT NULL,
 	id_lek Int NOT NULL,
-	id_wizyta_leki Int NOT NULL,
-	UNIQUE (id_wizyta_leki),
  Primary Key (id_wizyta,id_lek)) ENGINE = MyISAM;
 
 Create table specializacja (
@@ -77,8 +76,6 @@ Create table specializacja (
 Create table lekarz_specjalizacja (
 	id_lekarz Int NOT NULL,
 	id_specjalizacja Int NOT NULL,
-	id_lekarz_specjalizacja Int NOT NULL,
-	UNIQUE (id_lekarz_specjalizacja),
  Primary Key (id_lekarz,id_specjalizacja)) ENGINE = MyISAM;
 
 Create table godz_przyj (
@@ -88,19 +85,19 @@ Create table godz_przyj (
 	UNIQUE (id_godz_przyj),
  Primary Key (id_godz_przyj)) ENGINE = MyISAM;
 
-Create table lekarz_urlopy (
+Create table data_urlop_lekarz (
+	id_data_urlop_lekarz Int NOT NULL,
 	data_urlop Date NOT NULL,
 	id_lekarz Int NOT NULL,
-	id_data_lekarz_urlop Int NOT NULL,
-	UNIQUE (id_data_lekarz_urlop),
- Primary Key (data_urlop,id_lekarz)) ENGINE = MyISAM;
+	UNIQUE (id_data_urlop_lekarz),
+ Primary Key (id_data_urlop_lekarz)) ENGINE = MyISAM;
 
 Create table lekarz_godz_przyj (
-	id_godz_przyj Int NOT NULL,
-	id_lekarz Int NOT NULL,
 	id_lekarz_godz_przyj Int NOT NULL,
+	id_lekarz Int NOT NULL,
+	id_godz_przyj Int NOT NULL,
 	UNIQUE (id_lekarz_godz_przyj),
- Primary Key (id_godz_przyj,id_lekarz)) ENGINE = MyISAM;
+ Primary Key (id_lekarz_godz_przyj)) ENGINE = MyISAM;
 
 
 ALTER TABLE wizyta ADD CONSTRAINT dataNieUrlop CHECK ((SELECT data_urlop FROM lekarz_urlopy WHERE (wizyta.id_lekarz=lekarz_urlopy.id_lekarz AND wizyta.data_wizyty=lekarz_urlopy.data_urlop)) IS NULL);
@@ -111,13 +108,13 @@ ALTER TABLE godz_przyj ADD CONSTRAINT chkGodz CHECK (godz_pocz < godz_koniec);
 
 Alter table lekarz_specjalizacja add Foreign Key (id_lekarz) references lekarz (id_lekarz) on delete  restrict on update  restrict;
 Alter table lekarz_godz_przyj add Foreign Key (id_lekarz) references lekarz (id_lekarz) on delete  restrict on update  restrict;
-Alter table lekarz_urlopy add Foreign Key (id_lekarz) references lekarz (id_lekarz) on delete  restrict on update  restrict;
+Alter table data_urlop_lekarz add Foreign Key (id_lekarz) references lekarz (id_lekarz) on delete  restrict on update  restrict;
 Alter table wizyta add Foreign Key (id_pacjent) references pacjent (id_pacjent) on delete  restrict on update  restrict;
 Alter table wizyta_leki add Foreign Key (id_lek) references leki (id_lek) on delete  restrict on update  restrict;
 Alter table wizyta_leki add Foreign Key (id_wizyta) references wizyta (id_wizyta) on delete  restrict on update  restrict;
 Alter table lekarz_specjalizacja add Foreign Key (id_specjalizacja) references specializacja (id_specjalizacja) on delete  restrict on update  restrict;
 Alter table lekarz_godz_przyj add Foreign Key (id_godz_przyj) references godz_przyj (id_godz_przyj) on delete  restrict on update  restrict;
-Alter table wizyta add Foreign Key (id_godz_przyj,id_lekarz) references lekarz_godz_przyj (id_godz_przyj,id_lekarz) on delete  restrict on update  restrict;
+Alter table wizyta add Foreign Key (id_lekarz_godz_przyj) references lekarz_godz_przyj (id_lekarz_godz_przyj) on delete  restrict on update  restrict;
 
 
 /* Users permissions */
