@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="" />
+    <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_23_10_17_14_29_s.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_20_10_17_15_48_s.xml" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_20_10_17_15_48_s.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,30 +18,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lekarz_godz_przyj.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/lekarz_godz_przyj.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="specjalizacja.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/specjalizacja.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="wizyta.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
+            <state relative-caret-position="0">
               <caret line="51" column="39" lean-forward="false" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
               <folding />
             </state>
@@ -46,16 +30,6 @@
       </file>
       <file leaf-file-name="leki.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/leki.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lekiRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/lekiRepository.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -74,41 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenusController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="44" column="29" lean-forward="true" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data_urlop.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/data_urlop.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="64" lean-forward="false" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pacjent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/pacjent.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -118,8 +62,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s doctrine:database:create" />
-      <command text="s doctrine:database:create --force" />
       <command text="s doctrine:database:create" />
       <command text="s doctrine:generate:entity" />
       <command text="AppBundle:wizyta" />
@@ -141,21 +83,28 @@
       <command text="s doctrine:generate:crud " />
       <command text="AppBundle:specjalizacja" />
       <command text="s doctrine:generate:crud " />
+      <command text="s doctrine:schema:update" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s doctrine:database:create" />
+      <command text="s doctrine:schema:update --force" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/lekarz_godz_przyj.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/data_urlop.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/lekarz.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
       </list>
     </option>
   </component>
@@ -228,6 +177,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,18 +186,27 @@
               <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
               <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_f02737a78695063deace08e96d5042710d3e32db/cmd/git.exe" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -274,31 +234,31 @@
       <workItem from="1508737999312" duration="4149000" />
       <workItem from="1508751873750" duration="7654000" />
       <workItem from="1508761191976" duration="242000" />
+      <workItem from="1508761698654" duration="630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19216000" />
+    <option name="totallyTimeSpent" value="19846000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25475842" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48422712" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4853738" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -315,22 +275,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/lekarz_godz_przyj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/specjalizacja.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -423,7 +367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -492,7 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -540,20 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -586,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,7 +576,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
+        <state relative-caret-position="0">
           <caret line="51" column="39" lean-forward="false" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
           <folding />
         </state>
@@ -663,18 +590,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        <state relative-caret-position="-999">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-523">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="44" column="29" lean-forward="true" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+        <state relative-caret-position="549">
+          <caret line="44" column="29" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
           <folding />
         </state>
       </provider>
