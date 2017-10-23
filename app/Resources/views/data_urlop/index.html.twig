@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Data_urlops list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dataurlop</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for data_urlop in data_urlops %}
+            <tr>
+                <td><a href="{{ path('data_urlop_show', { 'id': data_urlop.id }) }}">{{ data_urlop.id }}</a></td>
+                <td>{% if data_urlop.dataUrlop %}{{ data_urlop.dataUrlop|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('data_urlop_show', { 'id': data_urlop.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('data_urlop_edit', { 'id': data_urlop.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('data_urlop_new') }}">Create a new data_urlop</a>
+        </li>
+    </ul>
+{% endblock %}

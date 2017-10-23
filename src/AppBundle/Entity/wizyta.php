@@ -49,7 +49,7 @@ class wizyta
 
     /**
      * @ORM\ManyToMany(targetEntity="leki")
-     * @ORM\JoinTable(name="leki",
+     * @ORM\JoinTable(name="wizyta_leki",
      *     joinColumns={@ORM\JoinColumn(name="id_wizyta", referencedColumnName="id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="id_lek", referencedColumnName="id")}
      *     )

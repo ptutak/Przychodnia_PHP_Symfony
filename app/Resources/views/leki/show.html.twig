@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Leki</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ leki.id }}</td>
+            </tr>
+            <tr>
+                <th>Nazwa</th>
+                <td>{{ leki.nazwa }}</td>
+            </tr>
+            <tr>
+                <th>Producent</th>
+                <td>{{ leki.producent }}</td>
+            </tr>
+            <tr>
+                <th>Zastosowanie</th>
+                <td>{{ leki.zastosowanie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('leki_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('leki_edit', { 'id': leki.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

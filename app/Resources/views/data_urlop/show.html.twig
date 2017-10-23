@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Data_urlop</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ data_urlop.id }}</td>
+            </tr>
+            <tr>
+                <th>Dataurlop</th>
+                <td>{% if data_urlop.dataUrlop %}{{ data_urlop.dataUrlop|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('data_urlop_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('data_urlop_edit', { 'id': data_urlop.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lekis list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa</th>
+                <th>Producent</th>
+                <th>Zastosowanie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for leki in lekis %}
+            <tr>
+                <td><a href="{{ path('leki_show', { 'id': leki.id }) }}">{{ leki.id }}</a></td>
+                <td>{{ leki.nazwa }}</td>
+                <td>{{ leki.producent }}</td>
+                <td>{{ leki.zastosowanie }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('leki_show', { 'id': leki.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('leki_edit', { 'id': leki.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('leki_new') }}">Create a new leki</a>
+        </li>
+    </ul>
+{% endblock %}

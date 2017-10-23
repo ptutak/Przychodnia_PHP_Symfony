@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Wizytas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Indeks</th>
+                <th>Datawizyty</th>
+                <th>Diagnoza</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wizytum in wizytas %}
+            <tr>
+                <td><a href="{{ path('wizyta_show', { 'id': wizytum.id }) }}">{{ wizytum.id }}</a></td>
+                <td>{{ wizytum.indeks }}</td>
+                <td>{% if wizytum.dataWizyty %}{{ wizytum.dataWizyty|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ wizytum.diagnoza }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('wizyta_show', { 'id': wizytum.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('wizyta_edit', { 'id': wizytum.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('wizyta_new') }}">Create a new wizytum</a>
+        </li>
+    </ul>
+{% endblock %}

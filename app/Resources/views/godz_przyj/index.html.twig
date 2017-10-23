@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Godz_przyjs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Godzpoczatek</th>
+                <th>Godzkoniec</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for godz_przyj in godz_przyjs %}
+            <tr>
+                <td><a href="{{ path('godz_przyj_show', { 'id': godz_przyj.id }) }}">{{ godz_przyj.id }}</a></td>
+                <td>{% if godz_przyj.godzPoczatek %}{{ godz_przyj.godzPoczatek|date('H:i:s') }}{% endif %}</td>
+                <td>{% if godz_przyj.godzKoniec %}{{ godz_przyj.godzKoniec|date('H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('godz_przyj_show', { 'id': godz_przyj.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('godz_przyj_edit', { 'id': godz_przyj.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('godz_przyj_new') }}">Create a new godz_przyj</a>
+        </li>
+    </ul>
+{% endblock %}
