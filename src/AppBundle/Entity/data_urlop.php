@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * data_urlop_lekarz
+ * data_urlop
  *
- * @ORM\Table(name="data_urlop_lekarz")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\data_urlop_lekarzRepository")
+ * @ORM\Table(name="data_urlop")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\data_urlopRepository")
  */
-class data_urlop_lekarz
+class data_urlop
 {
     /**
      * @var int
@@ -29,11 +29,9 @@ class data_urlop_lekarz
     private $dataUrlop;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_lekarz", type="integer")
+     * @ORM\ManyToMany(targetEntity="lekarz", mappedBy="urlopy")
      */
-    private $idLekarz;
+    private $lekarze;
 
 
     /**
@@ -51,7 +49,7 @@ class data_urlop_lekarz
      *
      * @param \DateTime $dataUrlop
      *
-     * @return data_urlop_lekarz
+     * @return data_urlop
      */
     public function setDataUrlop($dataUrlop)
     {
@@ -71,27 +69,27 @@ class data_urlop_lekarz
     }
 
     /**
-     * Set idLekarz
+     * Set lekarze
      *
-     * @param integer $idLekarz
+     * @param integer $lekarze
      *
-     * @return data_urlop_lekarz
+     * @return data_urlop
      */
-    public function setIdLekarz($idLekarz)
+    public function setLekarze($lekarze)
     {
-        $this->idLekarz = $idLekarz;
+        $this->lekarze = $lekarze;
 
         return $this;
     }
 
     /**
-     * Get idLekarz
+     * Get lekarze
      *
      * @return int
      */
-    public function getIdLekarz()
+    public function getLekarze()
     {
-        return $this->idLekarz;
+        return $this->lekarze;
     }
 }
 

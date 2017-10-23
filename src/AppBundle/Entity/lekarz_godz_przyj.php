@@ -22,16 +22,14 @@ class lekarz_godz_przyj
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_godz_przyj", type="integer")
+     * @ORM\ManyToOne(targetEntity="godz_przyj")
+     * @ORM\JoinColumn(name="id_godz_przyj", referencedColumnName="id")
      */
     private $idGodzPrzyj;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_lekarz", type="integer")
+     * @ORM\ManyToOne(targetEntity="lekarz")
+     * @ORM\JoinColumn(name="id_lekarz", referencedColumnName="id")
      */
     private $idLekarz;
 

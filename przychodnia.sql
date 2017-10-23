@@ -27,7 +27,8 @@ Create table lekarz (
 	imie Char(50) NOT NULL,
 	nazwisko Char(50) NOT NULL,
 	tytul Char(50),
-	specjalizacja Int,
+	specjalizacje Int,
+	urlopy Int,
 	UNIQUE (id_lekarz),
  Primary Key (id_lekarz)) ENGINE = MyISAM;
 
@@ -80,7 +81,7 @@ Create table lekarz_specjalizacja (
 
 Create table godz_przyj (
 	id_godz_przyj Int NOT NULL,
-	godz_pocz Time NOT NULL,
+	godz_poczatek Time NOT NULL,
 	godz_koniec Time NOT NULL,
 	UNIQUE (id_godz_przyj),
  Primary Key (id_godz_przyj)) ENGINE = MyISAM;

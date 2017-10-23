@@ -29,9 +29,8 @@ class wizyta
     private $indeks;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_pacjent", type="integer")
+     * @ORM\ManyToOne(targetEntity="pacjent")
+     * @ORM\JoinColumn(name="id_pacjent",referencedColumnName="id")
      */
     private $idPacjent;
 
@@ -43,16 +42,17 @@ class wizyta
     private $dataWizyty;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_lekarz_godz_przyj", type="integer")
+     * @ORM\ManyToOne(targetEntity="lekarz_godz_przyj")
+     * @ORM\JoinColumn(name="id_lekarz_godz_przyj", referencedColumnName="id")
      */
     private $idLekarzGodzPrzyj;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="leki", type="integer")
+     * @ORM\ManyToMany(targetEntity="leki")
+     * @ORM\JoinTable(name="leki",
+     *     joinColumns={@ORM\JoinColumn(name="id_wizyta", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="id_lek", referencedColumnName="id")}
+     *     )
      */
     private $leki;
 

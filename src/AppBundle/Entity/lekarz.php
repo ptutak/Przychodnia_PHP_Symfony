@@ -38,9 +38,24 @@ class lekarz
     /**
      * @var string
      *
-     * @ORM\Column(name="tytul", type="string", length=10, nullable=true)
+     * @ORM\Column(name="tytul", type="string", length=50, nullable=true)
      */
     private $tytul;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="data_urlop",inversedBy="lekarze")
+     * @ORM\JoinTable(name="lekarz_data_urlop")
+     */
+    private $urlopy;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="specjalizacja")
+     * @ORM\JoinTable(name="lekarz_specjalizacja",
+     *     joinColumns={@ORM\JoinColumn(name="id_lekarz",referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="id_specjalizacja",referencedColumnName="id")}
+     *     )
+     */
+    private $specjalizacje;
 
 
     /**
@@ -123,6 +138,54 @@ class lekarz
     public function getTytul()
     {
         return $this->tytul;
+    }
+
+    /**
+     * Set urlopy
+     *
+     * @param integer $urlopy
+     *
+     * @return lekarz
+     */
+    public function setUrlopy($urlopy)
+    {
+        $this->urlopy = $urlopy;
+
+        return $this;
+    }
+
+    /**
+     * Get urlopy
+     *
+     * @return int
+     */
+    public function getUrlopy()
+    {
+        return $this->urlopy;
+    }
+
+    /**
+     * Set specjalizacje
+     *
+     * @param integer $specjalizacje
+     *
+     * @return lekarz
+     */
+    public function setSpecjalizacje($specjalizacje)
+    {
+        $this->specjalizacje = $specjalizacje;
+
+        return $this;
+    }
+
+    /**
+     * Get specjalizacje
+     *
+     * @return int
+     */
+    public function getSpecjalizacje()
+    {
+        return $this->specjalizacje;
     }
 }
 
