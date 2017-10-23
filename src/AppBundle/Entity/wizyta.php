@@ -24,7 +24,7 @@ class wizyta
     /**
      * @var string
      *
-     * @ORM\Column(name="indeks", type="string", length=20, unique=true)
+     * @ORM\Column(name="indeks", type="string", length=50, unique=true)
      */
     private $indeks;
 
@@ -36,13 +36,6 @@ class wizyta
     private $idPacjent;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_lekarz", type="integer")
-     */
-    private $idLekarz;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="data_wizyty", type="date")
@@ -52,9 +45,16 @@ class wizyta
     /**
      * @var int
      *
-     * @ORM\Column(name="id_godz_przyj", type="integer")
+     * @ORM\Column(name="id_lekarz_godz_przyj", type="integer")
      */
-    private $idGodzPrzyj;
+    private $idLekarzGodzPrzyj;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="leki", type="integer")
+     */
+    private $leki;
 
     /**
      * @var string
@@ -123,30 +123,6 @@ class wizyta
     }
 
     /**
-     * Set idLekarz
-     *
-     * @param integer $idLekarz
-     *
-     * @return wizyta
-     */
-    public function setIdLekarz($idLekarz)
-    {
-        $this->idLekarz = $idLekarz;
-
-        return $this;
-    }
-
-    /**
-     * Get idLekarz
-     *
-     * @return int
-     */
-    public function getIdLekarz()
-    {
-        return $this->idLekarz;
-    }
-
-    /**
      * Set dataWizyty
      *
      * @param \DateTime $dataWizyty
@@ -171,27 +147,51 @@ class wizyta
     }
 
     /**
-     * Set idGodzPrzyj
+     * Set idLekarzGodzPrzyj
      *
-     * @param integer $idGodzPrzyj
+     * @param integer $idLekarzGodzPrzyj
      *
      * @return wizyta
      */
-    public function setIdGodzPrzyj($idGodzPrzyj)
+    public function setIdLekarzGodzPrzyj($idLekarzGodzPrzyj)
     {
-        $this->idGodzPrzyj = $idGodzPrzyj;
+        $this->idLekarzGodzPrzyj = $idLekarzGodzPrzyj;
 
         return $this;
     }
 
     /**
-     * Get idGodzPrzyj
+     * Get idLekarzGodzPrzyj
      *
      * @return int
      */
-    public function getIdGodzPrzyj()
+    public function getIdLekarzGodzPrzyj()
     {
-        return $this->idGodzPrzyj;
+        return $this->idLekarzGodzPrzyj;
+    }
+
+    /**
+     * Set leki
+     *
+     * @param integer $leki
+     *
+     * @return wizyta
+     */
+    public function setLeki($leki)
+    {
+        $this->leki = $leki;
+
+        return $this;
+    }
+
+    /**
+     * Get leki
+     *
+     * @return int
+     */
+    public function getLeki()
+    {
+        return $this->leki;
     }
 
     /**
