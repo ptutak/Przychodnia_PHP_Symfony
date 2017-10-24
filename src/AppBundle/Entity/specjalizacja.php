@@ -62,5 +62,11 @@ class specjalizacja
     {
         return $this->nazwa;
     }
+
+    public function __toString()
+    {
+        return $this->nazwa;
+    }
+
 }
 
