@@ -3,3 +3,31 @@ drop database --force
 use Symfony\COmponent\Validator\Constraints as Assert
 
 composer require friendsofsymfony/user-bundle
+
+w entity User:
+use FOS\UserBundle\Model\User as BaseUser;
+
+tutorial FOS USER - Symfony
+
+class User extends BaseUser
+
+security.yml - skopiowanie z tutorala Symfony
+
+w routing.yml skopiowanie
+
+symfony fos user registration overriding
+
+Uważać na TUTORIALA i WERSJĘ
+
+przeładowanie metod defaultowych w fromularzu RegistrationType
+
+config.yml:
+framework:
+	translator:~
+	
+Override layout.html.twig
+
+kopiujemy do katalogu FOSUserBundle
+
+i dziedziczymy po base.html.twig
+i ustawiamy block body
