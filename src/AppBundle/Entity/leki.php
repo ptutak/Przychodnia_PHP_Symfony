@@ -124,5 +124,10 @@ class leki
     {
         return $this->zastosowanie;
     }
+
+    public function __toString()
+    {
+        return $this->nazwa.$this->producent;
+    }
 }
 

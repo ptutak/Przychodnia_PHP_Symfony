@@ -21,6 +21,12 @@
                 <th>Tytul</th>
                 <td>{{ lekarz.tytul }}</td>
             </tr>
+            <tr>
+                <th>Specjalizacje</th>
+                {% for specjalizacja in lekarz.specjalizacje %}
+                    <td>{{ specjalizacja.nazwa }}</td> <br>
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
 

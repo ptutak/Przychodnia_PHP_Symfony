@@ -187,5 +187,10 @@ class lekarz
     {
         return $this->specjalizacje;
     }
+
+    public function __toString()
+    {
+        return $this->nazwisko.$this->imie.$this->tytul;
+    }
 }
 

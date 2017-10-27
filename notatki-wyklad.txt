@@ -1,0 +1,5 @@
+drop database --force
+
+use Symfony\COmponent\Validator\Constraints as Assert
+
+composer require friendsofsymfony/user-bundle

@@ -208,6 +208,11 @@ class pacjent
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->nazwisko.$this->imie.$this->pESEL;
+    }
+
     /**
      * Get numer
      *
