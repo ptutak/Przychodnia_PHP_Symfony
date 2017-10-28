@@ -3,14 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * Admin
+ * User
  *
- * @ORM\Table(name="admin")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\AdminRepository")
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class Admin
+class User extends BaseUser
 {
     /**
      * @var int
@@ -19,7 +20,7 @@ class Admin
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -44,7 +45,7 @@ class Admin
      *
      * @param string $name
      *
-     * @return Admin
+     * @return User
      */
     public function setName($name)
     {
@@ -62,5 +63,6 @@ class Admin
     {
         return $this->name;
     }
+
 }
 
