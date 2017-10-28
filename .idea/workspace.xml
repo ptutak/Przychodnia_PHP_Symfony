@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/przychodnia.dm2" afterPath="$PROJECT_DIR$/przychodnia.dm2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/przychodnia.~m2" afterPath="$PROJECT_DIR$/przychodnia.~m2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/data_urlop/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/data_urlop/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/data_urlop/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/data_urlop/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/data_urlop.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/data_urlop.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/data_urlopType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/data_urlopType.php" />
-    </list>
+    <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -192,10 +184,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="63" />
-    <option name="y" value="103" />
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
+    <option name="x" value="146" />
+    <option name="y" value="49" />
+    <option name="width" value="1036" />
+    <option name="height" value="736" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -341,16 +333,15 @@
       <workItem from="1508831588782" duration="1122000" />
       <workItem from="1509101400730" duration="7139000" />
       <workItem from="1509116533433" duration="1622000" />
-      <workItem from="1509170938639" duration="15577000" />
+      <workItem from="1509170938639" duration="16468000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45306000" />
+    <option name="totallyTimeSpent" value="46197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26012793" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
