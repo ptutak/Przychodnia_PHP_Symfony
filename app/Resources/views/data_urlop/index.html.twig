@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Dataurlop</th>
+                <th>Data</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -15,7 +15,7 @@
         {% for data_urlop in data_urlops %}
             <tr>
                 <td><a href="{{ path('data_urlop_show', { 'id': data_urlop.id }) }}">{{ data_urlop.id }}</a></td>
-                <td>{% if data_urlop.dataUrlop %}{{ data_urlop.dataUrlop|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if data_urlop.data %}{{ data_urlop.data|date('Y-m-d') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>

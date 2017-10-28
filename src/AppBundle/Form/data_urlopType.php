@@ -13,7 +13,7 @@ class data_urlopType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('dataUrlop')->add('lekarze');
+        $builder->add('data')->add('lekarze');
     }
     
     /**

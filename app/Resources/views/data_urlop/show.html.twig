@@ -10,16 +10,8 @@
                 <td>{{ data_urlop.id }}</td>
             </tr>
             <tr>
-                <th>Dataurlop</th>
-                <td>{% if data_urlop.dataUrlop %}{{ data_urlop.dataUrlop|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Lekarze</th>
-                {% for lekarz in data_urlop.lekarze %}
-                <td>
-                    {{ lekarz }};
-                </td>
-                {% endfor %}
+                <th>Data</th>
+                <td>{% if data_urlop.data %}{{ data_urlop.data|date('Y-m-d') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

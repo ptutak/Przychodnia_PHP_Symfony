@@ -2,9 +2,9 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * data_urlop
@@ -26,9 +26,9 @@ class data_urlop
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="data_urlop", type="date")
+     * @ORM\Column(name="data", type="date", unique=true)
      */
-    private $dataUrlop;
+    private $data;
 
     /**
      * @ORM\ManyToMany(targetEntity="lekarz", mappedBy="urlopy")
@@ -47,27 +47,27 @@ class data_urlop
     }
 
     /**
-     * Set dataUrlop
+     * Set data
      *
-     * @param \DateTime $dataUrlop
+     * @param \DateTime $data
      *
      * @return data_urlop
      */
-    public function setDataUrlop($dataUrlop)
+    public function setData($data)
     {
-        $this->dataUrlop = $dataUrlop;
+        $this->data = $data;
 
         return $this;
     }
 
     /**
-     * Get dataUrlop
+     * Get data
      *
      * @return \DateTime
      */
-    public function getDataUrlop()
+    public function getData()
     {
-        return $this->dataUrlop;
+        return $this->data;
     }
 
     /**
@@ -101,8 +101,7 @@ class data_urlop
 
     public function __toString()
     {
-        return $this->dataUrlop->format("Y-m-d");
+        return $this->data->format('Y-m-d');
     }
-
 }
 
