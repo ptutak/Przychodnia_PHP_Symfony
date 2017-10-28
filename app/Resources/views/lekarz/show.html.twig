@@ -21,6 +21,30 @@
                 <th>Tytul</th>
                 <td>{{ lekarz.tytul }}</td>
             </tr>
+            <tr>
+                <th>Specjalizacje</th>
+                    {% for spec in lekarz.specjalizacje %}
+                    <td>
+                        {{ spec }};
+                    </td>
+                    {% endfor %}
+            </tr>
+            <tr>
+                <th>Godziny przyjęć</th>
+                {% for godz in lekarz.godzPrzyj %}
+                    <td>
+                        {{ godz }};
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Urlopy</th>
+                {% for urlop in lekarz.urlopy %}
+                    <td>
+                        {{ urlop.dataUrlop | date('Y-m-d') }};
+                    </td>
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
 

@@ -101,7 +101,7 @@ class data_urlop
 
     public function __toString()
     {
-        return strval($this->dataUrlop);
+        return $this->dataUrlop->format("Y-m-d");
     }
 
 }
