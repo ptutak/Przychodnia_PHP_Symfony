@@ -38,9 +38,9 @@ class wizyta
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="data_wizyty", type="date")
+     * @ORM\Column(name="data", type="date")
      */
-    private $dataWizyty;
+    private $data;
 
     /**
      * @ORM\ManyToOne(targetEntity="lekarz_godz_przyj", inversedBy="wizyty")
@@ -126,13 +126,13 @@ class wizyta
     /**
      * Set dataWizyty
      *
-     * @param \DateTime $dataWizyty
+     * @param \DateTime $data
      *
      * @return wizyta
      */
-    public function setDataWizyty($dataWizyty)
+    public function setData($data)
     {
-        $this->dataWizyty = $dataWizyty;
+        $this->data = $data;
 
         return $this;
     }
@@ -142,9 +142,9 @@ class wizyta
      *
      * @return \DateTime
      */
-    public function getDataWizyty()
+    public function getData()
     {
-        return $this->dataWizyty;
+        return $this->data;
     }
 
     /**
@@ -226,7 +226,7 @@ class wizyta
 
     public function __toString()
     {
-        return $this->indeks."(".strval($this->dataWizyty).";".$this->idLekarzGodzPrzyj.";".$this->idPacjent.")";
+        return $this->indeks." ; ".$this->data->format("Y-m-d")." ; ".$this->idLekarzGodzPrzyj." ; ".$this->idPacjent;
     }
 
 }

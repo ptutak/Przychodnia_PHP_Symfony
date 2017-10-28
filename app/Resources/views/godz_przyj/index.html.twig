@@ -16,8 +16,8 @@
         {% for godz_przyj in godz_przyjs %}
             <tr>
                 <td><a href="{{ path('godz_przyj_show', { 'id': godz_przyj.id }) }}">{{ godz_przyj.id }}</a></td>
-                <td>{% if godz_przyj.godzPoczatek %}{{ godz_przyj.godzPoczatek|date('H:i:s') }}{% endif %}</td>
-                <td>{% if godz_przyj.godzKoniec %}{{ godz_przyj.godzKoniec|date('H:i:s') }}{% endif %}</td>
+                <td>{% if godz_przyj.godzPoczatek %}{{ godz_przyj.godzPoczatek|date('H:i') }}{% endif %}</td>
+                <td>{% if godz_przyj.godzKoniec %}{{ godz_przyj.godzKoniec|date('H:i') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>

@@ -15,6 +15,9 @@
             <tr>
                 <td><a href="{{ path('lekarz_godz_przyj_show', { 'id': lekarz_godz_przyj.id }) }}">{{ lekarz_godz_przyj.id }}</a></td>
                 <td>
+                    {{ lekarz_godz_przyj.idLekarz }} - {{ lekarz_godz_przyj.idGodzPrzyj }}
+                </td>
+                <td>
                     <ul>
                         <li>
                             <a href="{{ path('lekarz_godz_przyj_show', { 'id': lekarz_godz_przyj.id }) }}">show</a>

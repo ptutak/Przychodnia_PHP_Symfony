@@ -250,7 +250,7 @@ class pacjent
 
     public function __toString()
     {
-        return $this->pesel." ".$this->nazwisko." ".$this->nazwisko;
+        return $this->pesel." - ".$this->nazwisko." ".$this->imie;
     }
 
     public function __construct()

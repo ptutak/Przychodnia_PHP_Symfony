@@ -8,7 +8,7 @@
             <tr>
                 <th>Id</th>
                 <th>Indeks</th>
-                <th>Datawizyty</th>
+                <th>Data</th>
                 <th>Diagnoza</th>
                 <th>Actions</th>
             </tr>
@@ -18,7 +18,7 @@
             <tr>
                 <td><a href="{{ path('wizyta_show', { 'id': wizytum.id }) }}">{{ wizytum.id }}</a></td>
                 <td>{{ wizytum.indeks }}</td>
-                <td>{% if wizytum.dataWizyty %}{{ wizytum.dataWizyty|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if wizytum.data %}{{ wizytum.data|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ wizytum.diagnoza }}</td>
                 <td>
                     <ul>

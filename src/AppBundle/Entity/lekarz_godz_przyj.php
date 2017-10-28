@@ -129,7 +129,7 @@ class lekarz_godz_przyj
 
     public function __toString()
     {
-        return $this->idLekarz.$this->idGodzPrzyj;
+        return $this->idLekarz."-----------".$this->idGodzPrzyj;
     }
 
 }

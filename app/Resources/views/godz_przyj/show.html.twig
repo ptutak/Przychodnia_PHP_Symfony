@@ -11,11 +11,11 @@
             </tr>
             <tr>
                 <th>Godzpoczatek</th>
-                <td>{% if godz_przyj.godzPoczatek %}{{ godz_przyj.godzPoczatek|date('H:i:s') }}{% endif %}</td>
+                <td>{% if godz_przyj.godzPoczatek %}{{ godz_przyj.godzPoczatek|date('H:i') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Godzkoniec</th>
-                <td>{% if godz_przyj.godzKoniec %}{{ godz_przyj.godzKoniec|date('H:i:s') }}{% endif %}</td>
+                <td>{% if godz_przyj.godzKoniec %}{{ godz_przyj.godzKoniec|date('H:i') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>

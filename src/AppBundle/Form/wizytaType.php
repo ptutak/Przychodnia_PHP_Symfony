@@ -13,7 +13,7 @@ class wizytaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('indeks')->add('dataWizyty')->add('diagnoza')->add('idPacjent')->add('idLekarzGodzPrzyj')->add('leki');
+        $builder->add('indeks')->add('data')->add('idPacjent')->add('idLekarzGodzPrzyj')->add('diagnoza')->add('leki');
     }
     
     /**

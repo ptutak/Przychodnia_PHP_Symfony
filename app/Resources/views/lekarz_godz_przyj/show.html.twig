@@ -2,13 +2,23 @@
 
 {% block body %}
     <h1>Lekarz_godz_przyj</h1>
-
+    <h3>{{ lekarz_godz_przyj }}</h3>
     <table>
+        <thead>
+        <tr>
+            <th>Umówione wizyty</th>
+        </tr>
+        </thead>
+
         <tbody>
+        {% for wizyta in lekarz_godz_przyj.wizyty %}
             <tr>
-                <th>Id</th>
-                <td>{{ lekarz_godz_przyj.id }}</td>
+                <td>
+                    {{ wizyta.indeks }}, {{ wizyta.data | date('Y-m-d') }}, {{ wizyta.idPacjent }}
+                </td>
             </tr>
+        {% endfor %}
+
         </tbody>
     </table>
 

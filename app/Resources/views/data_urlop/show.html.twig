@@ -13,6 +13,14 @@
                 <th>Data</th>
                 <td>{% if data_urlop.data %}{{ data_urlop.data|date('Y-m-d') }}{% endif %}</td>
             </tr>
+            <tr>
+                <th>Lekarze</th>
+                {% for lekarz in data_urlop.lekarze %}
+                    <td>
+                        {{ lekarz }};
+                    </td>
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
 
@@ -20,9 +28,11 @@
         <li>
             <a href="{{ path('data_urlop_index') }}">Back to the list</a>
         </li>
+<!--
         <li>
             <a href="{{ path('data_urlop_edit', { 'id': data_urlop.id }) }}">Edit</a>
         </li>
+-->
         <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
