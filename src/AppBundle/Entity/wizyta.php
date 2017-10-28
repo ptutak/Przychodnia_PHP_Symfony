@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,7 +30,7 @@ class wizyta
     private $indeks;
 
     /**
-     * @ORM\ManyToOne(targetEntity="pacjent")
+     * @ORM\ManyToOne(targetEntity="pacjent",inversedBy="wizyty")
      * @ORM\JoinColumn(name="id_pacjent",referencedColumnName="id")
      */
     private $idPacjent;
@@ -42,7 +43,7 @@ class wizyta
     private $dataWizyty;
 
     /**
-     * @ORM\ManyToOne(targetEntity="lekarz_godz_przyj")
+     * @ORM\ManyToOne(targetEntity="lekarz_godz_przyj", inversedBy="wizyty")
      * @ORM\JoinColumn(name="id_lekarz_godz_przyj", referencedColumnName="id")
      */
     private $idLekarzGodzPrzyj;
@@ -187,7 +188,7 @@ class wizyta
     /**
      * Get leki
      *
-     * @return int
+     * @return ArrayCollection
      */
     public function getLeki()
     {
@@ -217,5 +218,16 @@ class wizyta
     {
         return $this->diagnoza;
     }
+
+    public function __construct()
+    {
+        $this->leki = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->indeks."(".strval($this->dataWizyty).";".$this->idLekarzGodzPrzyj.";".$this->idPacjent.")";
+    }
+
 }
 

@@ -13,7 +13,7 @@ class pacjentType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('pESEL')->add('imie')->add('nazwisko')->add('miasto')->add('ulica')->add('numer');
+        $builder->add('pesel')->add('imie')->add('nazwisko')->add('ulica')->add('numer')->add('miasto');
     }
     
     /**

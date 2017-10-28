@@ -13,7 +13,7 @@ class lekarz_godz_przyjType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('idGodzPrzyj')->add('idLekarz');
+        $builder->add('idLekarz')->add('idGodzPrzyj');
     }
     
     /**

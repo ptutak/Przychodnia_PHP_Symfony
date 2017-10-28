@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,16 +23,21 @@ class lekarz_godz_przyj
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="lekarz",inversedBy="godzPrzyj")
+     * @ORM\JoinColumn(name="id_lekarz", referencedColumnName="id")
+     */
+    private $idLekarz;
+
+    /**
      * @ORM\ManyToOne(targetEntity="godz_przyj")
      * @ORM\JoinColumn(name="id_godz_przyj", referencedColumnName="id")
      */
     private $idGodzPrzyj;
 
     /**
-     * @ORM\ManyToOne(targetEntity="lekarz")
-     * @ORM\JoinColumn(name="id_lekarz", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="wizyta",mappedBy="idLekarzGodzPrzyj")
      */
-    private $idLekarz;
+    private $wizyty;
 
 
     /**
@@ -91,5 +97,40 @@ class lekarz_godz_przyj
     {
         return $this->idLekarz;
     }
+
+    /**
+     * Set wizyty
+     *
+     * @param integer $wizyty
+     *
+     * @return lekarz_godz_przyj
+     */
+    public function setWizyty($wizyty)
+    {
+        $this->wizyty = $wizyty;
+
+        return $this;
+    }
+
+    /**
+     * Get wizyty
+     *
+     * @return ArrayCollection
+     */
+    public function getWizyty()
+    {
+        return $this->wizyty;
+    }
+
+    public function __construct()
+    {
+        $this->wizyty = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->idLekarz.$this->idGodzPrzyj;
+    }
+
 }
 

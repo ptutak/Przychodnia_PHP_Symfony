@@ -10,9 +10,9 @@
                 <th>Pesel</th>
                 <th>Imie</th>
                 <th>Nazwisko</th>
-                <th>Miasto</th>
                 <th>Ulica</th>
                 <th>Numer</th>
+                <th>Miasto</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -20,12 +20,12 @@
         {% for pacjent in pacjents %}
             <tr>
                 <td><a href="{{ path('pacjent_show', { 'id': pacjent.id }) }}">{{ pacjent.id }}</a></td>
-                <td>{{ pacjent.pESEL }}</td>
+                <td>{{ pacjent.pesel }}</td>
                 <td>{{ pacjent.imie }}</td>
                 <td>{{ pacjent.nazwisko }}</td>
-                <td>{{ pacjent.miasto }}</td>
                 <td>{{ pacjent.ulica }}</td>
                 <td>{{ pacjent.numer }}</td>
+                <td>{{ pacjent.miasto }}</td>
                 <td>
                     <ul>
                         <li>

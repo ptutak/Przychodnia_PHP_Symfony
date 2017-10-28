@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * data_urlop
@@ -86,11 +87,22 @@ class data_urlop
     /**
      * Get lekarze
      *
-     * @return int
+     * @return ArrayCollection
      */
     public function getLekarze()
     {
         return $this->lekarze;
     }
+
+    public function __construct()
+    {
+        $this->lekarze = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return strval($this->dataUrlop);
+    }
+
 }
 

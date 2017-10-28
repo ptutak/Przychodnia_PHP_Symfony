@@ -94,5 +94,10 @@ class godz_przyj
     {
         return $this->godzKoniec;
     }
+
+    public function __toString()
+    {
+        return "".strval($this->godzPoczatek)." - ".strval($this->godzKoniec);
+    }
 }
 

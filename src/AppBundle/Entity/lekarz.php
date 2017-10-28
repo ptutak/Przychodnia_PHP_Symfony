@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * lekarz
@@ -43,12 +44,6 @@ class lekarz
     private $tytul;
 
     /**
-     * @ORM\ManyToMany(targetEntity="data_urlop",inversedBy="lekarze")
-     * @ORM\JoinTable(name="lekarz_data_urlop")
-     */
-    private $urlopy;
-
-    /**
      * @ORM\ManyToMany(targetEntity="specjalizacja")
      * @ORM\JoinTable(name="lekarz_specjalizacja",
      *     joinColumns={@ORM\JoinColumn(name="id_lekarz",referencedColumnName="id")},
@@ -56,6 +51,17 @@ class lekarz
      *     )
      */
     private $specjalizacje;
+
+    /**
+     * @ORM\OneToMany(targetEntity="lekarz_godz_przyj", mappedBy="idLekarz")
+     */
+    private $godzPrzyj;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="data_urlop",inversedBy="lekarze")
+     * @ORM\JoinTable(name="lekarz_data_urlop")
+     */
+    private $urlopy;
 
 
     /**
@@ -141,30 +147,6 @@ class lekarz
     }
 
     /**
-     * Set urlopy
-     *
-     * @param integer $urlopy
-     *
-     * @return lekarz
-     */
-    public function setUrlopy($urlopy)
-    {
-        $this->urlopy = $urlopy;
-
-        return $this;
-    }
-
-    /**
-     * Get urlopy
-     *
-     * @return int
-     */
-    public function getUrlopy()
-    {
-        return $this->urlopy;
-    }
-
-    /**
      * Set specjalizacje
      *
      * @param integer $specjalizacje
@@ -181,16 +163,70 @@ class lekarz
     /**
      * Get specjalizacje
      *
-     * @return int
+     * @return ArrayCollection
      */
     public function getSpecjalizacje()
     {
         return $this->specjalizacje;
     }
 
+    /**
+     * Set godzPrzyj
+     *
+     * @param integer $godzPrzyj
+     *
+     * @return lekarz
+     */
+    public function setGodzPrzyj($godzPrzyj)
+    {
+        $this->godzPrzyj = $godzPrzyj;
+
+        return $this;
+    }
+
+    /**
+     * Get godzPrzyj
+     *
+     * @return ArrayCollection
+     */
+    public function getGodzPrzyj()
+    {
+        return $this->godzPrzyj;
+    }
+
+    /**
+     * Set urlopy
+     *
+     * @param integer $urlopy
+     *
+     * @return lekarz
+     */
+    public function setUrlopy($urlopy)
+    {
+        $this->urlopy = $urlopy;
+
+        return $this;
+    }
+
+    /**
+     * Get urlopy
+     *
+     * @return ArrayCollection
+     */
+    public function getUrlopy()
+    {
+        return $this->urlopy;
+    }
+    public function __construct()
+    {
+        $this->godzPrzyj = new ArrayCollection();
+        $this->urlopy = new ArrayCollection();
+        $this->specjalizacje = new ArrayCollection();
+    }
+
     public function __toString()
     {
-        return $this->nazwisko.$this->imie.$this->tytul;
+        return $this->imie." ".$this->nazwisko." ".$this->tytul;
     }
 }
 

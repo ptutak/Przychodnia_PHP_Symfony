@@ -13,7 +13,7 @@ class lekarzType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('imie')->add('nazwisko')->add('tytul')->add('urlopy')->add('specjalizacje');
+        $builder->add('imie')->add('nazwisko')->add('tytul')->add('specjalizacje')->add('urlopy');
     }
     
     /**

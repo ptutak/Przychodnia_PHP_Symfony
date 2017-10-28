@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,9 +25,9 @@ class pacjent
     /**
      * @var int
      *
-     * @ORM\Column(name="PESEL", type="bigint", unique=true)
+     * @ORM\Column(name="pesel", type="string", length=11, unique=true)
      */
-    private $pESEL;
+    private $pesel;
 
     /**
      * @var string
@@ -43,16 +44,14 @@ class pacjent
     private $nazwisko;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="miasto", type="string", length=50, nullable=true)
+     * @ORM\OneToMany(targetEntity="wizyta",mappedBy="idPacjent")
      */
-    private $miasto;
+    private $wizyty;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ulica", type="string", length=50, nullable=true)
+     * @ORM\Column(name="ulica", type="string", length=255, nullable=true)
      */
     private $ulica;
 
@@ -62,6 +61,13 @@ class pacjent
      * @ORM\Column(name="numer", type="string", length=10, nullable=true)
      */
     private $numer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="miasto", type="string", length=50, nullable=true)
+     */
+    private $miasto;
 
 
     /**
@@ -75,27 +81,27 @@ class pacjent
     }
 
     /**
-     * Set pESEL
+     * Set pesel
      *
-     * @param integer $pESEL
+     * @param string $pesel
      *
      * @return pacjent
      */
-    public function setPESEL($pESEL)
+    public function setPesel($pesel)
     {
-        $this->pESEL = $pESEL;
+        $this->pesel = $pesel;
 
         return $this;
     }
 
     /**
-     * Get pESEL
+     * Get pesel
      *
-     * @return int
+     * @return string
      */
-    public function getPESEL()
+    public function getPesel()
     {
-        return $this->pESEL;
+        return $this->pesel;
     }
 
     /**
@@ -147,27 +153,27 @@ class pacjent
     }
 
     /**
-     * Set miasto
+     * Set wizyty
      *
-     * @param string $miasto
+     * @param integer $wizyty
      *
      * @return pacjent
      */
-    public function setMiasto($miasto)
+    public function setWizyty($wizyty)
     {
-        $this->miasto = $miasto;
+        $this->wizyty = $wizyty;
 
         return $this;
     }
 
     /**
-     * Get miasto
+     * Get wizyty
      *
-     * @return string
+     * @return ArrayCollection
      */
-    public function getMiasto()
+    public function getWizyty()
     {
-        return $this->miasto;
+        return $this->wizyty;
     }
 
     /**
@@ -208,11 +214,6 @@ class pacjent
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->nazwisko.$this->imie.$this->pESEL;
-    }
-
     /**
      * Get numer
      *
@@ -221,6 +222,40 @@ class pacjent
     public function getNumer()
     {
         return $this->numer;
+    }
+
+    /**
+     * Set miasto
+     *
+     * @param string $miasto
+     *
+     * @return pacjent
+     */
+    public function setMiasto($miasto)
+    {
+        $this->miasto = $miasto;
+
+        return $this;
+    }
+
+    /**
+     * Get miasto
+     *
+     * @return string
+     */
+    public function getMiasto()
+    {
+        return $this->miasto;
+    }
+
+    public function __toString()
+    {
+        return $this->pesel." ".$this->nazwisko." ".$this->nazwisko;
+    }
+
+    public function __construct()
+    {
+        $this->wizyty = new ArrayCollection();
     }
 }
 
