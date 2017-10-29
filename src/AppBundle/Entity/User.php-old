@@ -147,6 +147,30 @@ class User extends BaseUser
         return $this->idLekarz;
     }
 
+    /**
+     * Set groups
+     *
+     * @param integer $groups
+     *
+     * @return User
+     */
+    public function setGroups($groups)
+    {
+        $this->groups = $groups;
+
+        return $this;
+    }
+
+    /**
+     * Get groups
+     *
+     * @return ArrayCollection
+     */
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
     public function __toString()
     {
         return parent::__toString()." ".$this->name;
