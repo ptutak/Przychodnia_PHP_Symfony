@@ -26,7 +26,6 @@ class Group extends BaseGroup
      */
     private $users;
 
-
     /**
      * Get id
      *

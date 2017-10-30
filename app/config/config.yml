@@ -73,8 +73,20 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: AppBundle\Entity\User
+    profile:
+        form:
+            type:               AppBundle\Form\UserProfileType # or 'fos_user_profile' on Symfony < 2.8
+            name:               fos_user_profile_form
+            validation_groups:  [Profile, Default]
     group:
-        group_class: AppBundle\Entity\Group
+        group_class:    AppBundle\Entity\Group
+        group_manager:  fos_user.group_manager.default
+        form:
+            type:               AppBundle\Form\GroupType # or 'fos_user_group' on Symfony < 2.8
+            name:               fos_user_group_form
+            validation_groups:  [Registration, Default]
+    service:
+        user_manager:           fos_user.user_manager.default
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"

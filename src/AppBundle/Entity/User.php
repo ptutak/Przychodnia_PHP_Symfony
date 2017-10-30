@@ -49,7 +49,7 @@ class User extends BaseUser
     private $idPacjent;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Group", mappedBy="users")
+     * @ORM\ManyToMany(targetEntity="Group", mappedBy="users")
      */
     protected $groups;
 

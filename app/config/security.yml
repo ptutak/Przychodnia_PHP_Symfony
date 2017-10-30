@@ -5,7 +5,9 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-        ROLE_USER: [ROLE_LEKARZ, ROLE_PACJENT]
+        ROLE_PACJENT:     ROLE_PACJENT
+        ROLE_LEKARZ:      ROLE_LEKARZ
+        ROLE_USER:        [ROLE_LEKARZ, ROLE_PACJENT]
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
