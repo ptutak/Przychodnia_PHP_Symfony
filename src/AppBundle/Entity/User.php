@@ -8,7 +8,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  * @ORM\Table(name="fos_user")
  */
 class User extends BaseUser
@@ -49,11 +49,7 @@ class User extends BaseUser
     private $idPacjent;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Group")
-     * @ORM\JoinTable(name="fos_user_user_group",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
-     * )
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Group", mappedBy="users")
      */
     protected $groups;
 
@@ -63,6 +59,7 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+//        $this->groups = new ArrayCollection();
     }
 
     /**

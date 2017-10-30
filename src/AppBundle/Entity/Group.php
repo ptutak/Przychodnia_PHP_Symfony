@@ -5,9 +5,10 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\Group as BaseGroup;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\GroupRepository")
  * @ORM\Table(name="fos_group")
  */
 class Group extends BaseGroup
@@ -20,6 +21,13 @@ class Group extends BaseGroup
     protected $id;
 
     /**
+     * @ORM\ManyToMany(targetEntity="User", inversedBy="groups")
+     * @ORM\JoinTable(name="fos_user_user_group")
+     */
+    private $users;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -29,4 +37,19 @@ class Group extends BaseGroup
         return $this->id;
     }
 
+    /**
+     * Get users
+     *
+     * @return ArrayCollection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    public function __construct($name)
+    {
+        parent::__construct($name);
+        $this->users = new ArrayCollection();
+    }
 }
