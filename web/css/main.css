@@ -1,3 +1,7 @@
-.my-custom-class {
+.calendar_day {
     height:100px;
+}
+
+.my_calendar {
+    border: double;
 }

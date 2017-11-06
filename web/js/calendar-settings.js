@@ -8,9 +8,11 @@ $(function () {
         header: {
             left: 'prev, next',
             center: 'title',
-            right: 'basicWeek, basicDay,'
+            right: 'month, basicWeek, basicDay,'
         },
         lazyFetching: true,
+        contentHeight:800,
+        aspectRatio:1,
         timeFormat: {
             // for agendaWeek and agendaDay
             agenda: 'h:mmt',    // 5:00 - 6:30

@@ -7,7 +7,9 @@
 {% endblock %}
 {% block body %}
     <h1>Welcome to the Kalendarz:index page</h1>
-    {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
+    <p class="my_calendar">
+        {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
+    </p>
 {% endblock %}
 
 {% block javascripts %}
