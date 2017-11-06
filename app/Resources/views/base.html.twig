@@ -17,6 +17,20 @@
             <li><a href="{{ path('leki_index') }}">Leki</a></li>
             <li><a href="{{ path('pacjent_index') }}">Pacjenci</a></li>
             <li><a href="{{ path('wizyta_index') }}">Wizyty</a></li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li><a href="{{ path('fos_user_group_list') }}">Group List</a></li>
+                <li>
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                </li>
+            {% endif %}
+
         </ul>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
