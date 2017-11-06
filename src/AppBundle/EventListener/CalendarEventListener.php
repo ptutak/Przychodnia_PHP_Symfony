@@ -37,7 +37,7 @@ class CalendarEventListener
         // load events using your custom logic here,
         // for instance, retrieving events from a repository
 
-        
+
 
 
     }
