@@ -12,7 +12,7 @@ class KalendarzController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AppBundle:Kalendarz:index.html.twig', array(
+        return $this->render('Kalendarz/index.html.twig', array(
             'number'=>4
         ));
     }

@@ -2,6 +2,7 @@
 
 {% block title %}AppBundle:Kalendarz:index{% endblock %}
 {% block stylesheets %}
+    {{ parent() }}
     <link rel="stylesheet" href="{{ asset('bundles/adesignscalendar/css/fullcalendar/fullcalendar.css') }}" />
 {% endblock %}
 {% block body %}
@@ -10,7 +11,9 @@
 {% endblock %}
 
 {% block javascripts %}
+    {{ parent() }}
     <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/jquery/jquery-1.8.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/fullcalendar/jquery.fullcalendar.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/calendar-settings.js') }}"></script>
+    {#<script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/calendar-settings.js') }}"></script>#}
+    <script type="text/javascript" src="{{ asset('js/calendar-settings.js') }}"></script>
 {% endblock %}

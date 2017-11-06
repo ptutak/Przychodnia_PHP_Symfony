@@ -41,7 +41,7 @@
                 <th>Urlopy</th>
                 {% for urlop in lekarz.urlopy %}
                     <td>
-                        {{ urlop.dataUrlop | date('Y-m-d') }};
+                        {{ urlop.data | date('Y-m-d') }};
                     </td>
                 {% endfor %}
             </tr>

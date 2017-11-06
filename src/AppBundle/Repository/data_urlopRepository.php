@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\User;
+
 /**
  * data_urlopRepository
  *
@@ -10,4 +12,11 @@ namespace AppBundle\Repository;
  */
 class data_urlopRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getUserDataUrlops(User $user){
+        $qb=$this->createQueryBuilder('du');
+        $qb->leftJoin('du.lekarze','l')
+            ->where('l.id = :userId')
+            ->setParameter('userId',$user->getIdLekarz());
+        return $qb->getQuery()->getResult();
+    }
 }
