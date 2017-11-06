@@ -11,8 +11,6 @@ $(function () {
             right: 'month, basicWeek, basicDay,'
         },
         lazyFetching: true,
-        contentHeight:800,
-        aspectRatio:1,
         timeFormat: {
             // for agendaWeek and agendaDay
             agenda: 'h:mmt',    // 5:00 - 6:30
@@ -24,9 +22,11 @@ $(function () {
             {
                 url: Routing.generate('fullcalendar_loader'),
                 type: 'POST',
+
                 // A way to add custom filters to your event listeners
                 data: {
                 },
+
                 error: function() {
                    //alert('There was an error while fetching Google Calendar!');
                 }
