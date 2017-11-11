@@ -25,6 +25,7 @@ $(function () {
 
                 // A way to add custom filters to your event listeners
                 data: {
+                    filter:'my_filter'
                 },
 
                 error: function() {

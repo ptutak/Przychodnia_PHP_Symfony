@@ -51,12 +51,12 @@ class CalendarEventListener
 
         $request = $calendarEvent->getRequest();
         $filter = $request->get('filter');
-
+        $route=$request->getMethod();
+        $myStr="".print_r($route,true)."\n";
 
         // load events using your custom logic here,
         // for instance, retrieving events from a repository
-
-        $eventEntity = new EventEntity("Moj event", new \DateTime("2017-11-07"), new \DateTime("2017-11-07"));
+        $eventEntity = new EventEntity($myStr, new \DateTime("2017-11-11"), new \DateTime("2017-11-11"));
 
         //optional calendar event settings
         $eventEntity->setAllDay(true); // default is false, set to true if this is an all day event
