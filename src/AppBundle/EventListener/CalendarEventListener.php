@@ -51,8 +51,9 @@ class CalendarEventListener
 
         $request = $calendarEvent->getRequest();
         $filter = $request->get('filter');
+        $url=$request->get('data');
         $route=$request->getMethod();
-        $myStr="".print_r($route,true)."\n";
+        $myStr="".print_r($url,true)."\n";
 
         // load events using your custom logic here,
         // for instance, retrieving events from a repository

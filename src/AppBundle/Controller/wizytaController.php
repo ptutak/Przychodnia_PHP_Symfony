@@ -39,7 +39,7 @@ class wizytaController extends Controller
      */
     public function newAction(Request $request)
     {
-        $wizytum = new Wizytum();
+        $wizytum = new Wizyta();
         $form = $this->createForm('AppBundle\Form\wizytaType', $wizytum);
         $form->handleRequest($request);
 
