@@ -15,37 +15,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 class lekarzController extends Controller
 {
     /**
-     * @var bool
-     */
-    private $showPlan=false;
-
-    /**
-     * @return bool
-     */
-    public function isShowPlan()
-    {
-        return $this->showPlan;
-    }
-
-    /**
-     * @param bool $showPlan
-     */
-    public function setShowPlan($showPlan)
-    {
-        $this->showPlan = $showPlan;
-    }
-
-    public function getPlan(){
-
-        if ($this->isShowPlan()){
-            return true; // Zwróć tablicę z tym co trzeba zwrócić
-        }
-        else{
-            return null;
-        }
-    }
-
-    /**
      * Lists all lekarz entities.
      *
      * @Route("/", name="lekarz_index")
@@ -56,7 +25,6 @@ class lekarzController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $lekarzs = $em->getRepository('AppBundle:lekarz')->findAll();
-        $this->setShowPlan(true);
         return $this->render('lekarz/index.html.twig', array(
             'lekarzs' => $lekarzs,
         ));
