@@ -8,7 +8,7 @@ $(function () {
         header: {
             left: 'prev, next',
             center: 'title',
-            right: 'month, basicWeek, basicDay,'
+            right: 'month, basicWeek, basicDay'
         },
         lazyFetching: true,
         timeFormat: {
@@ -22,14 +22,12 @@ $(function () {
             {
                 url: Routing.generate('fullcalendar_loader'),
                 type: 'POST',
-
                 // A way to add custom filters to your event listeners
                 data: {
-
+                    filter: 'my_custom_filter_param'
                 },
-
                 error: function() {
-                   //alert('There was an error while fetching Google Calendar!');
+                    //alert('There was an error while fetching Google Calendar!');
                 }
             }
         ]

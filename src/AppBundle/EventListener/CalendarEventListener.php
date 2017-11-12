@@ -45,29 +45,24 @@ class CalendarEventListener
             $eventEntity->setUrl('http://www.google.com'); // url to send user to when event label is clicked
             $eventEntity->setCssClass('calendar_day'); // a custom class you may want to apply to event labels
             $calendarEvent->addEvent($eventEntity);
-     }
+        }
         // The original request so you can get filters from the calendar
         // Use the filter in your query for example
 
-        $request = $calendarEvent->getRequest();
-        $url="Hello";
-
-        $myStr="".print_r($url,true)."\n";
+//        $request = $calendarEvent->getRequest();
 
         // load events using your custom logic here,
         // for instance, retrieving events from a repository
-        $eventEntity = new EventEntity($myStr, new \DateTime("2017-11-11"), new \DateTime("2017-11-11"));
+        $eventEntity = new EventEntity("Hello", new \DateTime("2017-11-11"), new \DateTime("2017-11-11"));
 
         //optional calendar event settings
         $eventEntity->setAllDay(true); // default is false, set to true if this is an all day event
-        $eventEntity->setBgColor('#FF0000'); //set the background color of the event's label
+        $eventEntity->setBgColor('#000000'); //set the background color of the event's label
         $eventEntity->setFgColor('#FFFFFF'); //set the foreground color of the event's label
         $eventEntity->setUrl('http://www.google.com'); // url to send user to when event label is clicked
         $eventEntity->setCssClass('calendar_day'); // a custom class you may want to apply to event labels
 
         //finally, add the event to the CalendarEvent for displaying on the calendar
         $calendarEvent->addEvent($eventEntity);
-
-
     }
 }

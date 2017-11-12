@@ -14,6 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  */
 class lekarzController extends Controller
 {
+
     /**
      * Lists all lekarz entities.
      *
