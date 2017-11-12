@@ -18,6 +18,8 @@ use FOS\UserBundle\Form\Factory\FactoryInterface;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -53,14 +55,35 @@ class ProfileController extends Controller
         $this->showPlan = $showPlan;
     }
 
-    public function getPlan(){
+
+    /**
+     * @Route("/showPlan",name="show_plan")
+     * @Method({"GET","POST"})
+     */
+    public function getPlan(Request $request){
 
         if ($this->isShowPlan()){
+            $this->setShowPlan(false);
             return true; // Zwróć tablicę z tym co trzeba zwrócić
         }
         else{
             return null;
         }
+    }
+
+    /**
+     * Show the user.
+     */
+    public function showAction()
+    {
+        $user = $this->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+        $this->setShowPlan(true);
+        return $this->render('@FOSUser/Profile/show.html.twig', array(
+            'user' => $user,
+        ));
     }
 
 

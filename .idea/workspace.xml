@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/lekarzController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/lekarzController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/pacjentController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/pacjentController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,47 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/adesigns/calendar-bundle/ADesigns/CalendarBundle/Controller/CalendarController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="calendar-settings.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/calendar-settings.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lekarzController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lekarzController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/lekarzController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1501">
@@ -79,11 +39,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProfileController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="114">
+              <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+              <folding>
+                <element signature="e#299#348#0#PHP" expanded="true" />
+                <element signature="e#2215#2248#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2300">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfileFormType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/ProfileFormType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1022">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pacjentController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/pacjentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-34">
+              <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -92,11 +85,21 @@
       <file leaf-file-name="GroupController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
+            <state relative-caret-position="1751">
               <caret line="123" column="85" lean-forward="false" selection-start-line="123" selection-start-column="85" selection-end-line="123" selection-end-column="85" />
               <folding>
                 <element signature="e#126#190#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfileController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/ProfileController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="47" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -176,7 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/wizytaType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/pacjent.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/RegistrationFormType.php" />
@@ -225,8 +227,9 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/Kalendarz/index.html.twig" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/lekarzController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/pacjentController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" />
       </list>
     </option>
   </component>
@@ -422,6 +425,32 @@
             <path>
               <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
               <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="user-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="user-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Factory" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="user-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Type" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -501,16 +530,15 @@
       <workItem from="1509981003830" duration="14266000" />
       <workItem from="1510045099098" duration="1473000" />
       <workItem from="1510401780316" duration="8196000" />
-      <workItem from="1510476646353" duration="6196000" />
+      <workItem from="1510476646353" duration="6659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127128000" />
+    <option name="totallyTimeSpent" value="127591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3022388" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -543,37 +571,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="77" column="51" lean-forward="false" selection-start-line="77" selection-start-column="51" selection-end-line="77" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/lekarzType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/genus/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -881,21 +878,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/lekarzController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="-1501">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#639#657#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2300">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/ProfileFormType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="123" column="85" lean-forward="false" selection-start-line="123" selection-start-column="85" selection-end-line="123" selection-end-column="85" />
-          <folding>
-            <element signature="e#126#190#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1022">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -907,12 +912,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/lekarzController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/pacjentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1501">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="-34">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="47" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1751">
+          <caret line="123" column="85" lean-forward="false" selection-start-line="123" selection-start-column="85" selection-end-line="123" selection-end-column="85" />
           <folding>
-            <element signature="e#639#657#1#PHP" expanded="true" />
+            <element signature="e#126#190#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+          <folding>
+            <element signature="e#299#348#0#PHP" expanded="true" />
+            <element signature="e#2215#2248#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
