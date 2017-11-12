@@ -25,23 +25,11 @@ $(function () {
 
                 // A way to add custom filters to your event listeners
                 data: {
-                    filter:'my_filter',
-                    url:getBaseUrl()
+
                 },
 
                 error: function() {
                    //alert('There was an error while fetching Google Calendar!');
-                }
-            },
-            {
-                url: '/php/calendar-feed.php',
-                type: 'POST',
-                data: {
-                    filter:'my_filter'
-                },
-
-                error: function() {
-                    //alert('There was an error while fetching Google Calendar!');
                 }
             }
         ]

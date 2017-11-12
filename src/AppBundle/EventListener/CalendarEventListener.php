@@ -50,9 +50,8 @@ class CalendarEventListener
         // Use the filter in your query for example
 
         $request = $calendarEvent->getRequest();
-        $filter = $request->get('filter');
-        $url=$request->get('data');
-        $route=$request->getMethod();
+        $url="Hello";
+
         $myStr="".print_r($url,true)."\n";
 
         // load events using your custom logic here,
