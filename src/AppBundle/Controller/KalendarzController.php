@@ -9,12 +9,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class KalendarzController extends Controller
 {
     /**
-     * @Route("/kalendarz",name="kalendarz")
+     * @Route("/kalendarz/show",name="kalendarz")
      */
     public function indexAction()
     {
-        return $this->render('Kalendarz/index.html.twig', array(
-            'number'=>4
+        return $this->render('show.html.twig', array(
         ));
     }
 

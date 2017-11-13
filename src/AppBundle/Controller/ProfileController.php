@@ -58,14 +58,13 @@ class ProfileController extends BaseController
 
 
     /**
-     * @Route("/profile/getPlan",name="get_plan")
+     * @Route("/profile/get_plan",name="get_plan")
      * @Method("GET")
      */
     public function getPlan(Request $request){
-        var_dump($request->query->all());
+//        var_dump($request->query->all());
 
         return $this->render(':Profile:get.html.twig', array(
-//            'vars'=>$vars
         ));
 
         if ($this->isShowPlan()){
@@ -79,7 +78,7 @@ class ProfileController extends BaseController
     }
 
     /**
-     * @Route("/profile/admin_panel",name="admin_panel")
+     * @Route("/admin",name="admin")
      */
     public function adminAction(Request $request){
         return $this->render(":Profile:admin.html.twig", array(
