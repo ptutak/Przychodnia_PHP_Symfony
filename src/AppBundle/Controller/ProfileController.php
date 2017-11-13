@@ -58,18 +58,16 @@ class ProfileController extends BaseController
 
 
     /**
-     * @Route("/profile/get_plan",name="get_plan")
+     * @Route("/profile/getPlan", name="get_plan")
      * @Method("GET")
      */
-    public function getPlan(Request $request){
-//        var_dump($request->query->all());
-
-        return $this->render(':Profile:get.html.twig', array(
-        ));
-
+    public function getPlanAction(Request $request){
         if ($this->isShowPlan()){
             $this->setShowPlan(false);
-            return true; // Zwróć tablicę z tym co trzeba zwrócić
+            $startDate=$request->query('start');
+            $endDate=$request->query('end');
+
+            return null; // Zwróć tablicę z tym co trzeba zwrócić
         }
         else{
             return null;

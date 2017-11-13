@@ -31,11 +31,8 @@ $(function () {
                 }
             },
             {
-                url:Routing.generate("get_plan"),
+                url: '/profile/getPlan',
                 type: 'GET',
-                data: {
-                    my_filter:'my_filter_lol'
-                }
             }
         ]
     });

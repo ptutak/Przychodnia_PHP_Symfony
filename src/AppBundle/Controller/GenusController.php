@@ -40,7 +40,7 @@ class GenusController extends Controller
             'Inked!'
         ];
 
-        return $this->render('genus/get.html.twig', array(
+        return $this->render('genus/get_plan.html.twig', array(
             'name' => $genusName,
             'notes' => $notes
         ));
