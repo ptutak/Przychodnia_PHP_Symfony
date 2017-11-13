@@ -13,7 +13,7 @@ class KalendarzController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('show.html.twig', array(
+        return $this->render(':Kalendarz:show.html.twig', array(
         ));
     }
 

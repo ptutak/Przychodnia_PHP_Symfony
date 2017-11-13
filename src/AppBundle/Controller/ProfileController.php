@@ -11,20 +11,11 @@
 
 namespace AppBundle\Controller;
 
-use FOS\UserBundle\Event\FilterUserResponseEvent;
-use FOS\UserBundle\Event\FormEvent;
-use FOS\UserBundle\Event\GetResponseUserEvent;
-use FOS\UserBundle\Form\Factory\FactoryInterface;
-use FOS\UserBundle\FOSUserEvents;
+
 use FOS\UserBundle\Model\UserInterface;
-use FOS\UserBundle\Model\UserManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Controller\ProfileController as BaseController;
 
@@ -58,21 +49,22 @@ class ProfileController extends BaseController
 
 
     /**
-     * @Route("/profile/getPlan", name="get_plan")
-     * @Method("GET")
+     * @Route("/profile/get_plan", name="get_plan")
+     * @Method({"POST","GET"})
      */
     public function getPlanAction(Request $request){
+        var_dump($request->query->all());
+        return $this->render(':Profile:get_plan.html.twig');
         if ($this->isShowPlan()){
             $this->setShowPlan(false);
             $startDate=$request->query('start');
             $endDate=$request->query('end');
 
-            return null; // Zwróć tablicę z tym co trzeba zwrócić
+            return $this->render(':Profile:get_plan.html.twig'); // Zwróć tablicę z tym co trzeba zwrócić
         }
         else{
             return null;
         }
-
     }
 
     /**
