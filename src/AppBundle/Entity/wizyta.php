@@ -228,9 +228,9 @@ class wizyta
     {
         return $this->indeks." ; ".$this->data->format("Y-m-d")." ; ".$this->idLekarzGodzPrzyj." ; ".$this->idPacjent;
     }
-    public function getName()
+    public function getNamePlate()
     {
-        return "Indeks:".$this->indeks.";\nData:".$this->data->format("Y-m-d").";\nLekarz, godz. przyjęcia:\n".$this->idLekarzGodzPrzyj.";\nPacjent:".$this->idPacjent; 
+        return "Indeks:".$this->indeks.";\nData:".$this->data->format("Y-m-d").";\nLekarz:\n".$this->idLekarzGodzPrzyj.";\nPacjent:\n".$this->idPacjent;
     }
 
 }

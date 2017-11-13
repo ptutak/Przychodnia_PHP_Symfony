@@ -14,3 +14,7 @@
         {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
     </div>
 {% endblock fos_user_content %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/calendar-settings-profile.js') }}"></script>
+{% endblock %}

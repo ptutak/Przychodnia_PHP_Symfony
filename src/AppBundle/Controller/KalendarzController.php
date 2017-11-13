@@ -36,18 +36,18 @@ class KalendarzController extends Controller
                      * @var wizyta $wizyta
                      */
                     $event=array(
-                        'title'=>$wizyta->getName(),
+                        'title'=>'Indeks: '.$wizyta->getIndeks(),
                         'start'=>date_format($wizyta->getData(),'Y-m-d'),
-                        'end'=>date_format($wizyta->getData(),'Y-m-d')
+                        'end'=>date_format($wizyta->getData(),'Y-m-d'),
+                        'url'=>$this->generateUrl('wizyta_show',array('id'=>$wizyta->getId()))
                         );
                     $eventArray[]=$event;
-
                 }
                 break;
-            case 'profil':
+            case 'profile':
+
                 break;
         }
-//        exit(dump($eventArray));
         return new JsonResponse($eventArray);
     }
 
