@@ -5,13 +5,13 @@
 
     <table>
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Indeks</th>
-                <th>Data</th>
-                <th>Diagnoza</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Indeks</th>
+            <th>Data</th>
+            <th>Diagnoza</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for wizytum in wizytas %}
@@ -44,4 +44,9 @@
     <div class="my_calendar">
         {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/calendar-settings-wizyta.js') }}"></script>
 {% endblock %}

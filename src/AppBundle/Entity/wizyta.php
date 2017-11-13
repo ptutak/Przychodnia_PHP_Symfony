@@ -228,6 +228,10 @@ class wizyta
     {
         return $this->indeks." ; ".$this->data->format("Y-m-d")." ; ".$this->idLekarzGodzPrzyj." ; ".$this->idPacjent;
     }
+    public function getName()
+    {
+        return $this->indeks." ; ".$this->data->format("Y-m-d")." ; ".$this->idLekarzGodzPrzyj." ; ".$this->idPacjent;
+    }
 
 }
 

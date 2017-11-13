@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use AppBundle\Entity\wizyta;
 
 /**
  * wizytaRepository
@@ -10,4 +11,15 @@ namespace AppBundle\Repository;
  */
 class wizytaRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getEventsByDate($start, $end, $type='all'){
+        $q=$this->getEntityManager()->createQuery('
+        SELECT events FROM AppBundle:wizyta events
+        WHERE events.data
+        BETWEEN :startData AND :endData
+        ')
+            ->setParameter('startData',$start)
+            ->setParameter('endData',$end)
+            ->getResult();
+        return $q;
+    }
 }

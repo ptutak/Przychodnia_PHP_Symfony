@@ -2,10 +2,13 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\wizyta;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Class KalendarzController
@@ -15,45 +18,44 @@ use Symfony\Component\HttpFoundation\Request;
 class KalendarzController extends Controller
 {
 
-    /**
-     * @var bool
-     */
-    private $showPlan=false;
 
     /**
-     * @return bool
+     * @Route("/get/data/{type}",name="get_kalendarz_data", options={"expose"=true})
+     *
      */
-    public function isShowPlan()
+    public function getKalendarzData($type, Request $request)
     {
-        return $this->showPlan;
+        $startDate = date_format(date_create_from_format('U',$request->query->get('start')),'Y-m-d');
+        $endDate = date_format(date_create_from_format('U',$request->query->get('end')),'Y-m-d');
+        $events=[];
+        switch($type){
+            case 'wizyta':
+                $events=$this->getDoctrine()->getRepository(wizyta::class)->getEventsByDate($startDate,$endDate);
+                $eventArray=[];
+                foreach ( $events as $event){
+                    /**
+                     * @var wizyta $event
+                     */
+                    $event->__toString();
+                }
+                break;
+            case 'profil':
+                break;
+        }
+        exit(dump($events));
+        return null;
     }
-
-    /**
-     * @param bool $showPlan
-     */
-    public function setShowPlan($showPlan)
-    {
-        $this->showPlan = $showPlan;
-    }
-
 
     /**
      * @Route("/get_plan", name="get_plan_kalendarz")
      * @Method({"POST","GET"})
      */
-    public function getPlanAction(Request $request){
+    public function getPlanAction(Request $request)
+    {
+        $startDate = $request->query('start');
+        $endDate = $request->query('end');
         var_dump($request->query->all());
         return $this->render('::dump.html.twig');
-        if ($this->isShowPlan()){
-            $this->setShowPlan(false);
-            $startDate=$request->query('start');
-            $endDate=$request->query('end');
-
-            return $this->render(':Profile:get_plan.html.twig'); // Zwróć tablicę z tym co trzeba zwrócić
-        }
-        else{
-            return null;
-        }
     }
 
     /**
@@ -61,8 +63,7 @@ class KalendarzController extends Controller
      */
     public function showAction()
     {
-        return $this->render(':Kalendarz:show.html.twig', array(
-        ));
+        return $this->render(':Kalendarz:show.html.twig', array());
     }
 
 }
