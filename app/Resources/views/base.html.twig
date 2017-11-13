@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/adesignscalendar/css/fullcalendar/fullcalendar.css') }}" />
             <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css"/>
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -13,25 +14,21 @@
         {% block menu %}
             <ul>
                 <li><a href="{{ path('home') }}">Home</a></li>
+
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
+                    <li><a href="{{ path('kalendarz') }}">Kalendarz</a></li>
+
                     {% if is_granted('ROLE_PACJENT') %}
-                        <li><a href="{{ path('pacjent_index') }}">Pacjenci</a></li>
-                        <li><a href="{{ path('wizyta_index') }}">Wizyty</a></li>
-
                     {% endif %}
+
                     {% if is_granted('ROLE_LEKARZ') %}
-                        <li><a href="{{ path('kalendarz') }}">Kalendarz</a></li>
-                        <li><a href="{{ path('lekarz_index') }}">Lekarze</a></li>
-                        <li><a href="{{ path('specjalizacja_index') }}">Specjalizacje</a></li>
-                        <li><a href="{{ path('lekarz_godz_przyj_index') }}">Lekarze - Godziny przyjęć</a></li>
-                        <li><a href="{{ path('godz_przyj_index') }}">Godziny przyjęć</a></li>
-                        <li><a href="{{ path('data_urlop_index') }}">Urlopy</a></li>
-                        <li><a href="{{ path('leki_index') }}">Leki</a></li>
+                    {% endif %}
 
-                    {% endif %}
                     {% if is_granted('ROLE_ADMIN') %}
-                        <li><a href="{{ path('fos_user_group_list') }}">Group List</a></li>
+                        {{ render(controller('AppBundle:Profile:admin')) }}
                     {% endif %}
+
                     <li>
                         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                         <a href="{{ path('fos_user_security_logout') }}">
@@ -42,7 +39,11 @@
                     <li>
                         <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                     </li>
+                    <li>
+                        <a href="{{ path('fos_user_registration_register') }}">Registration</a>
+                    </li>
                 {% endif %}
+
             </ul>
         {% endblock %}
 
@@ -51,6 +52,10 @@
         {% block javascripts %}
             <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
             <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/jquery/jquery-1.8.2.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/fullcalendar/jquery.fullcalendar.min.js') }}"></script>
+            {#<script type="text/javascript" src="{{ asset('bundles/adesignscalendar/js/calendar-settings.js') }}"></script>#}
+            <script type="text/javascript" src="{{ asset('js/calendar-settings.js') }}"></script>
         {% endblock %}
 
     </body>

@@ -13,11 +13,13 @@ use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseGroupEvent;
 use FOS\UserBundle\Event\GroupEvent;
 use FOS\UserBundle\FOSUserEvents;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 
 class GroupController extends BaseController
 {
@@ -31,6 +33,15 @@ class GroupController extends BaseController
             $theRoles[$role] = $role;
         }
         return $theRoles;
+    }
+
+    /**
+     * @Route("/group/index",name="group_index")
+     */
+    public function indexAction(Request $request){
+        return $this->render(":Group:index.html.twig",array(
+
+        ));
     }
 
     /**
@@ -55,13 +66,9 @@ class GroupController extends BaseController
             return $event->getResponse();
         }
 
-//        /** @var $formFactory FactoryInterface */
-        /*        $formFactory = $this->get('fos_user.group.form.factory');
-                $form = $formFactory->createForm();
-        */
-
-
-        /** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
+        /**
+         * @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface
+         */
         $formFactory = $this->get('fos_user.group.form.factory');
 
         $form = $formFactory->createForm();

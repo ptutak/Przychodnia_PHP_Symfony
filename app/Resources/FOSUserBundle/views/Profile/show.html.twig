@@ -2,4 +2,15 @@
 
 {% block fos_user_content %}
 {% include "@FOSUser/Profile/show_content.html.twig" %}
+    {{ dump() }}
+    {%  if is_granted('ROLE_LEKARZ') %}
+        <p>Profil Lekarski:{{ user.idLekarz}} </p>
+    {% endif %}
+    {% if is_granted('ROLE_PACJENT') %}
+        <p>Profil Pacjenta: {{ user.idPacjent }}</p>
+    {% endif %}
+    <a href="{{ path('fos_user_profile_edit') }}"><button>Edit</button></a>
+    <div class="my_calendar">
+        {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
+    </div>
 {% endblock fos_user_content %}

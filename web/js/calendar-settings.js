@@ -29,6 +29,13 @@ $(function () {
                 error: function() {
                     //alert('There was an error while fetching Google Calendar!');
                 }
+            },
+            {
+                url:Routing.generate("get_plan"),
+                type: 'GET',
+                data: {
+                    my_filter:'my_filter_lol'
+                }
             }
         ]
     });

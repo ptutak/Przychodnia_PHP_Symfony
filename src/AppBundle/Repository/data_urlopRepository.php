@@ -13,9 +13,9 @@ use AppBundle\Entity\User;
 class data_urlopRepository extends \Doctrine\ORM\EntityRepository
 {
     public function getUserDataUrlops(User $user){
-        $qb=$this->createQueryBuilder('du');
-        $qb->leftJoin('du.lekarze','l')
-            ->where('l.id = :userId')
+        $qb=$this->createQueryBuilder('data_urlop');
+        $qb->leftJoin('data_urlop.lekarze','lekarze')
+            ->where('lekarze.id = :userId')
             ->setParameter('userId',$user->getIdLekarz());
         return $qb->getQuery()->getResult();
     }

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\UserBundle\Controller;
+namespace AppBundle\Controller;
 
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
@@ -26,13 +26,14 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use FOS\UserBundle\Controller\ProfileController as BaseController;
 
 /**
  * Controller managing the user profile.
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-class ProfileController extends Controller
+class ProfileController extends BaseController
 {
     /**
      * @var bool
@@ -57,10 +58,15 @@ class ProfileController extends Controller
 
 
     /**
-     * @Route("/showPlan",name="show_plan")
-     * @Method({"GET","POST"})
+     * @Route("/profile/getPlan",name="get_plan")
+     * @Method("GET")
      */
     public function getPlan(Request $request){
+        var_dump($request->query->all());
+
+        return $this->render(':Profile:get.html.twig', array(
+//            'vars'=>$vars
+        ));
 
         if ($this->isShowPlan()){
             $this->setShowPlan(false);
@@ -69,8 +75,17 @@ class ProfileController extends Controller
         else{
             return null;
         }
+
     }
 
+    /**
+     * @Route("/profile/admin_panel",name="admin_panel")
+     */
+    public function adminAction(Request $request){
+        return $this->render(":Profile:admin.html.twig", array(
+
+        ));
+    }
     /**
      * Show the user.
      */

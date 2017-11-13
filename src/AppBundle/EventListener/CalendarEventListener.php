@@ -23,7 +23,7 @@ class CalendarEventListener
     public function __construct(EntityManagerInterface $entityManager,TokenStorage $tokenStorage)
     {
         $this->entityManager = $entityManager;
-        $this->tokenStorage= $tokenStorage;
+        $this->tokenStorage = $tokenStorage;
     }
 
     public function loadEvents(CalendarEvent $calendarEvent)
@@ -49,7 +49,7 @@ class CalendarEventListener
         // The original request so you can get filters from the calendar
         // Use the filter in your query for example
 
-//        $request = $calendarEvent->getRequest();
+        $request = $calendarEvent->getRequest();
 
         // load events using your custom logic here,
         // for instance, retrieving events from a repository

@@ -2,9 +2,26 @@
 
 {% block fos_user_content %}
 {% include "@FOSUser/Group/show_content.html.twig" %}
+    <h3>
+        Users
+    </h3>
     <ul>
-        <li>
-            <a href="{{ path('fos_user_group_edit', {'groupName':  group.getName()}) }}">Edit</a>
-        </li>
+        {% for user in group.users %}
+            <li>
+                {{ user }}
+            </li>
+        {% endfor %}
     </ul>
+    <h3>
+        Roles
+    </h3>
+    <ul>
+        {% for role in group.roles %}
+            <li>
+                {{ role }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ path('fos_user_group_edit', {'groupName':  group.getName()}) }}"><button>Edit</button></a>
 {% endblock fos_user_content %}
