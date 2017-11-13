@@ -49,12 +49,12 @@ class ProfileController extends BaseController
 
 
     /**
-     * @Route("/profile/get_plan", name="get_plan")
+     * @Route("/profile/get_plan", name="get_plan_profile")
      * @Method({"POST","GET"})
      */
     public function getPlanAction(Request $request){
         var_dump($request->query->all());
-        return $this->render(':Profile:get_plan.html.twig');
+        return $this->render('dump.html.twig');
         if ($this->isShowPlan()){
             $this->setShowPlan(false);
             $startDate=$request->query('start');
