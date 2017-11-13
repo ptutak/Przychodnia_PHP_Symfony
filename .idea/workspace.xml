@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="685">
-              <caret line="232" column="167" lean-forward="false" selection-start-line="232" selection-start-column="167" selection-end-line="232" selection-end-column="167" />
+              <caret line="232" column="168" lean-forward="false" selection-start-line="232" selection-start-column="168" selection-end-line="232" selection-end-column="168" />
               <folding />
             </state>
           </provider>
@@ -547,12 +545,12 @@
       <workItem from="1510401780316" duration="8196000" />
       <workItem from="1510476646353" duration="6659000" />
       <workItem from="1510563206089" duration="14899000" />
-      <workItem from="1510592708072" duration="11990000" />
+      <workItem from="1510592708072" duration="13187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154480000" />
+    <option name="totallyTimeSpent" value="155677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -981,7 +979,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="685">
-          <caret line="232" column="167" lean-forward="false" selection-start-line="232" selection-start-column="167" selection-end-line="232" selection-end-column="167" />
+          <caret line="232" column="168" lean-forward="false" selection-start-line="232" selection-start-column="168" selection-end-line="232" selection-end-column="168" />
           <folding />
         </state>
       </provider>
