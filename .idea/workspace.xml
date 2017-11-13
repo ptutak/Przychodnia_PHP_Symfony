@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/calendar-settings-profile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/calendar-settings-wizyta.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/calendar-settings.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/wizyta/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/wizyta/show.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/wizytaController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/wizytaController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/wizytaRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/wizytaRepository.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,15 +28,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KalendarzController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KalendarzController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="42" column="22" lean-forward="true" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+            <state relative-caret-position="549">
+              <caret line="38" column="51" lean-forward="false" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
-                <element signature="e#1760#1778#1#PHP" expanded="true" />
+                <element signature="e#2030#2048#1#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wizyta.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="685">
+              <caret line="232" column="167" lean-forward="false" selection-start-line="232" selection-start-column="167" selection-end-line="232" selection-end-column="167" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,16 +81,6 @@
               <folding>
                 <element signature="e#953#977#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/wizyta/show.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -230,7 +221,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/Profile/get_plan.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/Kalendarz/get_plan.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/wizyta/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/wizytaRepository.php" />
@@ -240,6 +230,7 @@
         <option value="$PROJECT_DIR$/web/js/calendar-settings-wizyta.js" />
         <option value="$PROJECT_DIR$/web/js/calendar-settings-profile.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" />
       </list>
     </option>
   </component>
@@ -556,12 +547,12 @@
       <workItem from="1510401780316" duration="8196000" />
       <workItem from="1510476646353" duration="6659000" />
       <workItem from="1510563206089" duration="14899000" />
-      <workItem from="1510592708072" duration="11107000" />
+      <workItem from="1510592708072" duration="11990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153597000" />
+    <option name="totallyTimeSpent" value="154480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -897,14 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3638">
-          <caret line="230" column="27" lean-forward="false" selection-start-line="230" selection-start-column="27" selection-end-line="230" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/wizyta/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -986,12 +969,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="42" column="22" lean-forward="true" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        <state relative-caret-position="549">
+          <caret line="38" column="51" lean-forward="false" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
-            <element signature="e#1760#1778#1#PHP" expanded="true" />
+            <element signature="e#2030#2048#1#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="232" column="167" lean-forward="false" selection-start-line="232" selection-start-column="167" selection-end-line="232" selection-end-column="167" />
+          <folding />
         </state>
       </provider>
     </entry>

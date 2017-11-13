@@ -27,23 +27,28 @@ class KalendarzController extends Controller
     {
         $startDate = date_format(date_create_from_format('U',$request->query->get('start')),'Y-m-d');
         $endDate = date_format(date_create_from_format('U',$request->query->get('end')),'Y-m-d');
-        $events=[];
+        $eventArray=array();
         switch($type){
             case 'wizyta':
-                $events=$this->getDoctrine()->getRepository(wizyta::class)->getEventsByDate($startDate,$endDate);
-                $eventArray=[];
-                foreach ( $events as $event){
+                $wizyty=$this->getDoctrine()->getRepository(wizyta::class)->getEventsByDate($startDate,$endDate);
+                foreach ( $wizyty as $wizyta){
                     /**
-                     * @var wizyta $event
+                     * @var wizyta $wizyta
                      */
-                    $event->__toString();
+                    $event=array(
+                        'title'=>$wizyta->getName(),
+                        'start'=>date_format($wizyta->getData(),'Y-m-d'),
+                        'end'=>date_format($wizyta->getData(),'Y-m-d')
+                        );
+                    $eventArray[]=$event;
+
                 }
                 break;
             case 'profil':
                 break;
         }
-        exit(dump($events));
-        return null;
+//        exit(dump($eventArray));
+        return new JsonResponse($eventArray);
     }
 
     /**
