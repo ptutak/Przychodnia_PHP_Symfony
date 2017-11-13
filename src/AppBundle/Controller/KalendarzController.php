@@ -52,18 +52,6 @@ class KalendarzController extends Controller
     }
 
     /**
-     * @Route("/get_plan", name="get_plan_kalendarz")
-     * @Method({"POST","GET"})
-     */
-    public function getPlanAction(Request $request)
-    {
-        $startDate = $request->query('start');
-        $endDate = $request->query('end');
-        var_dump($request->query->all());
-        return $this->render('::dump.html.twig');
-    }
-
-    /**
      * @Route("/",name="kalendarz_show")
      */
     public function showAction()

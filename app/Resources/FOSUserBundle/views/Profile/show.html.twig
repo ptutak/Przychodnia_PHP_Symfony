@@ -2,7 +2,6 @@
 
 {% block fos_user_content %}
 {% include "@FOSUser/Profile/show_content.html.twig" %}
-    {{ dump() }}
     {%  if is_granted('ROLE_LEKARZ') %}
         <p>Profil Lekarski:{{ user.idLekarz}} </p>
     {% endif %}
