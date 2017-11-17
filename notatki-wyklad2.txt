@@ -2,20 +2,3 @@ Krzysztof Bzowski - Skos
 
 
 nodejs.org
-
-instalujemy nodejs
-
-dostajemy npm
-
-npm init
-
-npm install nazwa_paczki --save
-npm install bootstrap --save
-npm install bootstrab@4.0.0-beta.2 --save
-
-npm uninstall bootstrap --save
-
-
-Instalacja brakujących zależności
-npm i -S nazwa_paczki@wersja
-npm i -D nazwa_paczki@wersja
