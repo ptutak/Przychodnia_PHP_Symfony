@@ -19,3 +19,15 @@ npm uninstall bootstrap --save
 Instalacja brakujących zależności
 npm i -S nazwa_paczki@wersja
 npm i -D nazwa_paczki@wersja
+
+
+dodać bootstrap'a
+
+{% form_theme form 'bootstrap_3_horizontal_layout' %}
+
+{{form_start(form)}}
+{{form_widget(form)}}
+
+<input type="submit" value="Create" class="btn btn-default pull-right" />
+
+{{form_end(form)}}
