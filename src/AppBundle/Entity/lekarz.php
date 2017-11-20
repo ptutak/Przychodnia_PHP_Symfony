@@ -58,7 +58,7 @@ class lekarz
     private $godzPrzyj;
 
     /**
-     * @ORM\ManyToMany(targetEntity="data_urlop",inversedBy="lekarze")
+     * @ORM\ManyToMany(targetEntity="data_urlop",inversedBy="lekarze", cascade={"persist"})
      * @ORM\JoinTable(name="lekarz_data_urlop")
      */
     private $urlopy;

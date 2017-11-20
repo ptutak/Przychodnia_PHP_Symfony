@@ -14,20 +14,28 @@ $(function () {
             right: 'month, basicWeek, basicDay'
         },
         allDayDefault:true,
-        lazyFetching: true,
+        lazyFetching: false,
         timeFormat: 'H(:mm)',
         selectable:true,
         selectHelper:true,
         select: (function(start,end,jsEvent,view,resource){
-            start.setHours(0,0,0);
-            end.setHours(0,0,0);
             $.get(Routing.generate('set_kalendarz_data',{
                 type: 'urlop',
-                start:Math.round(start.getTime()/1000),
-                end:Math.round(end.getTime()/1000),
+                start:Math.round(start.getTime()/1000)+3600,
+                end:Math.round(end.getTime()/1000)+3600,
                 _:Date.now()
-            }))
+            }));
             refetch();
+        }),
+        eventClick: (function(event,jsEvent,view){
+            var startDate=event;
+            var endDate=event;
+            $.get(Routing.generate('set_kalendarz_data',{
+                type:'urlop',
+                start: startDate,
+                end:endDate,
+                _:Date.now()
+            }));
         }),
         eventSources: [
             {

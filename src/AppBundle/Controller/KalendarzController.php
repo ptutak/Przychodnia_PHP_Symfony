@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 
 /**
@@ -39,8 +40,8 @@ class KalendarzController extends Controller
         $endDate = date_create_from_format('U',$request->query->get('end'));
         $eventArray=array();
         $eventArray[] = array(
-            'start'=>$startDate->format('Y-m-d h:i:s'),
-            'end'=>$endDate->format('Y-m-d h:i:s')
+            'start'=>$startDate->format('Y-m-d H:i:s'),
+            'end'=>$endDate->format('Y-m-d H:i:s')
         );
         switch ($type){
             case 'urlop':
@@ -51,7 +52,7 @@ class KalendarzController extends Controller
                      */
                     $event=array(
                       'title'=>'Urlop - remove',
-                        'date'=>date_format($urlop->getData(),'Y-m-d'),
+                        'date'=>date_format($urlop->getData(),'Y-m-d H:i:s'),
                     );
                     $eventArray[] = $event;
                     $this->entityManager->remove($urlop);
@@ -69,12 +70,11 @@ class KalendarzController extends Controller
                             $modify=false;
                             break;
                         }
-
                     }
                     if ($modify) {
                         $event=array(
                             'title'=>'Urlop - add',
-                            'date'=>date_format($tempDate,'Y-m-d h:i:s'),
+                            'date'=>date_format($tempDate,'Y-m-d H:i:s'),
                             'id'=>$this->getUser()->getIdLekarz()->getId()
                         );
                         $eventArray[] = $event;
@@ -86,17 +86,15 @@ class KalendarzController extends Controller
                         $addDataUrlop->setData($tempDate);
 //                        $addDataUrlop->addLekarz($this->getUser()->getIdLekarz());
                         $this->getUser()->getIdLekarz()->addUrlop($addDataUrlop);
-                        $this->entityManager->persist($addDataUrlop);
+//                        $this->entityManager->persist($addDataUrlop);
                         $this->entityManager->persist($this->getUser()->getIdLekarz());
+                        $this->entityManager->flush();
                     }
                     $tempDate->modify('+1 day');
 
                 }
-                $this->entityManager->flush();
-
                 break;
         }
-
         return new JsonResponse($eventArray);
 
     }
@@ -122,7 +120,8 @@ class KalendarzController extends Controller
                         'title'=>'Indeks: '.$wizyta->getIndeks(),
                         'start'=>date_format($wizyta->getData(),'Y-m-d'),
                         'end'=>date_format($wizyta->getData(),'Y-m-d'),
-                        'url'=>$this->generateUrl('wizyta_show',array('id'=>$wizyta->getId()))
+                        'url'=>$this->generateUrl('wizyta_show',array('id'=>$wizyta->getId())),
+
                         );
                     $eventArray[]=$event;
                 }
@@ -133,6 +132,7 @@ class KalendarzController extends Controller
             case 'urlop':
                 $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserUrlops($this->getUser());
                 foreach ($urlops as $urlop){
+                    $now=new \DateTime();
                     /**
                      * @var data_urlop $urlop
                      */
@@ -140,6 +140,7 @@ class KalendarzController extends Controller
                       'title'=>'Urlop',
                       'start'=>date_format($urlop->getData(),'Y-m-d'),
                         'end'=>date_format($urlop->getData(),'Y-m-d'),
+                        'className'=>'urlop_day',
                     );
                     $eventArray[]=$event;
                 }
