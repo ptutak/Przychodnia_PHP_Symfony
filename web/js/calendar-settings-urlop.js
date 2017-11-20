@@ -4,9 +4,7 @@ $(function () {
     var m = date.getMonth();
     var y = date.getFullYear();
 
-    function refetch(){
-        $('#calendar-holder').fullCalendar('refetchEvents');
-    }
+
     $('#calendar-holder').fullCalendar({
         header: {
             left: 'prev, next',
@@ -44,4 +42,8 @@ $(function () {
             }
         ]
     });
+
+    function refetch(){
+        $('#calendar-holder').fullCalendar('refetchEvents');
+    }
 });

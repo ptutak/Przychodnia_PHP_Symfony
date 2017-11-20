@@ -35,7 +35,15 @@ class data_urlopRepository extends \Doctrine\ORM\EntityRepository
             ->getResult();
 
         return $q;
-
     }
-
+    public function getDataByData(\DateTime $start, \DateTime $end){
+        $q=$this->getEntityManager()->createQuery('
+        SELECT data_urlop
+        FROM AppBundle:data_urlop data_urlop
+        WHERE data_urlop.data BETWEEN :startDate AND :endDate
+        ')->setParameter('startDate',$start->format('Y-m-d'))
+        ->setParameter('endDate',$end->format('Y-m-d'))
+        ->getResult();
+        return $q;
+    }
 }

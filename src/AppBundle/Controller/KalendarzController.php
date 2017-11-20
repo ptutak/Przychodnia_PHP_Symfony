@@ -20,6 +20,72 @@ use Symfony\Component\Validator\Constraints\DateTime;
  */
 class KalendarzController extends Controller
 {
+    /**
+     * @param \DateTime $startDate
+     * @param \DateTime $endDate
+     * @return array
+     */
+    private function setUrlopy(\DateTime $startDate, \DateTime $endDate){
+        $eventArray=array();
+        $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
+        $tempDate=date_create_from_format('U',$startDate->getTimestamp());
+        while($tempDate<=$endDate){
+            $modify=true;
+            foreach($urlops as $urlop){
+                /**
+                 * @var data_urlop $urlop
+                 */
+                if ($urlop->getData()->format('Y-m-d')==$tempDate->format('Y-m-d')){
+                    $modify=false;
+                    break;
+                }
+            }
+            if ($modify) {
+                $event=array(
+                    'title'=>'Urlop - add',
+                    'date'=>date_format($tempDate,'Y-m-d H:i:s'),
+                    'id'=>$this->getUser()->getIdLekarz()->getId()
+                );
+                $eventArray[] = $event;
+                $datas=$this->entityManager->getRepository(data_urlop::class)->getDataByData($startDate,$endDate);
+                /**
+                 * @var data_urlop $addDataUrlop
+                 */
+                $addDataUrlop=null;
+                foreach ($datas as $data){
+                    if ($tempDate->format('Y-m-d')==$data->getData()->format('Y-m-d')){
+                        $addDataUrlop=$data;
+                        break;
+                    }
+                }
+                if (!$addDataUrlop){
+                    $addDataUrlop=new data_urlop();
+                    $addDataUrlop->setData(date_create_from_format('U',$tempDate->getTimestamp()));
+                }
+                $this->getUser()->getIdLekarz()->addUrlop($addDataUrlop);
+                $this->entityManager->persist($this->getUser()->getIdLekarz());
+
+            }
+            $tempDate->modify('+1 day');
+        }
+        $this->entityManager->flush();
+        foreach($urlops as $urlop){
+            /**
+             * @var data_urlop $urlop
+             */
+            $event=array(
+                'title'=>'Urlop - remove',
+                'date'=>date_format($urlop->getData(),'Y-m-d H:i:s'),
+            );
+            $eventArray[] = $event;
+
+            $this->getUser()->getIdLekarz()->removeUrlop($urlop);
+            $this->entityManager->persist($this->getUser()->getIdLekarz());
+        }
+        $this->entityManager->flush();
+
+        return $eventArray;
+    }
 
     /**
      * KalendarzController constructor.
@@ -38,64 +104,17 @@ class KalendarzController extends Controller
     public function setKalendarzData($type,Request $request){
         $startDate = date_create_from_format('U',$request->query->get('start'));
         $endDate = date_create_from_format('U',$request->query->get('end'));
-        $eventArray=array();
+
+        switch ($type){
+            case 'urlop':
+                $eventArray=$this->setUrlopy($startDate,$endDate);
+                break;
+        }
+
         $eventArray[] = array(
             'start'=>$startDate->format('Y-m-d H:i:s'),
             'end'=>$endDate->format('Y-m-d H:i:s')
         );
-        switch ($type){
-            case 'urlop':
-                $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
-                $tempDate=$startDate;
-                while($tempDate<=$endDate){
-                    $modify=true;
-                    foreach($urlops as $urlop){
-                        /**
-                         * @var data_urlop $urlop
-                         */
-                        if ($urlop->getData()==$tempDate){
-                            $modify=false;
-                            break;
-                        }
-                    }
-                    if ($modify) {
-                        $event=array(
-                            'title'=>'Urlop - add',
-                            'date'=>date_format($tempDate,'Y-m-d H:i:s'),
-                            'id'=>$this->getUser()->getIdLekarz()->getId()
-                        );
-                        $eventArray[] = $event;
-                        /**
-                         * @var data_urlop $addDataUrlop
-                         */
-                        $addDataUrlop=new data_urlop();
-
-                        $addDataUrlop->setData($tempDate);
-//                        $addDataUrlop->addLekarz($this->getUser()->getIdLekarz());
-                        $this->getUser()->getIdLekarz()->addUrlop($addDataUrlop);
-//                        $this->entityManager->persist($addDataUrlop);
-                        $this->entityManager->persist($this->getUser()->getIdLekarz());
-                        $this->entityManager->flush();
-                    }
-                    $tempDate->modify('+1 day');
-                }
-
-                foreach($urlops as $urlop){
-                    /**
-                     * @var data_urlop $urlop
-                     */
-                    $event=array(
-                      'title'=>'Urlop - remove',
-                        'date'=>date_format($urlop->getData(),'Y-m-d H:i:s'),
-                    );
-                    $eventArray[] = $event;
-                    $this->entityManager->remove($urlop);
-                }
-                $this->entityManager->flush();
-
-
-                break;
-        }
         return new JsonResponse($eventArray);
 
     }

@@ -224,9 +224,24 @@ class lekarz
         $this->specjalizacje = new ArrayCollection();
     }
 
+    /**
+     * @param data_urlop $dataUrlop
+     * @return $this
+     */
     public function addUrlop(data_urlop $dataUrlop){
-        $this->urlopy[] = $dataUrlop;
+        $this->urlopy->add($dataUrlop);
+        return $this;
     }
+
+    /**
+     * @param data_urlop $dataUrlop
+     * @return $this
+     */
+    public function removeUrlop(data_urlop $dataUrlop){
+        $this->urlopy->removeElement($dataUrlop);
+        return $this;
+    }
+
 
     public function __toString()
     {

@@ -104,7 +104,16 @@ class data_urlop
      * @return $this
      */
     public function addLekarz(lekarz $lekarz){
-        $this->lekarze[] = $lekarz;
+        $this->lekarze->add($lekarz);
+        return $this;
+    }
+
+    /**
+     * @param lekarz $lekarz
+     * @return $this
+     */
+    public function removeLekarz(lekarz $lekarz){
+        $this->lekarze->removeElement($lekarz);
         return $this;
     }
 
