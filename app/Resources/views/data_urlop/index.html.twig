@@ -3,8 +3,8 @@
 {{ parent() }}
 {% endblock %}
 {% block body %}
-    <h1>Data_urlops list</h1>
-
+    <h1>Urlopy</h1>
+{#
     <table>
         <thead>
             <tr>
@@ -14,6 +14,7 @@
             </tr>
         </thead>
         <tbody>
+
         {% for data_urlop in data_urlops %}
             <tr>
                 <td><a href="{{ path('data_urlop_show', { 'id': data_urlop.id }) }}">{{ data_urlop.id }}</a></td>
@@ -23,7 +24,7 @@
                         <li>
                             <a href="{{ path('data_urlop_show', { 'id': data_urlop.id }) }}">show</a>
                         </li>
-<!--
+
                         <li>
                             <a href="{{ path('data_urlop_edit', { 'id': data_urlop.id }) }}">edit</a>
                         </li>
@@ -32,6 +33,7 @@
                 </td>
             </tr>
         {% endfor %}
+
         </tbody>
     </table>
 
@@ -40,6 +42,7 @@
             <a href="{{ path('data_urlop_new') }}">Create a new data_urlop</a>
         </li>
     </ul>
+#}
     <div class="my_calendar">
         {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
     </div>

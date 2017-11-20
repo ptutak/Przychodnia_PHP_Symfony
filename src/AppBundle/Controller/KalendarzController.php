@@ -10,7 +10,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 
 /**
@@ -67,7 +66,6 @@ class KalendarzController extends Controller
             }
             $tempDate->modify('+1 day');
         }
-        $this->entityManager->flush();
         foreach($urlops as $urlop){
             /**
              * @var data_urlop $urlop

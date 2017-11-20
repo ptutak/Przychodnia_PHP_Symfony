@@ -19,7 +19,7 @@ $(function () {
         timeFormat: 'H(:mm)',
         selectable:true,
         selectHelper:true,
-        select: (function(start,end,jsEvent,view,resource){
+        select: function(start,end,jsEvent,view,resource){
             $.get(Routing.generate('set_kalendarz_data',{
                 type: 'urlop',
                 start:Math.round(start.getTime()/1000)+3600,
@@ -27,8 +27,8 @@ $(function () {
                 _:Date.now()
             }));
             refetch();
-        }),
-        eventClick: (function(event,jsEvent,view){
+        },
+        eventClick: function(event,jsEvent,view){
             var startDate=Math.round(event.start.getTime()/1000)+3600;
             $.get(Routing.generate('set_kalendarz_data',{
                 type:'urlop',
@@ -37,7 +37,7 @@ $(function () {
                 _:Date.now()
             }));
             refetch();
-        }),
+        },
 
         eventSources: [
             {
