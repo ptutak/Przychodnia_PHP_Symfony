@@ -1,5 +1,7 @@
-function refetch(){
-    $('#calendar-holder').fullCalendar('refetchEvents');
+function refetchDelay(delay){
+    window.setTimeout(function(){
+        $('#calendar-holder').fullCalendar('refetchEvents');
+    },delay);
 }
 
 $(function () {
@@ -12,7 +14,6 @@ $(function () {
         header: {
             left: 'prev, next',
             center: 'title',
-            right: 'month, basicWeek, basicDay'
         },
         allDayDefault:true,
         lazyFetching: false,
@@ -26,7 +27,7 @@ $(function () {
                 end:Math.round(end.getTime()/1000)+3600,
                 _:Date.now()
             }));
-            refetch();
+            refetchDelay(150);
         },
         eventClick: function(event,jsEvent,view){
             var startDate=Math.round(event.start.getTime()/1000)+3600;
@@ -36,7 +37,7 @@ $(function () {
                 end: startDate,
                 _:Date.now()
             }));
-            refetch();
+            refetchDelay(150);
         },
 
         eventSources: [
