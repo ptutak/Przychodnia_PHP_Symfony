@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/data_urlop.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/data_urlop.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/lekarz.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/lekarz.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/data_urlopRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/data_urlopRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/calendar-settings-urlop.js" afterPath="$PROJECT_DIR$/web/js/calendar-settings-urlop.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="calendar-settings-urlop.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="calendar-settings-urlop.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-urlop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+            <state relative-caret-position="17">
+              <caret line="1" column="44" lean-forward="true" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -61,14 +58,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KalendarzController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KalendarzController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="64" column="73" lean-forward="true" selection-start-line="64" selection-start-column="73" selection-end-line="64" selection-end-column="73" />
+            <state relative-caret-position="685">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
                 <element signature="e#40#72#0#PHP" expanded="true" />
-                <element signature="e#6268#6295#0#PHP" expanded="true" />
+                <element signature="e#6267#6294#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -208,10 +205,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/data_urlop.php" />
-        <option value="$PROJECT_DIR$/web/js/calendar-settings-urlop.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/lekarz.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/data_urlopRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" />
+        <option value="$PROJECT_DIR$/web/js/calendar-settings-urlop.js" />
       </list>
     </option>
   </component>
@@ -475,12 +472,12 @@
       <workItem from="1511124476747" duration="185000" />
       <workItem from="1511124693913" duration="1488000" />
       <workItem from="1511159701352" duration="25484000" />
-      <workItem from="1511191071854" duration="4415000" />
+      <workItem from="1511191071854" duration="6301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189230000" />
+    <option name="totallyTimeSpent" value="191116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -859,14 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-urlop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
@@ -897,12 +886,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="64" column="73" lean-forward="true" selection-start-line="64" selection-start-column="73" selection-end-line="64" selection-end-column="73" />
+        <state relative-caret-position="685">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
-            <element signature="e#6268#6295#0#PHP" expanded="true" />
+            <element signature="e#6267#6294#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-urlop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="44" lean-forward="true" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

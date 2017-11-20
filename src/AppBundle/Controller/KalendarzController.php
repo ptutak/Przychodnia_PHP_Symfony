@@ -64,7 +64,6 @@ class KalendarzController extends Controller
                 }
                 $this->getUser()->getIdLekarz()->addUrlop($addDataUrlop);
                 $this->entityManager->persist($this->getUser()->getIdLekarz());
-
             }
             $tempDate->modify('+1 day');
         }

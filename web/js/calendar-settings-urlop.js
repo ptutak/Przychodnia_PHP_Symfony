@@ -1,9 +1,12 @@
+function refetch(){
+    $('#calendar-holder').fullCalendar('refetchEvents');
+}
+
 $(function () {
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-
 
     $('#calendar-holder').fullCalendar({
         header: {
@@ -26,15 +29,16 @@ $(function () {
             refetch();
         }),
         eventClick: (function(event,jsEvent,view){
-            var startDate=event;
-            var endDate=event;
+            var startDate=Math.round(event.start.getTime()/1000)+3600;
             $.get(Routing.generate('set_kalendarz_data',{
                 type:'urlop',
                 start: startDate,
-                end:endDate,
+                end: startDate,
                 _:Date.now()
             }));
+            refetch();
         }),
+
         eventSources: [
             {
                 url: Routing.generate('get_kalendarz_data',{ type: 'urlop'}),
@@ -43,7 +47,5 @@ $(function () {
         ]
     });
 
-    function refetch(){
-        $('#calendar-holder').fullCalendar('refetchEvents');
-    }
+
 });
