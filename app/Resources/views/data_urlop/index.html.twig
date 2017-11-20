@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
 {% block body %}
     <h1>Data_urlops list</h1>
 
@@ -38,4 +40,11 @@
             <a href="{{ path('data_urlop_new') }}">Create a new data_urlop</a>
         </li>
     </ul>
+    <div class="my_calendar">
+        {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/calendar-settings-urlop.js') }}"></script>
 {% endblock %}

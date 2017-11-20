@@ -1,0 +1,24 @@
+{
+  "name": "przychodnia_php_symfony",
+  "version": "1.0.0",
+  "description": "Projekt na przedmiot Inżynieria Internetu",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptutak/Przychodnia_PHP_Symfony.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ptutak/Przychodnia_PHP_Symfony/issues"
+  },
+  "homepage": "https://github.com/ptutak/Przychodnia_PHP_Symfony#readme"
+}

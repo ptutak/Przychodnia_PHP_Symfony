@@ -10,6 +10,7 @@ $(function () {
             center: 'title',
             right: 'month, basicWeek, basicDay'
         },
+        displayEventTime: true,
         lazyFetching: true,
         timeFormat: 'H(:mm)',
         eventSources: [

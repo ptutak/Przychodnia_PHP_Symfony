@@ -2,13 +2,14 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\data_urlop;
 use AppBundle\Entity\wizyta;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 /**
  * Class KalendarzController
@@ -17,6 +18,17 @@ use Symfony\Component\Validator\Constraints\DateTime;
  */
 class KalendarzController extends Controller
 {
+
+    /**
+     * @Route("/set/data/{type}",name="set_kalendarz_data",options={"expose"=true})
+     */
+    public function setKalendarzData($type,Request $request){
+        return $this->render("dump.html.twig");
+        $startDate = date_format(date_create_from_format('U',$request->query->get('start')),'Y-m-d');
+        $endDate = date_format(date_create_from_format('U',$request->query->get('end')),'Y-m-d');
+        $eventArray=array();
+
+    }
 
 
     /**
@@ -47,6 +59,20 @@ class KalendarzController extends Controller
             case 'profile':
 
                 break;
+            case 'urlop':
+                $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser());
+                foreach ($urlops as $urlop){
+                    /**
+                     * @var data_urlop $urlop
+                     */
+                    $event=array(
+                      'title'=>'Urlop',
+                      'start'=>date_format($urlop->getData(),'Y-m-d'),
+                        'end'=>date_format($urlop->getData(),'Y-m-d'),
+                    );
+                    $eventArray[]=$event;
+                }
+                break;
         }
         return new JsonResponse($eventArray);
     }
@@ -59,4 +85,9 @@ class KalendarzController extends Controller
         return $this->render(':Kalendarz:show.html.twig', array());
     }
 
+    public function __construct(EntityManagerInterface $entityManager,TokenStorage $tokenStorage)
+    {
+        $this->entityManager = $entityManager;
+        $this->tokenStorage = $tokenStorage;
+    }
 }

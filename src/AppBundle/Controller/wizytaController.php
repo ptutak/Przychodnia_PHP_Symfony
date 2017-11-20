@@ -14,14 +14,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  */
 class wizytaController extends Controller
 {
-    /**
-     * @Route("/get_plan", name="get_plan_wizyta")
-     * @Method({"POST","GET"})
-     */
-    public function getPlanAction(Request $request){
-        var_dump($request->query->all());
-        return $this->render('::dump.html.twig');
-    }
 
     /**
      * Lists all wizytum entities.

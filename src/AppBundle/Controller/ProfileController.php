@@ -28,15 +28,6 @@ class ProfileController extends BaseController
 {
 
     /**
-     * @Route("/profile/get_plan", name="get_plan_profile")
-     * @Method({"POST","GET"})
-     */
-    public function getPlanAction(Request $request){
-        var_dump($request->query->all());
-        return $this->render('dump.html.twig');
-    }
-
-    /**
      * @Route("/admin",name="admin")
      */
     public function adminAction(Request $request){
