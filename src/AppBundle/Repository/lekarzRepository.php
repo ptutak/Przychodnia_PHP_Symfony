@@ -10,4 +10,5 @@ namespace AppBundle\Repository;
  */
 class lekarzRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

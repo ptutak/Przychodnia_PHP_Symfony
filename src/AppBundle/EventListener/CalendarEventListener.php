@@ -28,7 +28,7 @@ class CalendarEventListener
 
     public function loadEvents(CalendarEvent $calendarEvent)
     {
-        $events = $this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->tokenStorage->getToken()->getUser());
+        $events = $this->entityManager->getRepository(data_urlop::class)->getUserUrlops($this->tokenStorage->getToken()->getUser());
 
         $startDate = $calendarEvent->getStartDatetime();
         $endDate = $calendarEvent->getEndDatetime();

@@ -12,11 +12,27 @@ use AppBundle\Entity\User;
  */
 class data_urlopRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getUserDataUrlops(User $user){
+    public function getUserUrlops(User $user){
         $qb=$this->createQueryBuilder('data_urlop');
         $qb->leftJoin('data_urlop.lekarze','lekarze')
-            ->where('lekarze.id = :userId')
-            ->setParameter('userId',$user->getIdLekarz());
+            ->where('lekarze.id = :userLekarzId')
+            ->setParameter('userLekarzId',$user->getIdLekarz());
         return $qb->getQuery()->getResult();
     }
+
+    public function getUserDataUrlops(User $user, \DateTime $start, \DateTime $end){
+
+        $q=$this->getEntityManager()->createQuery('
+        SELECT data_urlop
+        FROM AppBundle:data_urlop data_urlop
+        JOIN data_urlop.lekarze AS lekarze WITH lekarze.id = :userLekarzId 
+        WHERE data_urlop.data BETWEEN :startData AND :endData
+        ')  ->setParameter('userLekarzId',$user->getIdLekarz())
+            ->setParameter('startData',$start)
+            ->setParameter('endData',$end)
+            ->getResult();
+
+        return $q;
+    }
+
 }

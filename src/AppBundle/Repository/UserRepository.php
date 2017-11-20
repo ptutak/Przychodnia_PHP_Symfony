@@ -13,4 +13,7 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
     public function getUserEvents($start, $end){
 
     }
+    public function getUserUrlops(){
+
+    }
 }

@@ -16,12 +16,12 @@ $(function () {
         selectable:true,
         selectHelper:true,
         select: (function(start,end,jsEvent,view,resource){
-            window.location.href=Routing.generate('set_kalendarz_data',{
+            $.get(Routing.generate('set_kalendarz_data',{
                 type: 'urlop',
-                start:start.getFullYear()+'-'+start.getMonth()+'-'+start.getDay(),
-                end:end.getFullYear()+'-'+end.getMonth()+'-'+end.getDay(),
+                start:start.getTime(),
+                end:end.getTime(),
                 _:Date.now()
-            })
+            }))
         }),
         eventSources: [
             {

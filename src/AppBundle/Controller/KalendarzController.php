@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
+
 /**
  * Class KalendarzController
  *
@@ -23,10 +24,17 @@ class KalendarzController extends Controller
      * @Route("/set/data/{type}",name="set_kalendarz_data",options={"expose"=true})
      */
     public function setKalendarzData($type,Request $request){
-        return $this->render("dump.html.twig");
-        $startDate = date_format(date_create_from_format('U',$request->query->get('start')),'Y-m-d');
-        $endDate = date_format(date_create_from_format('U',$request->query->get('end')),'Y-m-d');
+        $startDate = date_create_from_format('U',$request->query->get('start'));
+        $endDate = date_create_from_format('U',$request->query->get('end'));
         $eventArray=array();
+        switch ($type){
+            case 'urlop':
+                $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
+                $eventArray=$urlops;
+                break;
+        }
+
+        return new JsonResponse($eventArray);
 
     }
 
@@ -60,7 +68,7 @@ class KalendarzController extends Controller
 
                 break;
             case 'urlop':
-                $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser());
+                $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserUrlops($this->getUser());
                 foreach ($urlops as $urlop){
                     /**
                      * @var data_urlop $urlop
