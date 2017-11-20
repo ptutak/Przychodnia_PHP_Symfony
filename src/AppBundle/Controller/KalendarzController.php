@@ -46,19 +46,6 @@ class KalendarzController extends Controller
         switch ($type){
             case 'urlop':
                 $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
-                foreach($urlops as $urlop){
-                    /**
-                     * @var data_urlop $urlop
-                     */
-                    $event=array(
-                      'title'=>'Urlop - remove',
-                        'date'=>date_format($urlop->getData(),'Y-m-d H:i:s'),
-                    );
-                    $eventArray[] = $event;
-                    $this->entityManager->remove($urlop);
-                }
-                $this->entityManager->flush();
-
                 $tempDate=$startDate;
                 while($tempDate<=$endDate){
                     $modify=true;
@@ -91,8 +78,22 @@ class KalendarzController extends Controller
                         $this->entityManager->flush();
                     }
                     $tempDate->modify('+1 day');
-
                 }
+
+                foreach($urlops as $urlop){
+                    /**
+                     * @var data_urlop $urlop
+                     */
+                    $event=array(
+                      'title'=>'Urlop - remove',
+                        'date'=>date_format($urlop->getData(),'Y-m-d H:i:s'),
+                    );
+                    $eventArray[] = $event;
+                    $this->entityManager->remove($urlop);
+                }
+                $this->entityManager->flush();
+
+
                 break;
         }
         return new JsonResponse($eventArray);
