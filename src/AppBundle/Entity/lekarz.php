@@ -224,6 +224,10 @@ class lekarz
         $this->specjalizacje = new ArrayCollection();
     }
 
+    public function addUrlop(data_urlop $dataUrlop){
+        $this->urlopy[] = $dataUrlop;
+    }
+
     public function __toString()
     {
         return $this->imie." ".$this->nazwisko." ".$this->tytul;

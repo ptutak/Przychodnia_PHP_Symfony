@@ -99,6 +99,15 @@ class data_urlop
         $this->lekarze = new ArrayCollection();
     }
 
+    /**
+     * @param lekarz $lekarz
+     * @return $this
+     */
+    public function addLekarz(lekarz $lekarz){
+        $this->lekarze[] = $lekarz;
+        return $this;
+    }
+
     public function __toString()
     {
         return $this->data->format('Y-m-d');

@@ -21,12 +21,27 @@ class KalendarzController extends Controller
 {
 
     /**
+     * KalendarzController constructor.
+     * @param EntityManagerInterface $entityManager
+     * @param TokenStorage $tokenStorage
+     */
+    public function __construct(EntityManagerInterface $entityManager,TokenStorage $tokenStorage)
+    {
+        $this->entityManager = $entityManager;
+        $this->tokenStorage = $tokenStorage;
+    }
+
+    /**
      * @Route("/set/data/{type}",name="set_kalendarz_data",options={"expose"=true})
      */
     public function setKalendarzData($type,Request $request){
         $startDate = date_create_from_format('U',$request->query->get('start'));
         $endDate = date_create_from_format('U',$request->query->get('end'));
         $eventArray=array();
+        $eventArray[] = array(
+            'start'=>$startDate->format('Y-m-d h:i:s'),
+            'end'=>$endDate->format('Y-m-d h:i:s')
+        );
         switch ($type){
             case 'urlop':
                 $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
@@ -35,13 +50,50 @@ class KalendarzController extends Controller
                      * @var data_urlop $urlop
                      */
                     $event=array(
-                      'title'=>'Urlop',
-                        'start'=>date_format($urlop->getData(),'Y-m-d'),
-                        'end'=>date_format($urlop->getData(),'Y-m-d')
+                      'title'=>'Urlop - remove',
+                        'date'=>date_format($urlop->getData(),'Y-m-d'),
                     );
-
-                    $eventArray[]=$event;
+                    $eventArray[] = $event;
+                    $this->entityManager->remove($urlop);
                 }
+                $this->entityManager->flush();
+
+                $tempDate=$startDate;
+                while($tempDate<=$endDate){
+                    $modify=true;
+                    foreach($urlops as $urlop){
+                        /**
+                         * @var data_urlop $urlop
+                         */
+                        if ($urlop->getData()==$tempDate){
+                            $modify=false;
+                            break;
+                        }
+
+                    }
+                    if ($modify) {
+                        $event=array(
+                            'title'=>'Urlop - add',
+                            'date'=>date_format($tempDate,'Y-m-d'),
+                            'id'=>$this->getUser()->getIdLekarz()->getId()
+                        );
+                        $eventArray[] = $event;
+                        /**
+                         * @var data_urlop $addDataUrlop
+                         */
+                        $addDataUrlop=new data_urlop();
+
+                        $addDataUrlop->setData($tempDate);
+                        $addDataUrlop->addLekarz($this->getUser()->getIdLekarz());
+                        // $this->getUser()->getIdLekarz()->addUrlop($addDataUrlop);
+                        $this->entityManager->persist($addDataUrlop);
+                        //$this->entityManager->persist($this->getUser()->getIdLekarz());
+                    }
+                    $tempDate->modify('+1 day');
+
+                }
+//                $this->entityManager->flush();
+
                 break;
         }
 
@@ -104,9 +156,5 @@ class KalendarzController extends Controller
         return $this->render(':Kalendarz:show.html.twig', array());
     }
 
-    public function __construct(EntityManagerInterface $entityManager,TokenStorage $tokenStorage)
-    {
-        $this->entityManager = $entityManager;
-        $this->tokenStorage = $tokenStorage;
-    }
+
 }
