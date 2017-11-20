@@ -22,17 +22,27 @@ class data_urlopRepository extends \Doctrine\ORM\EntityRepository
 
     public function getUserDataUrlops(User $user, \DateTime $start, \DateTime $end){
 
+/*
+        $q=$this->getEntityManager()->createQuery('
+        SELECT data_urlop FROM AppBundle:data_urlop data_urlop
+        WHERE data_urlop.data
+        BETWEEN :startData AND :endData
+        ')  ->setParameter('startData',date_format($start,'Y-m-d'))
+            ->setParameter('endData',date_format($end,'Y-m-d'))
+            ->getResult();
+*/
         $q=$this->getEntityManager()->createQuery('
         SELECT data_urlop
         FROM AppBundle:data_urlop data_urlop
-        JOIN data_urlop.lekarze AS lekarze WITH lekarze.id = :userLekarzId 
+        LEFT JOIN data_urlop.lekarze lekarze WITH lekarze.id = :userLekarzId
         WHERE data_urlop.data BETWEEN :startData AND :endData
         ')  ->setParameter('userLekarzId',$user->getIdLekarz())
-            ->setParameter('startData',$start)
-            ->setParameter('endData',$end)
+            ->setParameter('startData',date_format($start,'Y-m-d'))
+            ->setParameter('endData',date_format($end,'Y-m-d'))
             ->getResult();
 
         return $q;
+
     }
 
 }

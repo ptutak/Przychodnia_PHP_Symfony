@@ -10,7 +10,7 @@ $(function () {
             center: 'title',
             right: 'month, basicWeek, basicDay'
         },
-        displayEventTime: true,
+        allDayDefault:true,
         lazyFetching: true,
         timeFormat: 'H(:mm)',
         selectable:true,
@@ -18,8 +18,8 @@ $(function () {
         select: (function(start,end,jsEvent,view,resource){
             $.get(Routing.generate('set_kalendarz_data',{
                 type: 'urlop',
-                start:start.getTime(),
-                end:end.getTime(),
+                start:Math.round(start.getTime()/1000)+86400,
+                end:Math.round(end.getTime()/1000)+86400,
                 _:Date.now()
             }))
         }),

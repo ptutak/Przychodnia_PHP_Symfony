@@ -30,7 +30,18 @@ class KalendarzController extends Controller
         switch ($type){
             case 'urlop':
                 $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
-                $eventArray=$urlops;
+                foreach($urlops as $urlop){
+                    /**
+                     * @var data_urlop $urlop
+                     */
+                    $event=array(
+                      'title'=>'Urlop',
+                        'start'=>date_format($urlop->getData(),'Y-m-d'),
+                        'end'=>date_format($urlop->getData(),'Y-m-d')
+                    );
+
+                    $eventArray[]=$event;
+                }
                 break;
         }
 
