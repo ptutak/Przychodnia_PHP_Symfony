@@ -74,7 +74,7 @@ class KalendarzController extends Controller
                     if ($modify) {
                         $event=array(
                             'title'=>'Urlop - add',
-                            'date'=>date_format($tempDate,'Y-m-d'),
+                            'date'=>date_format($tempDate,'Y-m-d h:i:s'),
                             'id'=>$this->getUser()->getIdLekarz()->getId()
                         );
                         $eventArray[] = $event;
@@ -84,15 +84,15 @@ class KalendarzController extends Controller
                         $addDataUrlop=new data_urlop();
 
                         $addDataUrlop->setData($tempDate);
-                        $addDataUrlop->addLekarz($this->getUser()->getIdLekarz());
-                        // $this->getUser()->getIdLekarz()->addUrlop($addDataUrlop);
+//                        $addDataUrlop->addLekarz($this->getUser()->getIdLekarz());
+                        $this->getUser()->getIdLekarz()->addUrlop($addDataUrlop);
                         $this->entityManager->persist($addDataUrlop);
-                        //$this->entityManager->persist($this->getUser()->getIdLekarz());
+                        $this->entityManager->persist($this->getUser()->getIdLekarz());
                     }
                     $tempDate->modify('+1 day');
 
                 }
-//                $this->entityManager->flush();
+                $this->entityManager->flush();
 
                 break;
         }
