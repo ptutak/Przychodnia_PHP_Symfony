@@ -53,7 +53,7 @@ class lekarz_godz_przyj
     /**
      * Set idGodzPrzyj
      *
-     * @param integer $idGodzPrzyj
+     * @param lekarz_godz_przyj $idGodzPrzyj
      *
      * @return lekarz_godz_przyj
      */
@@ -67,7 +67,7 @@ class lekarz_godz_przyj
     /**
      * Get idGodzPrzyj
      *
-     * @return int
+     * @return godz_przyj
      */
     public function getIdGodzPrzyj()
     {
@@ -91,7 +91,7 @@ class lekarz_godz_przyj
     /**
      * Get idLekarz
      *
-     * @return int
+     * @return lekarz
      */
     public function getIdLekarz()
     {

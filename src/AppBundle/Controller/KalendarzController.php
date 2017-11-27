@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\data_urlop;
+use AppBundle\Entity\lekarz_godz_przyj;
 use AppBundle\Entity\wizyta;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -117,6 +118,8 @@ class KalendarzController extends Controller
     }
 
 
+
+
     /**
      * @Route("/get/data/{type}",name="get_kalendarz_data", options={"expose"=true})
      *
@@ -149,7 +152,6 @@ class KalendarzController extends Controller
             case 'urlop':
                 $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserUrlops($this->getUser());
                 foreach ($urlops as $urlop){
-                    $now=new \DateTime();
                     /**
                      * @var data_urlop $urlop
                      */
@@ -158,6 +160,23 @@ class KalendarzController extends Controller
                       'start'=>date_format($urlop->getData(),'Y-m-d'),
                         'end'=>date_format($urlop->getData(),'Y-m-d'),
                         'className'=>'urlop_day',
+                    );
+                    $eventArray[]=$event;
+                }
+                break;
+            case 'godz_przyj':
+                $godz_przyj=$this->entityManager->getRepository(lekarz_godz_przyj::class)->getUserLekarzGodzPrzyj($this->getUser());
+                foreach ($godz_przyj as $godz){
+                    /**
+                     * @var lekarz_godz_przyj $godz
+                     */
+                    $nowStart=date_date_set($godz->getIdGodzPrzyj()->getGodzPoczatek(),getdate()['year'],getdate()['mon'],getdate()['mday']);
+                    $nowEnd=date_date_set($godz->getIdGodzPrzyj()->getGodzKoniec(),getdate()['year'],getdate()['mon'],getdate()['mday']);
+                    #$now.setTime();
+                    $event=array(
+                        'title'=>'Godz',
+                        'start'=>$nowStart->format('Y-m-d H:i:s'),
+                        'end'=>$nowEnd->format('Y-m-d H:i:s')
                     );
                     $eventArray[]=$event;
                 }
