@@ -5,6 +5,7 @@ $(function () {
     var y = date.getFullYear();
 
     $('#calendar-holder').fullCalendar({
+        themeSystem: 'bootstrap3',
         header: {
             left: 'prev, next',
             center: 'title',

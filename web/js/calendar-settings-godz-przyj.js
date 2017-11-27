@@ -12,9 +12,9 @@ $(function () {
 
     $('#calendar-holder').fullCalendar({
         defaultView:'agendaDay',
+        themeSystem:'bootstrap3',
         header: false,
         columnHeader:false,
-        locale:'pl',
         businessHours: {
             dow: [ 1, 2, 3, 4, 5 ], // Monday - Friday
            start: '7:00', // a start time
@@ -22,6 +22,7 @@ $(function () {
         },
         displayEventTime:true,
         slotDuration:'00:05:00',
+
         minTime:'06:00:00',
         maxTime:'22:00:00',
         allDaySlot:false,

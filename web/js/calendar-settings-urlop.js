@@ -11,7 +11,7 @@ $(function () {
     var y = date.getFullYear();
 
     $('#calendar-holder').fullCalendar({
-        locale:'pl',
+        themeSystem: 'bootstrap3',
         header: {
             left: 'prev, next',
             center: 'title',
