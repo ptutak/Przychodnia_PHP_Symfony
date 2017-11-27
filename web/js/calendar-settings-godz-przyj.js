@@ -20,12 +20,17 @@ $(function () {
            start: '7:00', // a start time
             end: '21:00', // an end time
         },
+        displayEventTime:true,
+        slotDuration:'00:05:00',
+        minTime:'06:00:00',
+        maxTime:'22:00:00',
         allDaySlot:false,
         allDayDefault:false,
         lazyFetching: false,
         timeFormat: 'H:mm',
         selectable:true,
         selectHelper:true,
+        selectOverlap:false,
         select: function(start,end,jsEvent,view,resource){
             $.get(Routing.generate('set_kalendarz_data',{
                 type: 'godz_przyj',
@@ -36,8 +41,8 @@ $(function () {
             refetchDelay(150);
         },
         eventClick: function(event,jsEvent,view){
-            var startDate=Math.round(event.start.getTime()/1000)+3600;
-            var endDate=Math.round(event.end.getTime()/1000)+3600;
+            var startDate=event.start.unix();
+            var endDate=event.end.unix();
             $.get(Routing.generate('set_kalendarz_data',{
                 type:'godz_przyj',
                 start: startDate,

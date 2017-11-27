@@ -20,6 +20,17 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
  */
 class KalendarzController extends Controller
 {
+
+    /**
+     * KalendarzController constructor.
+     * @param EntityManagerInterface $entityManager
+     * @param TokenStorage $tokenStorage
+     */
+    public function __construct(EntityManagerInterface $entityManager,TokenStorage $tokenStorage)
+    {
+        $this->entityManager = $entityManager;
+        $this->tokenStorage = $tokenStorage;
+    }
     /**
      * @param \DateTime $startDate
      * @param \DateTime $endDate
@@ -86,14 +97,14 @@ class KalendarzController extends Controller
     }
 
     /**
-     * KalendarzController constructor.
-     * @param EntityManagerInterface $entityManager
-     * @param TokenStorage $tokenStorage
+     * @param \DateTime $startDate
+     * @param \DateTime $endDate
+     * @return array
      */
-    public function __construct(EntityManagerInterface $entityManager,TokenStorage $tokenStorage)
-    {
-        $this->entityManager = $entityManager;
-        $this->tokenStorage = $tokenStorage;
+    public function setGodzPrzyj(\DateTime $startDate, \DateTime $endDate){
+        $eventArray=array();
+
+        return $eventArray;
     }
 
     /**
@@ -106,6 +117,9 @@ class KalendarzController extends Controller
         switch ($type){
             case 'urlop':
                 $eventArray=$this->setUrlopy($startDate,$endDate);
+                break;
+            case 'godz_przyj':
+                $eventArray=$this->setGodzPrzyj($startDate,$endDate);
                 break;
         }
 
