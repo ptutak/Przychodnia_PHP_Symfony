@@ -24,14 +24,14 @@ $(function () {
         select: function(start,end,jsEvent,view,resource){
             $.get(Routing.generate('set_kalendarz_data',{
                 type: 'urlop',
-                start:Math.round(start.getTime()/1000)+3600,
-                end:Math.round(end.getTime()/1000)+3600,
+                start:start.unix(),
+                end:end.unix()-1,
                 _:Date.now()
             }));
             refetchDelay(150);
         },
         eventClick: function(event,jsEvent,view){
-            var startDate=Math.round(event.start.getTime()/1000)+3600;
+            var startDate=event.start.unix();
             $.get(Routing.generate('set_kalendarz_data',{
                 type:'urlop',
                 start: startDate,
