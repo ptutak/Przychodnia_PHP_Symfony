@@ -29,7 +29,7 @@ class lekarz_godz_przyj
     private $idLekarz;
 
     /**
-     * @ORM\ManyToOne(targetEntity="godz_przyj")
+     * @ORM\ManyToOne(targetEntity="godz_przyj",cascade={"persist"})
      * @ORM\JoinColumn(name="id_godz_przyj", referencedColumnName="id")
      */
     private $idGodzPrzyj;
@@ -77,7 +77,7 @@ class lekarz_godz_przyj
     /**
      * Set idLekarz
      *
-     * @param integer $idLekarz
+     * @param lekarz $idLekarz
      *
      * @return lekarz_godz_przyj
      */
@@ -101,7 +101,7 @@ class lekarz_godz_przyj
     /**
      * Set wizyty
      *
-     * @param integer $wizyty
+     * @param ArrayCollection $wizyty
      *
      * @return lekarz_godz_przyj
      */
@@ -130,6 +130,17 @@ class lekarz_godz_przyj
     public function __toString()
     {
         return $this->idLekarz.",\n".$this->idGodzPrzyj;
+    }
+
+    /**
+     * @param lekarz $lekarz
+     * @param godz_przyj $godz_przyj
+     * @return $this
+     */
+    public function addLekarzGodzPrzyj(lekarz $lekarz, godz_przyj $godz_przyj){
+        $this->setIdLekarz($lekarz);
+        $this->setIdGodzPrzyj($godz_przyj);
+        return $this;
     }
 
 }

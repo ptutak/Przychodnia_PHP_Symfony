@@ -22,4 +22,6 @@ class lekarz_godz_przyjRepository extends \Doctrine\ORM\EntityRepository
 
         return $query;
     }
+
+
 }

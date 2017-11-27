@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\data_urlop;
+use AppBundle\Entity\godz_przyj;
 use AppBundle\Entity\lekarz_godz_przyj;
 use AppBundle\Entity\wizyta;
 use Doctrine\ORM\EntityManagerInterface;
@@ -89,6 +90,8 @@ class KalendarzController extends Controller
             $eventArray[] = $event;
 
             $this->getUser()->getIdLekarz()->removeUrlop($urlop);
+            if ($urlop->getLekarze()->count()==0)
+                $this->entityManager->remove($urlop);
             $this->entityManager->persist($this->getUser()->getIdLekarz());
         }
         $this->entityManager->flush();
@@ -103,7 +106,27 @@ class KalendarzController extends Controller
      */
     public function setGodzPrzyj(\DateTime $startDate, \DateTime $endDate){
         $eventArray=array();
-
+        $godzPrzyj=null;
+        $godzPrzyjs=$this->entityManager->getRepository(godz_przyj::class)->getGodzPrzyjByData($startDate,$endDate);
+        foreach ($godzPrzyjs as $godzPrzyjTmp) {
+            /**
+             * @var godz_przyj $godzPrzyjTmp
+             */
+            if ($godzPrzyjTmp->getGodzPoczatek()->format('H:i:s') == $startDate->format('H:i:s') && $godzPrzyjTmp->getGodzKoniec()->format('H:i:s') == $endDate->format('H:i:s')) {
+                $godzPrzyj = $godzPrzyjTmp;
+                break;
+            }
+        }
+        if(!$godzPrzyj) {
+            $godzPrzyj = new godz_przyj();
+            $godzPrzyj->setGodzPoczatek($startDate);
+            $godzPrzyj->setGodzKoniec($endDate);
+        }
+        $lekarzGodzPrzyj=new lekarz_godz_przyj();
+        $lekarzGodzPrzyj->setIdLekarz($this->getUser()->getIdLekarz());
+        $lekarzGodzPrzyj->setIdGodzPrzyj($godzPrzyj);
+        $this->entityManager->persist($lekarzGodzPrzyj);
+        $this->entityManager->flush();
         return $eventArray;
     }
 
@@ -118,8 +141,10 @@ class KalendarzController extends Controller
             case 'urlop':
                 $eventArray=$this->setUrlopy($startDate,$endDate);
                 break;
-            case 'godz_przyj':
+            case 'godz_przyj_add':
                 $eventArray=$this->setGodzPrzyj($startDate,$endDate);
+                break;
+            case 'godz_przyj_remove':
                 break;
         }
 
@@ -179,18 +204,17 @@ class KalendarzController extends Controller
                 }
                 break;
             case 'godz_przyj':
-                $godz_przyj=$this->entityManager->getRepository(lekarz_godz_przyj::class)->getUserLekarzGodzPrzyj($this->getUser());
-                foreach ($godz_przyj as $godz){
+                $godz_przyjs=$this->entityManager->getRepository(lekarz_godz_przyj::class)->getUserLekarzGodzPrzyj($this->getUser());
+                foreach ($godz_przyjs as $godz){
                     /**
                      * @var lekarz_godz_przyj $godz
                      */
                     $nowStart=date_date_set($godz->getIdGodzPrzyj()->getGodzPoczatek(),getdate()['year'],getdate()['mon'],getdate()['mday']);
                     $nowEnd=date_date_set($godz->getIdGodzPrzyj()->getGodzKoniec(),getdate()['year'],getdate()['mon'],getdate()['mday']);
-                    #$now.setTime();
                     $event=array(
-                        'title'=>'Godz',
                         'start'=>$nowStart->format('Y-m-d H:i:s'),
-                        'end'=>$nowEnd->format('Y-m-d H:i:s')
+                        'end'=>$nowEnd->format('Y-m-d H:i:s'),
+                        'url'=>$this->generateUrl('lekarz_godz_przyj_show',array('id'=>$godz->getId()))
                     );
                     $eventArray[]=$event;
                 }

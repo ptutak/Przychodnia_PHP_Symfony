@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class godz_przyjRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getGodzPrzyjByData(\DateTime $startDate,\DateTime $endDate){
+        $query=$this->getEntityManager()->createQuery('
+        SELECT godzPrzyj
+        FROM AppBundle:godz_przyj as godzPrzyj
+        WHERE godzPrzyj.godzPoczatek = :startGodz
+        AND godzPrzyj.godzKoniec = :endGodz
+        ')->setParameter('startGodz',$startDate->format('H:i:s'))
+            ->setParameter('endGodz',$endDate->format('H:i:s'))
+            ->getResult();
+        return $query;
+    }
 }

@@ -22,7 +22,6 @@ $(function () {
         },
         displayEventTime:true,
         slotDuration:'00:05:00',
-
         minTime:'06:00:00',
         maxTime:'22:00:00',
         allDaySlot:false,
@@ -32,22 +31,12 @@ $(function () {
         selectable:true,
         selectHelper:true,
         selectOverlap:false,
+        eventOverlap:false,
         select: function(start,end,jsEvent,view,resource){
             $.get(Routing.generate('set_kalendarz_data',{
-                type: 'godz_przyj',
+                type: 'godz_przyj_add',
                 start:start.unix(),
                 end:end.unix(),
-                _:Date.now()
-            }));
-            refetchDelay(150);
-        },
-        eventClick: function(event,jsEvent,view){
-            var startDate=event.start.unix();
-            var endDate=event.end.unix();
-            $.get(Routing.generate('set_kalendarz_data',{
-                type:'godz_przyj',
-                start: startDate,
-                end: endDate,
                 _:Date.now()
             }));
             refetchDelay(150);

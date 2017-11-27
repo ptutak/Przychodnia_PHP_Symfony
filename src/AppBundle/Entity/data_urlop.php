@@ -114,6 +114,9 @@ class data_urlop
      */
     public function removeLekarz(lekarz $lekarz){
         $this->lekarze->removeElement($lekarz);
+        if ($this->lekarze->count()==0){
+
+        }
         return $this;
     }
 
