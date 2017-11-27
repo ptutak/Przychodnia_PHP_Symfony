@@ -12,9 +12,9 @@ $(function () {
 
     $('#calendar-holder').fullCalendar({
         defaultView:'agendaDay',
-        columnHeader:false,
         header: false,
-        locale:"pl",
+        columnHeader:false,
+        locale:'pl',
         businessHours: {
             dow: [ 1, 2, 3, 4, 5 ], // Monday - Friday
            start: '7:00', // a start time
@@ -29,8 +29,8 @@ $(function () {
         select: function(start,end,jsEvent,view,resource){
             $.get(Routing.generate('set_kalendarz_data',{
                 type: 'godz_przyj',
-                start:Math.round(start.getTime()/1000)+3600,
-                end:Math.round(end.getTime()/1000)+3600,
+                start:start.unix(),
+                end:end.unix(),
                 _:Date.now()
             }));
             refetchDelay(150);
@@ -46,13 +46,24 @@ $(function () {
             }));
             refetchDelay(150);
         },
-
-        eventSources: [
-            {
+        events: function(start, end, timezone, callback) {
+            $.ajax({
                 url: Routing.generate('get_kalendarz_data',{ type: 'godz_przyj'}),
-                type:'GET'
-            }
-        ]
+                dataType: 'json',
+                data: {
+                    start: start.unix(),
+                    end: end.unix(),
+                    _:Date.now()
+                },
+                success: function(json) {
+                    var events = []
+                    jQuery.each(json, function(i, ob) {
+                        events.push(ob);
+                    });
+                    callback(events);
+                },
+            });
+        }
     });
 
 

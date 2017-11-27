@@ -11,6 +11,7 @@ $(function () {
     var y = date.getFullYear();
 
     $('#calendar-holder').fullCalendar({
+        locale:'pl',
         header: {
             left: 'prev, next',
             center: 'title',
@@ -39,13 +40,24 @@ $(function () {
             }));
             refetchDelay(150);
         },
-
-        eventSources: [
-            {
+        events: function(start, end, timezone, callback) {
+            $.ajax({
                 url: Routing.generate('get_kalendarz_data',{ type: 'urlop'}),
-                type:'GET'
-            }
-        ]
+                dataType: 'json',
+                data: {
+                    start: start.unix(),
+                    end: end.unix(),
+                    _:Date.now()
+                },
+                success: function(json) {
+                    var events = []
+                    jQuery.each(json, function(i, ob) {
+                        events.push(ob);
+                    });
+                    callback(events);
+                },
+            });
+        }
     });
 
 
