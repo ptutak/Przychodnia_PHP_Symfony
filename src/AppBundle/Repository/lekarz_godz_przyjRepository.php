@@ -19,8 +19,11 @@ class lekarz_godz_przyjRepository extends \Doctrine\ORM\EntityRepository
         WHERE lekarzGodzPrzyj.idLekarz = :userIdLekarz
         ')->setParameter('userIdLekarz',$user->getIdLekarz())
         ->getResult();
-
         return $query;
+    }
+
+    public function getLekarzGodzPrzyjById(int $id){
+
     }
 
 

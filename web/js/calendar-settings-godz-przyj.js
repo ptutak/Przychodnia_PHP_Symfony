@@ -32,6 +32,27 @@ $(function () {
         selectHelper:true,
         selectOverlap:false,
         eventOverlap:false,
+        editable: true,
+        eventResize: function(event, delta, revertFunc, jsEvent, ui, view){
+            $.get(Routing.generate('set_kalendarz_data',{
+                type: 'godz_przyj_resize_move',
+                id:event.id,
+                start:event.start.unix(),
+                end:event.end.unix(),
+                _:Date.now()
+            }))
+            refetchDelay(150);
+        },
+        eventDrop: function(event, delta, revertFunc, jsEvent, ui, view){
+            $.get(Routing.generate('set_kalendarz_data',{
+                type: 'godz_przyj_resize_move',
+                id:event.id,
+                start:event.start.unix(),
+                end:event.end.unix(),
+                _:Date.now()
+            }))
+            refetchDelay(150);
+        },
         select: function(start,end,jsEvent,view,resource){
             $.get(Routing.generate('set_kalendarz_data',{
                 type: 'godz_przyj_add',

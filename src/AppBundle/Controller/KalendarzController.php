@@ -126,7 +126,6 @@ class KalendarzController extends Controller
         $lekarzGodzPrzyj->setIdLekarz($this->getUser()->getIdLekarz());
         $lekarzGodzPrzyj->setIdGodzPrzyj($godzPrzyj);
         $this->entityManager->persist($lekarzGodzPrzyj);
-        $this->entityManager->flush();
         return $eventArray;
     }
 
@@ -144,7 +143,11 @@ class KalendarzController extends Controller
             case 'godz_przyj_add':
                 $eventArray=$this->setGodzPrzyj($startDate,$endDate);
                 break;
-            case 'godz_przyj_remove':
+            case 'godz_przyj_resize_move':
+                $godzPrzyj=$this->entityManager->getRepository(lekarz_godz_przyj::class)->find($request->get('id'));
+                $this->entityManager->remove($godzPrzyj);
+                $eventArray=$this->setGodzPrzyj($startDate,$endDate);
+                $this->entityManager->flush();
                 break;
         }
 
@@ -197,8 +200,8 @@ class KalendarzController extends Controller
                     $event=array(
                       'title'=>'Urlop',
                       'start'=>date_format($urlop->getData(),'Y-m-d'),
-                        'end'=>date_format($urlop->getData(),'Y-m-d'),
-                        'className'=>'urlop_day',
+                      'end'=>date_format($urlop->getData(),'Y-m-d'),
+                      'className'=>'urlop_day',
                     );
                     $eventArray[]=$event;
                 }
@@ -214,7 +217,8 @@ class KalendarzController extends Controller
                     $event=array(
                         'start'=>$nowStart->format('Y-m-d H:i:s'),
                         'end'=>$nowEnd->format('Y-m-d H:i:s'),
-                        'url'=>$this->generateUrl('lekarz_godz_przyj_show',array('id'=>$godz->getId()))
+                        'url'=>$this->generateUrl('lekarz_godz_przyj_show',array('id'=>$godz->getId())),
+                        'id'=>$godz->getId()
                     );
                     $eventArray[]=$event;
                 }
