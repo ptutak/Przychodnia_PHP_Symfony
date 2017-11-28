@@ -45,6 +45,3 @@ services:
         class: AppBundle\Form\GroupType
         tags:
             - { name: form.type, alias: app_group }
-    AppBundle\EventListener\CalendarEventListener:
-        tags:
-            - { name: kernel.event_listener, event: calendar.load_events, method: loadEvents }
