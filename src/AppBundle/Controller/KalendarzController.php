@@ -94,7 +94,7 @@ class KalendarzController extends Controller
                 $this->entityManager->remove($urlop);
             $this->entityManager->persist($this->getUser()->getIdLekarz());
         }
-        $this->entityManager->flush();
+
 
         return $eventArray;
     }
@@ -139,9 +139,11 @@ class KalendarzController extends Controller
         switch ($type){
             case 'urlop':
                 $eventArray=$this->setUrlopy($startDate,$endDate);
+                $this->entityManager->flush();
                 break;
             case 'godz_przyj_add':
                 $eventArray=$this->setGodzPrzyj($startDate,$endDate);
+                $this->entityManager->flush();
                 break;
             case 'godz_przyj_resize_move':
                 $godzPrzyj=$this->entityManager->getRepository(lekarz_godz_przyj::class)->find($request->get('id'));
