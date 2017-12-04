@@ -59,6 +59,33 @@ class wizytaController extends Controller
     }
 
     /**
+     * Creates a new wizytum entity.
+     *
+     * @Route("/new_regular", name="wizyta_new_regular")
+     * @Method({"GET", "POST"})
+     */
+    public function new_regularAction(Request $request)
+    {
+        $wizytum = new Wizyta();
+        $form = $this->createForm('AppBundle\Form\wizytaType', $wizytum);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($wizytum);
+            $em->flush();
+
+            return $this->redirectToRoute('wizyta_show', array('id' => $wizytum->getId()));
+        }
+
+        return $this->render('wizyta/new_regular.html.twig', array(
+            'wizytum' => $wizytum,
+            'form' => $form->createView(),
+        ));
+    }
+
+
+    /**
      * Finds and displays a wizytum entity.
      *
      * @Route("/{id}", name="wizyta_show")

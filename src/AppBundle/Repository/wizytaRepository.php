@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 use AppBundle\Entity\lekarz;
+use AppBundle\Entity\lekarz_godz_przyj;
 use AppBundle\Entity\wizyta;
 
 /**
@@ -18,22 +19,25 @@ class wizytaRepository extends \Doctrine\ORM\EntityRepository
         WHERE wizyta.data
         BETWEEN :startData AND :endData
         ')
-            ->setParameter('startData',$start)
-            ->setParameter('endData',$end)
+            ->setParameter('startData',$start->format('Y-m-d'))
+            ->setParameter('endData',$end->format('Y-m-d'))
             ->getResult();
         return $q;
     }
-    public function getWizytaByIdLekarzDate(lekarz $lekarz, $start, $end){
-
+    public function getWizytaByIdLekarzDate($idLekarz, $start, $end){
         $q=$this->getEntityManager()->createQuery('
         SELECT wizyta
         FROM AppBundle:wizyta AS wizyta
         WHERE wizyta.data 
         BETWEEN :startData AND :endData
-        AND wizyta.idLekarz = :lekarz
-        ')->setParameter('startData',$start)
-            ->setParameter('endData',$end)
-            ->setParameter('lekarz',$lekarz->getId())
+        AND wizyta.idLekarzGodzPrzyj IN (
+        SELECT lekarzGodzPrzyj
+        FROM AppBundle:lekarz_godz_przyj AS lekarzGodzPrzyj
+        WHERE lekarzGodzPrzyj.idLekarz = :idLekarz
+        )
+        ')->setParameter('startData',$start->format('Y-m-d'))
+            ->setParameter('endData',$end->format('Y-m-d'))
+            ->setParameter('idLekarz',$idLekarz)
             ->getResult();
         return $q;
     }

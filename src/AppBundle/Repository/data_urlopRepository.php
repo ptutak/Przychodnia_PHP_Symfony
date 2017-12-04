@@ -36,7 +36,7 @@ class data_urlopRepository extends \Doctrine\ORM\EntityRepository
 
         return $q;
     }
-    public function getDataByData(\DateTime $start, \DateTime $end){
+    public function getDataUrlopByData(\DateTime $start, \DateTime $end){
         $q=$this->getEntityManager()->createQuery('
         SELECT data_urlop
         FROM AppBundle:data_urlop data_urlop
@@ -44,6 +44,23 @@ class data_urlopRepository extends \Doctrine\ORM\EntityRepository
         ')->setParameter('startDate',$start->format('Y-m-d'))
         ->setParameter('endDate',$end->format('Y-m-d'))
         ->getResult();
+        return $q;
+    }
+
+    public function getDataUrlopByIdLekarz($idLekarz, \DateTime $start, \DateTime $end){
+
+        $q=$this->getEntityManager()->createQuery('
+        SELECT data_urlop
+        FROM AppBundle:data_urlop data_urlop
+        LEFT JOIN data_urlop.lekarze lekarze
+        WHERE lekarze.id = :idLekarz
+        AND data_urlop.data
+        BETWEEN :startData AND :endData
+        ')  ->setParameter('idLekarz',$idLekarz)
+            ->setParameter('startData',date_format($start,'Y-m-d'))
+            ->setParameter('endData',date_format($end,'Y-m-d'))
+            ->getResult();
+
         return $q;
     }
 }

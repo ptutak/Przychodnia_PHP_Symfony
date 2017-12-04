@@ -102,7 +102,7 @@ class wizyta
     /**
      * Set idPacjent
      *
-     * @param integer $idPacjent
+     * @param pacjent $idPacjent
      *
      * @return wizyta
      */
@@ -150,7 +150,7 @@ class wizyta
     /**
      * Set idLekarzGodzPrzyj
      *
-     * @param integer $idLekarzGodzPrzyj
+     * @param lekarz_godz_przyj $idLekarzGodzPrzyj
      *
      * @return wizyta
      */

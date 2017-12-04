@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\data_urlop;
 use AppBundle\Entity\godz_przyj;
+use AppBundle\Entity\lekarz;
 use AppBundle\Entity\lekarz_godz_przyj;
 use AppBundle\Entity\wizyta;
 use Doctrine\ORM\EntityManagerInterface;
@@ -60,7 +61,7 @@ class KalendarzController extends Controller
                     'id'=>$this->getUser()->getIdLekarz()->getId()
                 );
                 $eventArray[] = $event;
-                $datas=$this->entityManager->getRepository(data_urlop::class)->getDataByData($startDate,$endDate);
+                $datas=$this->entityManager->getRepository(data_urlop::class)->getDataUrlopByData($startDate,$endDate);
                 /**
                  * @var data_urlop $addDataUrlop
                  */
@@ -166,6 +167,15 @@ class KalendarzController extends Controller
                 $eventArray=$this->setGodzPrzyj($startDate,$endDate);
                 $this->entityManager->flush();
                 break;
+            case 'wizyta_new_select':
+                $wizyta=new wizyta();
+                $wizyta->setIndeks(chr(rand(ord('A'),ord('Z'))).date('U'));
+                $wizyta->setData($startDate);
+                $wizyta->setIdLekarzGodzPrzyj($this->entityManager->getRepository(lekarz_godz_przyj::class)->find($request->query->get('idLekarzGodzPrzyj')));
+                $wizyta->setIdPacjent($this->getUser()->getIdPacjent());
+                $this->entityManager->persist($wizyta);
+                $this->entityManager->flush();
+                break;
         }
 
         $eventArray[] = array(
@@ -177,31 +187,51 @@ class KalendarzController extends Controller
     }
 
 
-    public function getFreeWizyta($startDate, $endDate, $idLekarz){
-        $eventArray=array();
-        $wizyty=$this->getDoctrine()->getRepository(wizyta::class)->getWizytaByIdLekarzDate($idLekarz,$startDate,$endDate);
-        $godzPrzyj=$this->getDoctrine()->getRepository(lekarz_godz_przyj::class)->getLekarzGodzPrzyjByIdLekarz($idLekarz);
-
-        foreach($godzPrzyj as $godz){
-            /**
-             * @var godz_przyj $godz
-             */
+    public function getFreeWizytas($startDate, $endDate, $idLekarz){
+        $eventArray=[];
+        $godzPrzyj=$this->getDoctrine()->getRepository(lekarz_godz_przyj::class)->getActiveLekarzGodzPrzyjByIdLekarz($idLekarz);
+        $wizyty = $this->getDoctrine()->getRepository(wizyta::class)->getWizytaByIdLekarzDate($idLekarz,$startDate,$endDate);
+        $urlopy = $this->getDoctrine()->getRepository(data_urlop::class)->getDataUrlopByIdLekarz($idLekarz,$startDate,$endDate);
+        $tempDate=date_create_from_format('U',$startDate->getTimestamp());
+        while($tempDate<=$endDate){
             $show=true;
-            foreach ($wizyty as $wizyta){
+            foreach ($urlopy as $urlop){
                 /**
-                 * @var wizyta $wizyta
+                 * @var data_urlop $urlop
                  */
-                if ($wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getId() == $godz->getId())
+                if ($urlop->getData()->format('Y-m-d')==$tempDate->format('Y-m-d')){
                     $show=false;
+                    break;
+                }
             }
-            if ($show){
-                $eventArray[] =array(
-                    'start'=>$startDate." ".$godz->getGodzPoczatek()->format('H:i:s'),
-                    'end'=>$endDate." ".$godz->getGodzKoniec()->format('H:i:s'),
-                    'className'=>'godz_przyj_aktywna'
-                );
+            if ($show) {
+                foreach ($godzPrzyj as $godz) {
+                    $show = true;
+                    /**
+                     * @var lekarz_godz_przyj $godz
+                     */
+                    foreach ($wizyty as $wizyta) {
+                        /**
+                         * @var wizyta $wizyta
+                         */
+                        if ($wizyta->getIdLekarzGodzPrzyj() === $godz && $wizyta->getData()->format('Y-m-d') == $tempDate->format('Y-m-d')) {
+                            $show = false;
+                            break;
+                        }
+                    }
+                    if ($show) {
+                        $eventArray[] = array(
+                            'start' => $tempDate->format('Y-m-d') . " " . $godz->getIdGodzPrzyj()->getGodzPoczatek()->format('H:i:s'),
+                            'end' => $tempDate->format('Y-m-d') . " " . $godz->getIdGodzPrzyj()->getGodzKoniec()->format('H:i:s'),
+                            'idLekarzGodzPrzyj'=>$godz->getId(),
+                            'className' => 'godz_przyj_aktywna'
+                        );
+                    }
+                }
             }
+            $tempDate->modify('+1 day');
         }
+        return $eventArray;
     }
 
     /**
@@ -210,8 +240,8 @@ class KalendarzController extends Controller
      */
     public function getKalendarzData($type, Request $request)
     {
-        $startDate = date_format(date_create_from_format('U',$request->query->get('start')),'Y-m-d');
-        $endDate = date_format(date_create_from_format('U',$request->query->get('end')),'Y-m-d');
+        $startDate = date_create_from_format('U',$request->query->get('start'));
+        $endDate = date_create_from_format('U',$request->query->get('end'));
         $eventArray=array();
         switch($type){
             case 'wizyta':
@@ -232,7 +262,7 @@ class KalendarzController extends Controller
                 break;
             case 'wizyta_lekarz':
                 $idLekarz=$request->query->get('idLekarz');
-                $eventArray=$this->getFreeWizyta($startDate,$endDate,$idLekarz);
+                $eventArray=$this->getFreeWizytas($startDate,$endDate,$idLekarz);
                 break;
             case 'profile':
 

@@ -1,20 +1,35 @@
 $(function () {
     $('#calendar-holder').fullCalendar({
         themeSystem: 'bootstrap3',
+        defaultView: 'basicWeek',
         header: {
             left: 'prev, next',
             center: 'title',
             right: 'month, basicWeek, basicDay'
         },
         displayEventTime: true,
+        displayEventEnd:true,
         lazyFetching: true,
+        allDayDefault:false,
         timeFormat: 'H(:mm)',
+        eventClick: function(event,jsEvent,view){
+            var startDate=event.start.unix();
+            $.get(Routing.generate('set_kalendarz_data',{
+                type:'wizyta_new_select',
+                start: startDate,
+                end: startDate,
+                idLekarzGodzPrzyj:event.idLekarzGodzPrzyj,
+                _:Date.now()
+            }));
+//            refetchDelay(150);
+            window.location.replace(Routing.generate('user_profile'));
+        },
         events: function(start, end, timezone, callback) {
             var item=$('#lekarzChoice').jqxDropDownList('getSelectedItem');
             if (item)
                 item=item.value;
             $.ajax({
-                url: Routing.generate('get_kalendarz_data',{ type: 'wizyta_new'}),
+                url: Routing.generate('get_kalendarz_data',{ type: 'wizyta_lekarz'}),
                 dataType: 'json',
                 data: {
                     start: start.unix(),
@@ -30,6 +45,7 @@ $(function () {
                     callback(events);
                 }
             });
+
         }
     });
 });

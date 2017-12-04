@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Wizytum creation</h1>
+    <h1>Umów się na wizytę</h1>
 {#
     {{ form_start(form) }}
         {{ form_widget(form) }}
@@ -12,12 +12,13 @@
 
     <div id="calendar-holder"></div>
 
-
+{#
     <ul>
         <li>
             <a href="{{ path('wizyta_index') }}">Back to the list</a>
         </li>
     </ul>
+#}
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
@@ -28,6 +29,12 @@
     <script src="{{ asset('js/jqxdropdownlist.js') }}"></script>
     <script src="{{ asset('js/jqxdata.js') }}"></script>
     <script>
+        function refetchDelay(delay){
+            window.setTimeout(function(){
+                $('#calendar-holder').fullCalendar('refetchEvents');
+            },delay);
+        }
+
         var sourceJson={
             dataType : 'json',
             dataFields : [
@@ -39,13 +46,7 @@
         var dataAdapter = new $.jqx.dataAdapter(sourceJson);
         $("#lekarzChoice").jqxDropDownList({ source: dataAdapter, displayMember: "name", valueMember: "id", width: '300px', height: '25px'});
         $('#lekarzChoice').on('select', function (event){
-            var args = event.args;
-            if (args) {
-                var item=args.item;
-                var label = item.label;
-                var idLekarz = item.value;
-
-            }
+            refetchDelay(150);
         });
     </script>
 

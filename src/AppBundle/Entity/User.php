@@ -61,7 +61,7 @@ class User extends BaseUser
     /**
      * Set idPacjent
      *
-     * @param integer $idPacjent
+     * @param pacjent $idPacjent
      *
      * @return User
      */
@@ -75,7 +75,7 @@ class User extends BaseUser
     /**
      * Get idPacjent
      *
-     * @return int
+     * @return pacjent
      */
     public function getIdPacjent()
     {

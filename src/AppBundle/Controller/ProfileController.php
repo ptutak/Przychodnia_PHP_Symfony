@@ -50,9 +50,16 @@ class ProfileController extends BaseController
      */
     public function lekarz_profileAction(Request $request){
         return $this->render(":Profile:lekarz.html.twig", array(
-
         ));
     }
+
+    /**
+     * @Route("/user_profile",name="user_profile",options={"expose"=true})
+     */
+    public function user_profileAction(){
+        return $this->redirectToRoute('fos_user_profile_show');
+    }
+
     /**
      * Show the user.
      */

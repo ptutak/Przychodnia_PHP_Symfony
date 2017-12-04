@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Dodaj wizytę</h1>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Create" />
+        {{ form_end(form) }}
+        <ul>
+            <li>
+                <a href="{{ path('wizyta_index') }}">Do listy wizyt</a>
+            </li>
+        </ul>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

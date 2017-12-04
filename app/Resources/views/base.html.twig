@@ -22,13 +22,14 @@
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
                     {% if is_granted('ROLE_ADMIN') %}
-                        {{ render(controller('AppBundle:Profile:admin_profile')) }}
-                    {% elseif is_granted('ROLE_LEKARZ') %}
-                        {{ render(controller('AppBundle:Profile:lekarz_profile')) }}
-                    {% elseif is_granted('ROLE_PACJENT') %}
-                        {{ render(controller('AppBundle:Profile:pacjent_profile')) }}
+                        {{ include('Profile/admin.html.twig') }}
                     {% endif %}
-
+                    {% if is_granted('ROLE_LEKARZ') %}
+                        {{ include('Profile/lekarz.html.twig') }}
+                    {% endif %}
+                    {% if is_granted('ROLE_PACJENT') %}
+                        {{ include('Profile/pacjent.html.twig') }}
+                    {% endif %}
                     <li>
                         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                         <a href="{{ path('fos_user_security_logout') }}">
