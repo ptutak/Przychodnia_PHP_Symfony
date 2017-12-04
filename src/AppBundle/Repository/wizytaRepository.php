@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use AppBundle\Entity\lekarz;
 use AppBundle\Entity\wizyta;
 
 /**
@@ -19,6 +20,20 @@ class wizytaRepository extends \Doctrine\ORM\EntityRepository
         ')
             ->setParameter('startData',$start)
             ->setParameter('endData',$end)
+            ->getResult();
+        return $q;
+    }
+    public function getWizytaByIdLekarzDate(lekarz $lekarz, $start, $end){
+
+        $q=$this->getEntityManager()->createQuery('
+        SELECT wizyta
+        FROM AppBundle:wizyta AS wizyta
+        WHERE wizyta.data 
+        BETWEEN :startData AND :endData
+        AND wizyta.idLekarz = :lekarz
+        ')->setParameter('startData',$start)
+            ->setParameter('endData',$end)
+            ->setParameter('lekarz',$lekarz->getId())
             ->getResult();
         return $q;
     }

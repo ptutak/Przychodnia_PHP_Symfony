@@ -164,7 +164,7 @@ class wizyta
     /**
      * Get idLekarzGodzPrzyj
      *
-     * @return int
+     * @return lekarz_godz_przyj
      */
     public function getIdLekarzGodzPrzyj()
     {

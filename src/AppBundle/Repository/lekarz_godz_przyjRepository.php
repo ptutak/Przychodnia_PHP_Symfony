@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use AppBundle\Entity\lekarz;
 use AppBundle\Entity\User;
 
 /**
@@ -30,6 +31,16 @@ class lekarz_godz_przyjRepository extends \Doctrine\ORM\EntityRepository
         AND lekarzGodzPrzyj.id = :idGodzPrzyj
         ')->setParameter('userIdLekarz',$user->getIdLekarz())
             ->setParameter('idGodzPrzyj',$idGodzPrzyj)
+            ->getResult();
+        return $query;
+    }
+
+    public function getLekarzGodzPrzyjByIdLekarz($lekarz){
+        $query=$this->getEntityManager()->createQuery('
+        SELECT lekarzGodzPrzyj
+        FROM AppBundle:lekarz_godz_przyj AS lekarzGodzPrzyj
+        WHERE lekarzGodzPrzyj.idLekarz = :idLekarz
+        ')->setParameter('idLekarz',$lekarz)
             ->getResult();
         return $query;
     }

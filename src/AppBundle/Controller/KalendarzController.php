@@ -21,7 +21,8 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
  */
 class KalendarzController extends Controller
 {
-
+    private $entityManager;
+    private $tokenStorage;
     /**
      * KalendarzController constructor.
      * @param EntityManagerInterface $entityManager
@@ -176,7 +177,32 @@ class KalendarzController extends Controller
     }
 
 
+    public function getFreeWizyta($startDate, $endDate, $idLekarz){
+        $eventArray=array();
+        $wizyty=$this->getDoctrine()->getRepository(wizyta::class)->getWizytaByIdLekarzDate($idLekarz,$startDate,$endDate);
+        $godzPrzyj=$this->getDoctrine()->getRepository(lekarz_godz_przyj::class)->getLekarzGodzPrzyjByIdLekarz($idLekarz);
 
+        foreach($godzPrzyj as $godz){
+            /**
+             * @var godz_przyj $godz
+             */
+            $show=true;
+            foreach ($wizyty as $wizyta){
+                /**
+                 * @var wizyta $wizyta
+                 */
+                if ($wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getId() == $godz->getId())
+                    $show=false;
+            }
+            if ($show){
+                $eventArray[] =array(
+                    'start'=>$startDate." ".$godz->getGodzPoczatek()->format('H:i:s'),
+                    'end'=>$endDate." ".$godz->getGodzKoniec()->format('H:i:s'),
+                    'className'=>'godz_przyj_aktywna'
+                );
+            }
+        }
+    }
 
     /**
      * @Route("/get/data/{type}",name="get_kalendarz_data", options={"expose"=true})
@@ -203,6 +229,10 @@ class KalendarzController extends Controller
                         );
                     $eventArray[]=$event;
                 }
+                break;
+            case 'wizyta_lekarz':
+                $idLekarz=$request->query->get('idLekarz');
+                $eventArray=$this->getFreeWizyta($startDate,$endDate,$idLekarz);
                 break;
             case 'profile':
 
