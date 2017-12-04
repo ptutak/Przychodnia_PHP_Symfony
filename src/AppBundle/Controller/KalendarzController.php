@@ -125,6 +125,7 @@ class KalendarzController extends Controller
         $lekarzGodzPrzyj=new lekarz_godz_przyj();
         $lekarzGodzPrzyj->setIdLekarz($this->getUser()->getIdLekarz());
         $lekarzGodzPrzyj->setIdGodzPrzyj($godzPrzyj);
+        $lekarzGodzPrzyj->setAktywna(true);
         $this->entityManager->persist($lekarzGodzPrzyj);
         return $eventArray;
     }
@@ -147,7 +148,10 @@ class KalendarzController extends Controller
                 break;
             case 'godz_przyj_resize_move':
                 $godzPrzyj=$this->entityManager->getRepository(lekarz_godz_przyj::class)->find($request->get('id'));
-                $this->entityManager->remove($godzPrzyj);
+                if (count($godzPrzyj->getWizyty()))
+                    $godzPrzyj->setAktywna(false);
+                else
+                    $this->entityManager->remove($godzPrzyj);
                 $eventArray=$this->setGodzPrzyj($startDate,$endDate);
                 $this->entityManager->flush();
                 break;
@@ -216,11 +220,16 @@ class KalendarzController extends Controller
                      */
                     $nowStart=date_date_set($godz->getIdGodzPrzyj()->getGodzPoczatek(),getdate()['year'],getdate()['mon'],getdate()['mday']);
                     $nowEnd=date_date_set($godz->getIdGodzPrzyj()->getGodzKoniec(),getdate()['year'],getdate()['mon'],getdate()['mday']);
+                    if ($godz->isAktywna())
+                        $class='godz_przyj_aktywna';
+                    else
+                        $class='godz_przyj_nieaktywna';
                     $event=array(
                         'start'=>$nowStart->format('Y-m-d H:i:s'),
                         'end'=>$nowEnd->format('Y-m-d H:i:s'),
                         'url'=>$this->generateUrl('lekarz_godz_przyj_show',array('id'=>$godz->getId())),
-                        'id'=>$godz->getId()
+                        'id'=>$godz->getId(),
+                        'className'=>$class
                     );
                     $eventArray[]=$event;
                 }

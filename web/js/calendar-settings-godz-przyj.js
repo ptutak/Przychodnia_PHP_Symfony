@@ -5,20 +5,32 @@ function refetchDelay(delay){
 }
 
 $(function () {
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-
+    var toggleActiveVal=false;
     $('#calendar-holder').fullCalendar({
         defaultView:'agendaDay',
         themeSystem:'bootstrap3',
-        header: false,
+        customButtons: {
+            toggleActive: {
+                text: 'Włącz/wyłącz nieaktywne godziny',
+                click: function() {
+                    if (toggleActiveVal)
+                        toggleActiveVal=false;
+                    else
+                        toggleActiveVal=true;
+                    refetchDelay(0);
+                }
+            }
+        },
+        header: {
+            left: 'toggleActive',
+            center: '',
+            right: ''
+        },
         columnHeader:false,
         businessHours: {
             dow: [ 1, 2, 3, 4, 5 ], // Monday - Friday
            start: '7:00', // a start time
-            end: '21:00', // an end time
+            end: '21:00' // an end time
         },
         displayEventTime:true,
         slotDuration:'00:05:00',
@@ -40,7 +52,7 @@ $(function () {
                 start:event.start.unix(),
                 end:event.end.unix(),
                 _:Date.now()
-            }))
+            }));
             refetchDelay(150);
         },
         eventDrop: function(event, delta, revertFunc, jsEvent, ui, view){
@@ -50,7 +62,7 @@ $(function () {
                 start:event.start.unix(),
                 end:event.end.unix(),
                 _:Date.now()
-            }))
+            }));
             refetchDelay(150);
         },
         select: function(start,end,jsEvent,view,resource){
@@ -72,12 +84,17 @@ $(function () {
                     _:Date.now()
                 },
                 success: function(json) {
-                    var events = []
+                    var events = [];
                     jQuery.each(json, function(i, ob) {
-                        events.push(ob);
+                        if (toggleActiveVal)
+                            events.push(ob);
+                        else{
+                            if (ob.className=='godz_przyj_aktywna')
+                                events.push(ob);
+                        }
                     });
                     callback(events);
-                },
+                }
             });
         }
     });

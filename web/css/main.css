@@ -2,6 +2,14 @@
     height : 40px
 }
 
+.godz_przyj_aktywna {
+    background-color : #66dd66;
+}
+
+.godz_przyj_nieaktywna {
+    background-color : #00AA88;
+}
+
 .my_calendar {
     border: groove #ff4229;
 }

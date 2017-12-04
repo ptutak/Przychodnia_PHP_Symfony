@@ -23,6 +23,14 @@ class lekarz_godz_przyj
     private $id;
 
     /**
+     * @var boolean
+     * @ORM\Column (name="aktywna", type="boolean", nullable=true)
+     */
+    private $aktywna;
+
+
+
+    /**
      * @ORM\ManyToOne(targetEntity="lekarz",inversedBy="godzPrzyj")
      * @ORM\JoinColumn(name="id_lekarz", referencedColumnName="id")
      */
@@ -51,9 +59,27 @@ class lekarz_godz_przyj
     }
 
     /**
+     * @return bool
+     */
+    public function isAktywna()
+    {
+        return $this->aktywna;
+    }
+
+    /**
+     * @param bool
+     * @return lekarz_godz_przyj
+     */
+    public function setAktywna($aktywna)
+    {
+        $this->aktywna = $aktywna;
+        return $this;
+    }
+
+    /**
      * Set idGodzPrzyj
      *
-     * @param lekarz_godz_przyj $idGodzPrzyj
+     * @param godz_przyj $idGodzPrzyj
      *
      * @return lekarz_godz_przyj
      */
