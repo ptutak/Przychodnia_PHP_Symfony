@@ -22,8 +22,16 @@ class lekarz_godz_przyjRepository extends \Doctrine\ORM\EntityRepository
         return $query;
     }
 
-    public function getLekarzGodzPrzyjById(int $id){
-
+    public function getUserLekarzGodzPrzyjById(User $user, int $idGodzPrzyj){
+        $query=$this->getEntityManager()->createQuery('
+        SELECT lekarzGodzPrzyj
+        FROM AppBundle:lekarz_godz_przyj AS lekarzGodzPrzyj
+        WHERE lekarzGodzPrzyj.idLekarz = :userIdLekarz
+        AND lekarzGodzPrzyj.id = :idGodzPrzyj
+        ')->setParameter('userIdLekarz',$user->getIdLekarz())
+            ->setParameter('idGodzPrzyj',$idGodzPrzyj)
+            ->getResult();
+        return $query;
     }
 
 

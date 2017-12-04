@@ -104,10 +104,11 @@ class KalendarzController extends Controller
      * @param \DateTime $endDate
      * @return array
      */
-    public function setGodzPrzyj(\DateTime $startDate, \DateTime $endDate){
-        $eventArray=array();
-        $godzPrzyj=null;
-        $godzPrzyjs=$this->entityManager->getRepository(godz_przyj::class)->getGodzPrzyjByData($startDate,$endDate);
+    public function setGodzPrzyj(\DateTime $startDate, \DateTime $endDate)
+    {
+        $eventArray = array();
+        $godzPrzyj = null;
+        $godzPrzyjs = $this->entityManager->getRepository(godz_przyj::class)->getGodzPrzyjByData($startDate, $endDate);
         foreach ($godzPrzyjs as $godzPrzyjTmp) {
             /**
              * @var godz_przyj $godzPrzyjTmp
@@ -117,14 +118,23 @@ class KalendarzController extends Controller
                 break;
             }
         }
-        if(!$godzPrzyj) {
+        $lekarzGodzPrzyj = null;
+        if (!$godzPrzyj) {
             $godzPrzyj = new godz_przyj();
             $godzPrzyj->setGodzPoczatek($startDate);
             $godzPrzyj->setGodzKoniec($endDate);
+        } else {
+            $lekarzGodzPrzyj = $this->entityManager->getRepository(lekarz_godz_przyj::class)->getUserLekarzGodzPrzyjById($this->getUser(), $godzPrzyj->getId());
+            if (count($lekarzGodzPrzyj))
+                $lekarzGodzPrzyj = $lekarzGodzPrzyj[0];
+            else
+                $lekarzGodzPrzyj = null;
         }
-        $lekarzGodzPrzyj=new lekarz_godz_przyj();
-        $lekarzGodzPrzyj->setIdLekarz($this->getUser()->getIdLekarz());
-        $lekarzGodzPrzyj->setIdGodzPrzyj($godzPrzyj);
+        if (!$lekarzGodzPrzyj) {
+            $lekarzGodzPrzyj = new lekarz_godz_przyj();
+            $lekarzGodzPrzyj->setIdLekarz($this->getUser()->getIdLekarz());
+            $lekarzGodzPrzyj->setIdGodzPrzyj($godzPrzyj);
+        }
         $lekarzGodzPrzyj->setAktywna(true);
         $this->entityManager->persist($lekarzGodzPrzyj);
         return $eventArray;
