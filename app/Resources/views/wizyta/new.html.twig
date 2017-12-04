@@ -10,7 +10,7 @@
 #}
     <div id="lekarzChoice"></div>
 
-    {% include '::calendar.html.twig' %}
+    <div id="calendar-holder"></div>
 
 
     <ul>
@@ -26,13 +26,27 @@
     <script src="{{ asset('js/jqxscrollbar.js') }}"></script>
     <script src="{{ asset('js/jqxlistbox.js') }}"></script>
     <script src="{{ asset('js/jqxdropdownlist.js') }}"></script>
+    <script src="{{ asset('js/jqxdata.js') }}"></script>
     <script>
-        var source = [
-            "Instant coffee",
-            "Irish coffee",
-            "Liqueur coffee"
-        ];
-        $("#lekarzChoice").jqxDropDownList({ source: source, width: '200px', height: '25px'});
+        var sourceJson={
+            dataType : 'json',
+            dataFields : [
+                {name : 'name',type : 'string'},
+                {name : 'id',type : 'int'}
+            ],
+            url:  Routing.generate('get_lekarz_list')
+        };
+        var dataAdapter = new $.jqx.dataAdapter(sourceJson);
+        $("#lekarzChoice").jqxDropDownList({ source: dataAdapter, displayMember: "name", valueMember: "id", width: '300px', height: '25px'});
+        $('#lekarzChoice').on('select', function (event){
+            var args = event.args;
+            if (args) {
+                var item=args.item;
+                var label = item.label;
+                var value = item.value;
+                //TODO: Get lekarz calendar events;
+            }
+        });
     </script>
 
     <script src="{{ asset('js/moment.min.js') }}"></script>

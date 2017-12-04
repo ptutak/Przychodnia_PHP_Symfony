@@ -11,7 +11,7 @@ use AppBundle\Entity\wizyta;
  */
 class wizytaRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getEventsByDate($start, $end, $type='all'){
+    public function getEventsByDate($start, $end){
         $q=$this->getEntityManager()->createQuery('
         SELECT wizyta FROM AppBundle:wizyta wizyta
         WHERE wizyta.data

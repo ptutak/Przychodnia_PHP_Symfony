@@ -1,9 +1,4 @@
 $(function () {
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-
     $('#calendar-holder').fullCalendar({
         themeSystem: 'bootstrap3',
         header: {
@@ -16,7 +11,7 @@ $(function () {
         timeFormat: 'H(:mm)',
         events: function(start, end, timezone, callback) {
             $.ajax({
-                url: Routing.generate('get_kalendarz_data',{ type: 'wizyta'}),
+                url: Routing.generate('get_kalendarz_data',{ type: 'wizyta_new'}),
                 dataType: 'json',
                 data: {
                     start: start.unix(),

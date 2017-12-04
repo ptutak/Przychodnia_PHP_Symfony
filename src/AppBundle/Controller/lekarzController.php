@@ -5,7 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\lekarz;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Lekarz controller.
@@ -29,6 +31,27 @@ class lekarzController extends Controller
             'lekarzs' => $lekarzs,
         ));
     }
+
+    /**
+     * @Route("/list",name="get_lekarz_list",options={"expose"=true})
+     * @Method("GET")
+     * @return JsonResponse
+     */
+    public function listAction(){
+        $em=$this->getDoctrine()->getManager();
+
+        $lekarze=$em->getRepository(lekarz::class)->findAll();
+        $lekarzeArray=[];
+
+        foreach($lekarze as $lekarz){
+            $lekarzeArray[] = array(
+                'id'=>$lekarz->getId(),
+                'name'=>$lekarz->__toString(),
+            );
+        }
+        return new JsonResponse($lekarzeArray);
+    }
+
 
     /**
      * Creates a new lekarz entity.
