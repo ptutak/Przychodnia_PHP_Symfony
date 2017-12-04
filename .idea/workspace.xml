@@ -2,22 +2,337 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/Profile/lekarz.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/Profile/pacjent.html.twig" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/backImage.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/backgroundTop.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_black_horizontal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_blackhover.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_blackhover_horizontal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_blackpressed.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_blackpressed_horizontal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_blueenergy.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_darkblue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_darkbluehover.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/bg_darkbluepressed.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/black_gradient.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/blackbackground.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_blue_indeterminate.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_disabled.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_indeterminate_black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_indeterminate_disabled.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_indeterminate_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_lightblue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_lightblue_indeterminate.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/check_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/close_black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/close_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/close_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/colorpicker/ReadMe.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/colorpicker/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/colorpicker/bar-hue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/colorpicker/bar-saturation.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/colorpicker/map-hue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/colorpicker/map-saturation-overlay.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/colorpicker/map-saturation.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/common.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/crosshair-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/crosshair.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ReadMe.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-bg_flat_30_cccccc_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-bg_flat_50_5c5c5c_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-bg_glass_20_555555_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-bg_glass_40_0078a3_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-bg_glass_40_ffc73d_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-bg_gloss-wave_25_333333_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-bg_inset-soft_25_000000_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-bg_inset-soft_30_f58400_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-icons_4b8e0b_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-icons_a83300_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-icons_cccccc_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkness/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/darkred_gradient.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/drag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/dragcancel.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/error.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/filter.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/html_editor.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/html_editor_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-calendar-light.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-calendar-metro-light.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-calendar-metro-yellow-light.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-calendar-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-calendar.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-cancel-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-cancel.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-delete-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-delete.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-down-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-down-transparent.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-down-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-down.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-edit-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-edit.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-first-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-first-transparent.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-first-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-first.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-last-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-last-transparent.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-last-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-last.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-left-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-left-transparent.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-left-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-left.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-menu-minimized-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-menu-minimized.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-menu-small-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-menu-small.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-plus-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-plus.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-recurrence-exception-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-recurrence-exception.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-recurrence-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-recurrence.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-right-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-right-transparent.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-right-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-right.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-save-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-save.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-showpassword-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-showpassword.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-sort-asc-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-sort-asc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-sort-desc-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-sort-desc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-sort-remove-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-sort-remove.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-time-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-time.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-up-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-up-transparent.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-up-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon-up.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon_collapse.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/icon_expand.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/info.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ReadMe.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-bg_diagonals-small_0_aaaaaa_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-bg_diagonals-thick_15_444444_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-bg_diagonals-thick_95_ffdc2e_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-bg_glass_55_fbf5d0_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-bg_highlight-hard_30_285c00_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-bg_highlight-soft_33_3a8104_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-bg_highlight-soft_50_4eb305_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-bg_highlight-soft_60_4ca20b_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-bg_inset-soft_10_285c00_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-icons_4eb305_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-icons_72b42d_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-icons_cd0a0a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/le-frog/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ReadMe.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/icon-first.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/icon-last.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-bg_diagonals-thick_18_b81900_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-bg_diagonals-thick_20_666666_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-bg_flat_10_000000_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-bg_glass_100_f6f6f6_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-bg_glass_100_fdf5ce_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-bg_glass_65_ffffff_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-bg_gloss-wave_35_f6a828_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-icons_228ef1_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-icons_ef8c08_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-icons_ffd27a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/lightness/ui-icons_ffffff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/loader-small.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/loader.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/mail.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/menubutton.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-down-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-down.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-first-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-first.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-last-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-last.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-left-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-left.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-right - Copy.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-right-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-right.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-up-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/metro-icon-up.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/multi-arrow.gif" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/office-icon-down.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/office-icon-first.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/office-icon-last.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/office-icon-left.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/office-icon-right.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/office-icon-up.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ReadMe.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-bg_flat_0_eeeeee_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-bg_flat_55_c0402a_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-bg_flat_55_eeeeee_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-bg_glass_100_f8f8f8_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-bg_glass_35_dddddd_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-bg_glass_60_eeeeee_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-bg_inset-hard_75_999999_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-icons_3383bb_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-icons_454545_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-icons_70b2e1_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-icons_999999_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/overcast/ui-icons_fbc856_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pin-black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pin-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pin-lightblue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pin-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pin-yellow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pin.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pinned-black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pinned-blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pinned-lightblue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pinned-white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pinned-yellow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pinned.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/plus.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/plus_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/pointer.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/rangebar_classic.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/rangebar_darkblue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/rangebar_shinyblack.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/rangebar_summer.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/red_arrow_down.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/red_arrow_up.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/red_gradient.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ReadMe.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/icon-first.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/icon-last.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-bg_flat_55_fbec88_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-bg_glass_75_d0e5f5_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-bg_glass_85_dfeffc_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-icons_217bc0_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-icons_2e83ff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-icons_469bdd_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-icons_6da8d5_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-icons_cd0a0a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-icons_d8e7f3_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/redmond/ui-icons_f9bd01_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/roundbg_check_black.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/roundbg_check_disabled.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/roundbg_check_indeterminate.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/roundbg_check_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/roundbg_classic_hover.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/roundbg_classic_normal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/roundbg_disabled.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/search.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/search_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ReadMe.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-bg_flat_75_ffffff_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-bg_glass_55_fbf9ee_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-bg_glass_65_ffffff_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-bg_glass_75_dadada_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-bg_glass_75_e6e6e6_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-bg_highlight-soft_75_cccccc_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-icons_222222_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-icons_2e83ff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-icons_454545_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-icons_888888_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/smoothness/ui-icons_cd0a0a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sortasc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sortascbutton.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sortdesc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sortdescbutton.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sortremove.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/star.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/star_disabled.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/star_hover.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ReadMe.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-bg_flat_55_999999_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-bg_flat_75_aaaaaa_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-bg_glass_45_0078ae_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-bg_glass_55_f8da4e_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-bg_glass_75_79c9ec_1x400.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-bg_gloss-wave_75_2191c0_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-icons_0078ae_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-icons_056b93_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-icons_d8e7f3_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-icons_e0fdff_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-icons_f5e175_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-icons_f7a50d_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/start/ui-icons_fcd113_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/stripes.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/success.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ReadMe.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-bg_diagonals-medium_20_d34d17_40x40.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-bg_flat_30_cccccc_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-bg_flat_50_5c5c5c_40x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-bg_gloss-wave_45_817865_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-bg_gloss-wave_60_fece2f_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-bg_gloss-wave_70_ffdd57_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-bg_gloss-wave_90_fff9e5_500x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-bg_highlight-soft_100_feeebd_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-bg_inset-soft_30_ffffff_1x100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-icons_3d3d3d_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-icons_bd7b00_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-icons_d19405_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-icons_eb990f_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-icons_ed9f26_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-icons_fadc7a_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/sunny/ui-icons_ffe180_256x240.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/tick.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/time.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/track_classic.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/track_darkblue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/track_shinyblack.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/track_summer.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/warning.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/wp_check_indeterminate_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/images/wp_check_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/jqx.base.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/calendar-settings-nowa-wizyta.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/jqxbuttons.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/jqxcore.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/jqxdropdownlist.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/jqxlistbox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/jqxscrollbar.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Group/list.html.twig" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Group/list.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Group/index.html.twig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Profile/admin.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/Profile/admin.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/data_urlop/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/data_urlop/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/index.html.twig" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/wizyta/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/wizyta/new.html.twig" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" />
       <change beforePath="$PROJECT_DIR$/web/css/main.css" afterPath="$PROJECT_DIR$/web/css/main.css" />
+      <change beforePath="$PROJECT_DIR$/web/js/calendar-settings-wizyta.js" afterPath="$PROJECT_DIR$/web/js/calendar-settings-wizyta.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,51 +357,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/Profile/admin.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Group/list.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            <state relative-caret-position="170">
+              <caret line="10" column="75" lean-forward="false" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
+      <file leaf-file-name="widget_icons.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/jqwidgets-framework/styles/widget_icons.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="site.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/node_modules/jqwidgets-framework/styles/site.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,11 +387,22 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="39" column="64" lean-forward="false" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="64" />
+            <state relative-caret-position="668">
+              <caret line="46" column="7" lean-forward="false" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
+                <element signature="e#1285#1305#0#Twig" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,48 +410,66 @@
       <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/wizyta/new.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="493">
+              <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
+                <element signature="e#267#287#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-ui.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/jquery-ui.css">
+      <file leaf-file-name="calendar-settings-godz-przyj.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-godz-przyj.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="447">
+              <caret line="84" column="18" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-ui.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/js/jquery-ui.js">
+      <file leaf-file-name="calendar-settings-wizyta.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-wizyta.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="28" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jqx.base.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/jqx.base.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1511994198884" expanded="true" signature="22659:22730" ph="..." />
-                <marker date="1511994198884" expanded="true" signature="22753:22777" ph="..." />
-                <marker date="1511994198884" expanded="true" signature="105400:105417" ph="..." />
-                <marker date="1511994198884" expanded="true" signature="120032:120048" ph="..." />
-                <marker date="1511994198884" expanded="true" signature="166751:166757" ph="..." />
-                <marker date="1511994198884" expanded="true" signature="277506:277550" ph="..." />
+                <marker date="1507019049000" expanded="true" signature="5432:5469" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="12227:12264" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="12512:12549" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="22536:22573" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="22855:22892" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="23182:23219" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="23480:23517" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="28155:28192" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="35280:35317" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="35422:35459" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="35561:35598" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="35701:35738" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="58818:58855" ph="{...}" />
+                <marker date="1507019049000" expanded="true" signature="92883:92920" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Group/show.html.twig">
+      <file leaf-file-name="calendar-settings-nowa-wizyta.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-nowa-wizyta.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="578">
+              <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -208,7 +529,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/Profile/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Group/show.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/RegistrationType.php" />
@@ -220,7 +540,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/wizyta/show.html.twig" />
         <option value="$PROJECT_DIR$/web/js/calendar-settings.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/web/js/calendar-settings-urlopy.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/wizytaController.php" />
@@ -230,15 +549,12 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/lekarz.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/data_urlopRepository.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/data_urlop/index.html.twig" />
         <option value="$PROJECT_DIR$/web/js/calendar-settings-godz-prac.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/Kalendarz/show.html.twig" />
-        <option value="$PROJECT_DIR$/web/js/calendar-settings-wizyta.js" />
         <option value="$PROJECT_DIR$/web/js/calendar-settings-urlop.js" />
         <option value="$PROJECT_DIR$/web/js/calendar-settings-profile.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/godz_przyjRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/data_urlop.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/index.html.twig" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/lekarz_godz_przyjController.php" />
@@ -247,7 +563,6 @@
         <option value="$PROJECT_DIR$/web/js/calendar-settings-godz-przyj.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/lekarz_godz_przyjRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" />
-        <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/Profile/pacjent.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/Profile/lekarz.html.twig" />
@@ -255,10 +570,16 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/Profile/admin.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Group/list.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
+        <option value="$PROJECT_DIR$/web/js/calendar-settings-nowa-wizyta.js" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/data_urlop/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig" />
+        <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/wizyta/new.html.twig" />
+        <option value="$PROJECT_DIR$/web/js/calendar-settings-wizyta.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       </list>
     </option>
   </component>
@@ -386,7 +707,9 @@
               <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="FOSUserBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Profile" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
@@ -394,15 +717,6 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="godz_przyj" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
@@ -420,13 +734,43 @@
             <path>
               <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
               <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="my_modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="jquery-ui-1.12.1.custom" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="node_modules" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
               <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="node_modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jqwidgets-framework" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="node_modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jqwidgets-framework" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jqwidgets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="node_modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jqwidgets-framework" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jqwidgets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="styles" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="node_modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jqwidgets-framework" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="styles" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Przychodnia_PHP_Symfony" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="node_modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="jqwidgets-framework" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="styles" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="fonts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="Przychodnia_PHP_Symfony" type="b2602c69:ProjectViewProjectNode" />
@@ -501,17 +845,17 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\app\Resources\views" />
+      <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\app\Resources" />
+      <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\app" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\web\css" />
       <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\web\js" />
       <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\app\Resources" />
       <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\node_modules\fullcalendar\dist\locale" />
       <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\web\fonts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\app\Resources\views" />
-      <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\app\Resources" />
-      <recent name="C:\Users\Piotr Tutak\Documents\GitHub\Przychodnia_PHP_Symfony\app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -583,17 +927,17 @@
       <workItem from="1511984698822" duration="1078000" />
       <workItem from="1512374626978" duration="32000" />
       <workItem from="1512374819126" duration="6519000" />
-      <workItem from="1512381386789" duration="1739000" />
+      <workItem from="1512381386789" duration="3732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235866000" />
+    <option name="totallyTimeSpent" value="237859000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20788912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20788912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48422712" sideWeight="0.50512445" order="7" side_tool="true" content_ui="tabs" />
@@ -601,7 +945,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -627,63 +971,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/data_urlop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/godz_przyjController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/creative.js" />
-    <entry file="file://$PROJECT_DIR$/web/css/creative.css" />
-    <entry file="file://$PROJECT_DIR$/web/css/agency.css" />
-    <entry file="file://$PROJECT_DIR$/web/js/agency.js" />
-    <entry file="file://$PROJECT_DIR$/web/css/bootstrap-theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/adesigns/calendar-bundle/ADesigns/CalendarBundle/Resources/config/routing.xml" />
-    <entry file="file://$PROJECT_DIR$/vendor/adesigns/calendar-bundle/ADesigns/CalendarBundle/Resources/config/routing.yml" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -734,6 +1021,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1511994198809" expanded="true" signature="386:494" ph="SELECT wizyt... AppBundle" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -741,6 +1031,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -748,6 +1039,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1511994198798" expanded="true" signature="736:952" ph="SELECT data_... AppBundle" />
+            <marker date="1511994198798" expanded="true" signature="1331:1455" ph="SELECT data_... AppBundle" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -755,6 +1050,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <marker date="1511994198799" expanded="true" signature="386:543" ph="SELECT godzP... AppBundle" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -777,6 +1075,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <folding>
+            <marker date="1512378647150" expanded="true" signature="403:540" ph="SELECT lekar... AppBundle" />
+            <marker date="1512378647150" expanded="true" signature="798:954" ph="SELECT lekar... AppBundle" />
+            <marker date="1512378647150" expanded="true" signature="798:981" ph="SELECT lekar... AppBundle" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -785,20 +1088,6 @@
         <state relative-caret-position="391">
           <caret line="136" column="9" lean-forward="false" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-godz-przyj.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="84" column="18" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -835,6 +1124,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -902,24 +1194,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/Profile/admin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="0">
           <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Group/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -932,27 +1208,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="39" column="64" lean-forward="false" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="64" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/wizyta/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/jquery-ui.css">
+    <entry file="file://$PROJECT_DIR$/web/js/jqxdropdownlist.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -965,7 +1221,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
             <marker date="1511994198884" expanded="true" signature="22659:22730" ph="..." />
             <marker date="1511994198884" expanded="true" signature="22753:22777" ph="..." />
             <marker date="1511994198884" expanded="true" signature="105400:105417" ph="..." />
@@ -973,6 +1229,187 @@
             <marker date="1511994198884" expanded="true" signature="166751:166757" ph="..." />
             <marker date="1511994198884" expanded="true" signature="277506:277550" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/jquery-ui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/dump.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/wizyta/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/calendar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Group/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#37#0#Twig" expanded="false" />
+            <element signature="e#470#490#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/data_urlop/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="787">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+            <element signature="e#1278#1298#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+            <element signature="e#1298#1318#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jqxcore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-nowa-wizyta.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/jqx.base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1507019049000" expanded="true" signature="5432:5469" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="12227:12264" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="12512:12549" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="22536:22573" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="22855:22892" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="23182:23219" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="23480:23517" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="28155:28192" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="35280:35317" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="35422:35459" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="35561:35598" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="35701:35738" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="58818:58855" ph="{...}" />
+            <marker date="1507019049000" expanded="true" signature="92883:92920" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="46" column="7" lean-forward="false" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#1285#1305#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/wizyta/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#267#287#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-godz-przyj.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="84" column="18" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/calendar-settings-wizyta.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="28" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="75" lean-forward="false" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jqwidgets-framework/styles/widget_icons.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jqwidgets-framework/styles/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

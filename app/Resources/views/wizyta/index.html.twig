@@ -42,11 +42,15 @@
     </ul>
 
     <div class="my_calendar">
-        {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
+        {% include '::calendar.html.twig' %}
     </div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/fullcalendar.js') }}"></script>
+    <script src="{{ asset('js/pl.js') }}"></script>
+
     <script type="text/javascript" src="{{ asset('js/calendar-settings-wizyta.js') }}"></script>
 {% endblock %}

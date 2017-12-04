@@ -10,10 +10,14 @@
     {% endif %}
     <a href="{{ path('fos_user_profile_edit') }}"><button>Edit</button></a>
     <div class="my_calendar">
-        {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
+        {% include '::calendar.html.twig' %}
     </div>
 {% endblock fos_user_content %}
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/fullcalendar.js') }}"></script>
+    <script src="{{ asset('js/pl.js') }}"></script>
+
     <script type="text/javascript" src="{{ asset('js/calendar-settings-profile.js') }}"></script>
 {% endblock %}

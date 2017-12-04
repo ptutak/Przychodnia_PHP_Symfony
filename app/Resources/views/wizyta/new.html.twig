@@ -2,11 +2,15 @@
 
 {% block body %}
     <h1>Wizytum creation</h1>
-
+{#
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <input type="submit" value="Create" />
     {{ form_end(form) }}
+#}
+    <div id="lekarzChoice"></div>
+
+    {% include '::calendar.html.twig' %}
 
 
     <ul>
@@ -14,4 +18,25 @@
             <a href="{{ path('wizyta_index') }}">Back to the list</a>
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/jqxcore.js') }}"></script>
+    <script src="{{ asset('js/jqxbuttons.js') }}"></script>
+    <script src="{{ asset('js/jqxscrollbar.js') }}"></script>
+    <script src="{{ asset('js/jqxlistbox.js') }}"></script>
+    <script src="{{ asset('js/jqxdropdownlist.js') }}"></script>
+    <script>
+        var source = [
+            "Instant coffee",
+            "Irish coffee",
+            "Liqueur coffee"
+        ];
+        $("#lekarzChoice").jqxDropDownList({ source: source, width: '200px', height: '25px'});
+    </script>
+
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/fullcalendar.js') }}"></script>
+    <script src="{{ asset('js/pl.js') }}"></script>
+    <script src="{{ asset('js/calendar-settings-nowa-wizyta.js') }}"></script>
 {% endblock %}

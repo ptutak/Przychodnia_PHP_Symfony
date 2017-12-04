@@ -1,9 +1,4 @@
 $(function () {
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-
     $('#calendar-holder').fullCalendar({
         themeSystem: 'bootstrap3',
         header: {
@@ -24,12 +19,12 @@ $(function () {
                     _:Date.now()
                 },
                 success: function(json) {
-                    var events = []
+                    var events = [];
                     jQuery.each(json, function(i, ob) {
                         events.push(ob);
                     });
                     callback(events);
-                },
+                }
             });
         }
     });
