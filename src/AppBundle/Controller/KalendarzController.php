@@ -44,17 +44,17 @@ class KalendarzController extends Controller
         $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
         $tempDate=date_create_from_format('U',$startDate->getTimestamp());
         while($tempDate<=$endDate){
-            $modify=true;
+            $add=true;
             foreach($urlops as $urlop){
                 /**
                  * @var data_urlop $urlop
                  */
                 if ($urlop->getData()->format('Y-m-d')==$tempDate->format('Y-m-d')){
-                    $modify=false;
+                    $add=false;
                     break;
                 }
             }
-            if ($modify) {
+            if ($add) {
                 $event=array(
                     'title'=>'Urlop - add',
                     'date'=>date_format($tempDate,'Y-m-d H:i:s'),

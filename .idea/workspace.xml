@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a35b513-a555-4ce4-ad31-4205cfccaaa3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/wizyta/new_regular.html.twig" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Profile/admin.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/Profile/admin.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Profile/lekarz.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/Profile/lekarz.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/Profile/pacjent.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/Profile/pacjent.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/edit.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/wizyta/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/wizyta/new.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProfileController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/wizytaController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/wizytaController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/wizyta.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/data_urlopRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/data_urlopRepository.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/lekarz_godz_przyjRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/lekarz_godz_przyjRepository.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/wizytaRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/wizytaRepository.php" />
-      <change beforePath="$PROJECT_DIR$/web/css/main.css" afterPath="$PROJECT_DIR$/web/css/main.css" />
-      <change beforePath="$PROJECT_DIR$/web/js/calendar-settings-nowa-wizyta.js" afterPath="$PROJECT_DIR$/web/js/calendar-settings-nowa-wizyta.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -80,13 +60,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wizytaController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wizytaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/wizytaController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="719">
               <caret line="80" column="58" lean-forward="false" selection-start-line="80" selection-start-column="58" selection-end-line="80" selection-end-column="58" />
               <folding>
                 <element signature="e#2223#2253#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KalendarzController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="43" column="128" lean-forward="false" selection-start-line="43" selection-start-column="128" selection-end-line="43" selection-end-column="128" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wizytaRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/wizytaRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+              <folding>
+                <marker date="1512406678795" expanded="true" signature="442:550" ph="SELECT wizyt... AppBundle" />
+                <marker date="1512406678795" expanded="true" signature="868:1182" ph="SELECT wizyt... AppBundle" />
               </folding>
             </state>
           </provider>
@@ -107,28 +110,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-              <folding>
-                <element signature="e#12#28#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -248,7 +229,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/Profile/pacjent.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/lekarz_godz_przyj/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/lekarz_godz_przyjRepository.php" />
         <option value="$PROJECT_DIR$/web/js/calendar-settings-nowa-wizyta.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/wizyta/new.html.twig" />
@@ -261,6 +241,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/wizyta/new_regular.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/wizyta/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/wizytaController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php" />
       </list>
     </option>
   </component>
@@ -575,12 +556,12 @@
       <workItem from="1511984698822" duration="1078000" />
       <workItem from="1512374626978" duration="32000" />
       <workItem from="1512374819126" duration="6519000" />
-      <workItem from="1512381386789" duration="27194000" />
+      <workItem from="1512381386789" duration="27665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261321000" />
+    <option name="totallyTimeSpent" value="261792000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -802,18 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/wizytaRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-          <folding>
-            <element signature="e#39#67#0#PHP" expanded="false" />
-            <marker date="1512406678795" expanded="true" signature="442:550" ph="SELECT wizyt... AppBundle" />
-            <marker date="1512406678795" expanded="true" signature="868:1182" ph="SELECT wizyt... AppBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -925,14 +894,6 @@
           <folding>
             <element signature="e#12#26#0#Twig" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="94" column="25" lean-forward="false" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1081,6 +1042,25 @@
           <folding>
             <element signature="e#2223#2253#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/wizytaRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+          <folding>
+            <marker date="1512406678795" expanded="true" signature="442:550" ph="SELECT wizyt... AppBundle" />
+            <marker date="1512406678795" expanded="true" signature="868:1182" ph="SELECT wizyt... AppBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/KalendarzController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="43" column="128" lean-forward="false" selection-start-line="43" selection-start-column="128" selection-end-line="43" selection-end-column="128" />
+          <folding />
         </state>
       </provider>
     </entry>
