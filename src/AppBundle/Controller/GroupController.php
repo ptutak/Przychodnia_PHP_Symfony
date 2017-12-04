@@ -36,15 +36,6 @@ class GroupController extends BaseController
     }
 
     /**
-     * @Route("/group/index",name="group_index")
-     */
-    public function indexAction(Request $request){
-        return $this->render(":Group:index.html.twig",array(
-
-        ));
-    }
-
-    /**
      * Edit one group, show the edit form.
      *
      * @param Request $request

@@ -28,10 +28,28 @@ class ProfileController extends BaseController
 {
 
     /**
-     * @Route("/admin",name="admin")
+     * @Route("/admin_profile",name="admin_profile")
      */
-    public function adminAction(Request $request){
+    public function admin_profileAction(Request $request){
         return $this->render(":Profile:admin.html.twig", array(
+
+        ));
+    }
+
+    /**
+     * @Route("/pacjent_profile",name="pacjent_profile")
+     */
+    public function pacjent_profileAction(Request $request){
+        return $this->render(":Profile:pacjent.html.twig", array(
+
+        ));
+    }
+
+    /**
+     * @Route("/lekarz_profile",name="lekarz_profile")
+     */
+    public function lekarz_profileAction(Request $request){
+        return $this->render(":Profile:lekarz.html.twig", array(
 
         ));
     }

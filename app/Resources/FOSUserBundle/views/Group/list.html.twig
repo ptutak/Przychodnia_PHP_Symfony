@@ -1,5 +1,8 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
+
+    <h1>Lista grup:</h1>
 {% include "@FOSUser/Group/list_content.html.twig" %}
+    <a href="{{ path('fos_user_group_new') }}"><button>Nowa Grupa</button></a>
 {% endblock fos_user_content %}

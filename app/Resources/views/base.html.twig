@@ -15,19 +15,18 @@
     </head>
     <body>
         {% block menu %}
+            <h1>Przychodnia pod Aniołem!</h1>
             <ul>
                 <li><a href="{{ path('home') }}">Home</a></li>
 
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
-                    {% if is_granted('ROLE_PACJENT') %}
-                    {% endif %}
-
-                    {% if is_granted('ROLE_LEKARZ') %}
-                    {% endif %}
-
                     {% if is_granted('ROLE_ADMIN') %}
-                        {{ render(controller('AppBundle:Profile:admin')) }}
+                        {{ render(controller('AppBundle:Profile:admin_profile')) }}
+                    {% elseif is_granted('ROLE_LEKARZ') %}
+                        {{ render(controller('AppBundle:Profile:lekarz_profile')) }}
+                    {% elseif is_granted('ROLE_PACJENT') %}
+                        {{ render(controller('AppBundle:Profile:pacjent_profile')) }}
                     {% endif %}
 
                     <li>

@@ -3,11 +3,13 @@
 }
 
 .godz_przyj_aktywna {
-    background-color : #66dd66;
+    font-size : medium;
+    color : black;
+    background-color : yellow;
 }
 
 .godz_przyj_nieaktywna {
-    background-color : #00AA88;
+    background-color : #99979c;
 }
 
 .my_calendar {
