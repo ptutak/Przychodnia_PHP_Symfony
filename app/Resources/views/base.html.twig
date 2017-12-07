@@ -56,9 +56,13 @@
             <script src="{{ asset('js/jquery-ui.js') }}"></script>
             <script src="{{ asset('js/bootstrap.js') }}"></script>
             <script>
-                $("table:not([class~='table'])").addClass("table");
-                $("ul:not([class~='list-group'])").addClass("list-group");
-                $("li:not([class~='list-group-item'])").addClass("list-group-item");
+                $("table").addClass("table table-hover table-sm");
+                $("thead").addClass("thead-default");
+                $("ul").addClass("list-group");
+                $("li").addClass("list-group-item");
+                $("div").addClass("form-group");
+                $("div").children("select").addClass("form-control");
+                $("div").children("input").addClass("form-control");
             </script>
 
             <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
