@@ -42,6 +42,7 @@ class KalendarzController extends Controller
     private function setUrlopy(\DateTime $startDate, \DateTime $endDate){
         $eventArray=array();
         $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
+        $wizyts=$this->entityManager->getRepository(wizyta::class)->getWizytaByIdLekarzDate($this->getUser()->getIdLekarz(),$startDate,$endDate);
         $tempDate=date_create_from_format('U',$startDate->getTimestamp());
         while($tempDate<=$endDate){
             $add=true;
@@ -55,29 +56,41 @@ class KalendarzController extends Controller
                 }
             }
             if ($add) {
-                $event=array(
-                    'title'=>'Urlop - add',
-                    'date'=>date_format($tempDate,'Y-m-d H:i:s'),
-                    'id'=>$this->getUser()->getIdLekarz()->getId()
-                );
-                $eventArray[] = $event;
-                $datas=$this->entityManager->getRepository(data_urlop::class)->getDataUrlopByData($startDate,$endDate);
-                /**
-                 * @var data_urlop $addDataUrlop
-                 */
-                $addDataUrlop=null;
-                foreach ($datas as $data){
-                    if ($tempDate->format('Y-m-d')==$data->getData()->format('Y-m-d')){
-                        $addDataUrlop=$data;
+                foreach($wizyts as $wizyta){
+                    /**
+                     * @var wizyta $wizyta
+                     */
+                    if ($wizyta->getData()->format('Y-m-d')==$tempDate->format('Y-m-d')){
+                        $add=false;
                         break;
                     }
+
                 }
-                if (!$addDataUrlop){
-                    $addDataUrlop=new data_urlop();
-                    $addDataUrlop->setData(date_create_from_format('U',$tempDate->getTimestamp()));
+                if ($add){
+                    $event=array(
+                        'title'=>'Urlop - add',
+                        'date'=>date_format($tempDate,'Y-m-d H:i:s'),
+                        'id'=>$this->getUser()->getIdLekarz()->getId()
+                    );
+                    $eventArray[] = $event;
+                    $datas=$this->entityManager->getRepository(data_urlop::class)->getDataUrlopByData($startDate,$endDate);
+                    /**
+                     * @var data_urlop $addDataUrlop
+                     */
+                    $addDataUrlop=null;
+                    foreach ($datas as $data){
+                        if ($tempDate->format('Y-m-d')==$data->getData()->format('Y-m-d')){
+                            $addDataUrlop=$data;
+                            break;
+                        }
+                    }
+                    if (!$addDataUrlop){
+                        $addDataUrlop=new data_urlop();
+                        $addDataUrlop->setData(date_create_from_format('U',$tempDate->getTimestamp()));
+                    }
+                    $this->getUser()->getIdLekarz()->addUrlop($addDataUrlop);
+                    $this->entityManager->persist($this->getUser()->getIdLekarz());
                 }
-                $this->getUser()->getIdLekarz()->addUrlop($addDataUrlop);
-                $this->entityManager->persist($this->getUser()->getIdLekarz());
             }
             $tempDate->modify('+1 day');
         }
