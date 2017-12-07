@@ -50,7 +50,7 @@ $(function () {
                 url: Routing.generate('get_kalendarz_data',{ type: 'urlop'}),
                 dataType: 'json',
                 data: {
-                    start: start.unix(),
+                    start: moment().unix(),
                     end: end.unix(),
                     _:Date.now()
                 },

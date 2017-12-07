@@ -22,6 +22,13 @@
             </li>
         {% endfor %}
     </ul>
+    <ul>
+        <li>
+            <a href="{{ path('fos_user_group_edit', {'groupName':  group.getName()}) }}"><button>Edit</button></a>
+        </li>
+        <li>
+            <a href="{{ path('fos_user_group_list') }}"><button>Spowrotem do listy</button></a>
+        </li>
+    </ul>
 
-    <a href="{{ path('fos_user_group_edit', {'groupName':  group.getName()}) }}"><button>Edit</button></a>
 {% endblock fos_user_content %}

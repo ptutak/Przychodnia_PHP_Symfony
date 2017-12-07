@@ -14,6 +14,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <div class="container-fluid">
         {% block menu %}
             <h1>Przychodnia pod Aniołem!</h1>
             <ul>
@@ -54,15 +55,20 @@
             <script src="{{ asset('js/jquery.js') }}"></script>
             <script src="{{ asset('js/jquery-ui.js') }}"></script>
             <script src="{{ asset('js/bootstrap.js') }}"></script>
+            <script>
+                $("table:not([class~='table'])").addClass("table");
+                $("ul:not([class~='list-group'])").addClass("list-group");
+                $("li:not([class~='list-group-item'])").addClass("list-group-item");
+            </script>
+
             <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
             <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-
             {#<script src="{{ asset('js/moment.min.js') }}"></script>#}
             {#<script src="{{ asset('js/fullcalendar.js') }}"></script>#}
             {#<script src="{{ asset('js/pl.js') }}"></script>#}
             {#<script type="text/javascript" src="{{ asset('js/calendar-settings-odpowiedni-konfig-kalendarza.js') }}"></script>#}
 
         {% endblock %}
-
+            </div>
     </body>
 </html>

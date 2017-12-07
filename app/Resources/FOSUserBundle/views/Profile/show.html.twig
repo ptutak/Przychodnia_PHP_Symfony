@@ -1,14 +1,26 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
-{% include "@FOSUser/Profile/show_content.html.twig" %}
+<ul>
+    <li>
+        {% include "@FOSUser/Profile/show_content.html.twig" %}
+    </li>
     {%  if is_granted('ROLE_LEKARZ') %}
-        <p>Profil Lekarski:{{ user.idLekarz}} </p>
+    <li>
+            <p>Profil Lekarski:{{ user.idLekarz}} </p>
+    </li>
     {% endif %}
     {% if is_granted('ROLE_PACJENT') %}
-        <p>Profil Pacjenta: {{ user.idPacjent }}</p>
+    <li>
+            <p>Profil Pacjenta: {{ user.idPacjent }}</p>
+    </li>
     {% endif %}
-    <a href="{{ path('fos_user_profile_edit') }}"><button>Edit</button></a>
+    <li>
+        <a href="{{ path('fos_user_profile_edit') }}"><button>Edit</button></a>
+    </li>
+</ul>
+
+
     <div class="my_calendar">
         {% include '::calendar.html.twig' %}
     </div>

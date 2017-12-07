@@ -34,10 +34,10 @@ $(function () {
             if (item)
                 item=item.value;
             $.ajax({
-                url: Routing.generate('get_kalendarz_data',{ type: 'wizyta_lekarz'}),
+                url: Routing.generate('get_kalendarz_data',{ type: 'wolna_wizyta_lekarz'}),
                 dataType: 'json',
                 data: {
-                    start: start.unix(),
+                    start: moment().unix(),
                     end: end.unix(),
                     idLekarz: item,
                     _:Date.now()

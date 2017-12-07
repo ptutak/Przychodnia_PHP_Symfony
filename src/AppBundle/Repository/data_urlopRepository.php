@@ -12,14 +12,14 @@ use AppBundle\Entity\User;
  */
 class data_urlopRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getUserUrlops(User $user){
+/*    public function getUserUrlops(User $user){
         $qb=$this->createQueryBuilder('data_urlop');
         $qb->leftJoin('data_urlop.lekarze','lekarze')
             ->where('lekarze.id = :userLekarzId')
             ->setParameter('userLekarzId',$user->getIdLekarz());
         return $qb->getQuery()->getResult();
     }
-
+*/
     public function getUserDataUrlops(User $user, \DateTime $start, \DateTime $end){
 
         $q=$this->getEntityManager()->createQuery('

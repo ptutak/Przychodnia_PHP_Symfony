@@ -271,23 +271,58 @@ class KalendarzController extends Controller
                      */
                     $event=array(
                         'title'=>'Indeks: '.$wizyta->getIndeks(),
-                        'start'=>date_format($wizyta->getData(),'Y-m-d'),
-                        'end'=>date_format($wizyta->getData(),'Y-m-d'),
+                        'start'=>$wizyta->getData()->format('Y-m-d ').$wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getGodzPoczatek()->format('H:i:m'),
+                        'end'=>$wizyta->getData()->format('Y-m-d ').$wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getGodzKoniec()->format('H:i:m'),
                         'url'=>$this->generateUrl('wizyta_show',array('id'=>$wizyta->getId())),
-
+                        'className'=>'wizyta_list'
                         );
                     $eventArray[]=$event;
                 }
                 break;
-            case 'wizyta_lekarz':
+            case 'wolna_wizyta_lekarz':
                 $idLekarz=$request->query->get('idLekarz');
                 $eventArray=$this->getFreeWizytas($startDate,$endDate,$idLekarz);
                 break;
             case 'profile':
-
+                $wizyty=$this->getDoctrine()->getRepository(wizyta::class)->getWizytaByUserDate($this->getUser(),$startDate,$endDate);
+                $urlopy=null;
+                if ($this->getUser()->getIdLekarz()!=null)
+                    $urlopy=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
+                foreach ($wizyty as $wizyta){
+                    /**
+                     * @var wizyta $wizyta
+                     */
+                    if ($wizyta->getIdLekarzGodzPrzyj()->getIdLekarz()===$this->getUser()->getIdLekarz())
+                        $eventArray[]=array(
+                            'title'=>'Wizyta - Indeks:'.$wizyta->getIndeks(),
+                            'start'=>$wizyta->getData()->format('Y-m-d ').$wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getGodzPoczatek()->format('H:i:m'),
+                            'end'=>$wizyta->getData()->format('Y-m-d ').$wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getGodzKoniec()->format('H:i:m'),
+                            'url'=>$this->generateUrl('wizyta_show',array('id'=>$wizyta->getId())),
+                            'className'=>'wizyta_lekarz'
+                        );
+                    else
+                        $eventArray[] = array(
+                            'title'=>'Umówiona wizyta:'.$wizyta->getIdLekarzGodzPrzyj()->getIdLekarz()->__toString(),
+                            'start'=>$wizyta->getData()->format('Y-m-d ').$wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getGodzPoczatek()->format('H:i:m'),
+                            'end'=>$wizyta->getData()->format('Y-m-d ').$wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getGodzKoniec()->format('H:i:m'),
+                            'url'=>$this->generateUrl('wizyta_show',array('id'=>$wizyta->getId())),
+                            'className'=>'wizyta_pacjent'
+                        );
+                }
+                foreach ($urlopy as $urlop){
+                    /**
+                     * @var data_urlop $urlop
+                     */
+                    $eventArray[] = array(
+                        'title'=>'Urlop',
+                        'start'=>date_format($urlop->getData(),'Y-m-d'),
+                        'end'=>date_format($urlop->getData(),'Y-m-d'),
+                        'className'=>'urlop_day',
+                    );
+                }
                 break;
             case 'urlop':
-                $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserUrlops($this->getUser());
+                $urlops=$this->entityManager->getRepository(data_urlop::class)->getUserDataUrlops($this->getUser(),$startDate,$endDate);
                 foreach ($urlops as $urlop){
                     /**
                      * @var data_urlop $urlop

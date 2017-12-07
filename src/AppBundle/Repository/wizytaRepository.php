@@ -41,4 +41,23 @@ class wizytaRepository extends \Doctrine\ORM\EntityRepository
             ->getResult();
         return $q;
     }
+    public function getWizytaByUserDate($user, $start, $end){
+        $q=$this->getEntityManager()->createQuery('
+        SELECT wizyta
+        FROM AppBundle:wizyta AS wizyta
+        WHERE wizyta.data 
+        BETWEEN :startData AND :endData
+        AND (wizyta.idPacjent = :idPacjent
+        OR wizyta.idLekarzGodzPrzyj IN (
+        SELECT lekarzGodzPrzyj
+        FROM AppBundle:lekarz_godz_przyj AS lekarzGodzPrzyj
+        WHERE lekarzGodzPrzyj.idLekarz = :idLekarz
+        ))
+        ')->setParameter('startData',$start->format('Y-m-d'))
+            ->setParameter('endData',$end->format('Y-m-d'))
+            ->setParameter('idPacjent',$user->getIdPacjent())
+            ->setParameter('idLekarz',$user->getIdLekarz())
+            ->getResult();
+        return $q;
+    }
 }

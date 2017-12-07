@@ -1,5 +1,6 @@
 .urlop_day {
-    height : 40px
+    height : 40px;
+    background-color: lightgreen;
 }
 
 .godz_przyj_aktywna {
@@ -10,6 +11,18 @@
 
 .godz_przyj_nieaktywna {
     background-color : #99979c;
+}
+
+.wizyta_pacjent {
+    background-color: lightskyblue;
+}
+
+.wizyta_lekarz {
+    background-color: lightcoral;
+}
+
+.wizyta_list {
+    background-color: royalblue;
 }
 
 .my_calendar {
