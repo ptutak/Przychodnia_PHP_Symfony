@@ -11,6 +11,11 @@ $(function () {
     var y = date.getFullYear();
 
     $('#calendar-holder').fullCalendar({
+        validRange: function(nowDate) {
+            return {
+                start: nowDate
+            };
+        },
         themeSystem: 'bootstrap3',
         header: {
             left: 'prev, next',

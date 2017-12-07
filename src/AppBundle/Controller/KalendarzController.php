@@ -109,8 +109,6 @@ class KalendarzController extends Controller
                 $this->entityManager->remove($urlop);
             $this->entityManager->persist($this->getUser()->getIdLekarz());
         }
-
-
         return $eventArray;
     }
 

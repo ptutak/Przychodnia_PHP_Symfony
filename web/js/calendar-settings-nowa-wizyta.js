@@ -1,5 +1,10 @@
 $(function () {
     $('#calendar-holder').fullCalendar({
+        validRange: function(nowDate) {
+            return {
+                start: nowDate
+            };
+        },
         themeSystem: 'bootstrap3',
         defaultView: 'basicWeek',
         header: {
