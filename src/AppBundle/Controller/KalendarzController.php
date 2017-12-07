@@ -45,6 +45,10 @@ class KalendarzController extends Controller
         $wizyts=$this->entityManager->getRepository(wizyta::class)->getWizytaByIdLekarzDate($this->getUser()->getIdLekarz(),$startDate,$endDate);
         $tempDate=date_create_from_format('U',$startDate->getTimestamp());
         while($tempDate<=$endDate){
+            if ($tempDate->format('D')=='Sat' || $tempDate->format('D')=='Sun'){
+                $tempDate->modify('+1 day');
+                continue;
+            }
             $add=true;
             foreach($urlops as $urlop){
                 /**
@@ -205,6 +209,10 @@ class KalendarzController extends Controller
         $urlopy = $this->getDoctrine()->getRepository(data_urlop::class)->getDataUrlopByIdLekarz($idLekarz,$startDate,$endDate);
         $tempDate=date_create_from_format('U',$startDate->getTimestamp());
         while($tempDate<=$endDate){
+            if ($tempDate->format('D')=='Sat' || $tempDate->format('D')=='Sun'){
+                $tempDate->modify('+1 day');
+                continue;
+            }
             $show=true;
             foreach ($urlopy as $urlop){
                 /**
