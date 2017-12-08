@@ -11,7 +11,5 @@ use FOS\UserBundle\Model\User;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function abc(){
-        $this->getEntityManager()->getRepository(User::class)
-    }
+
 }
