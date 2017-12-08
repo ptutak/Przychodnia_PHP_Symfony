@@ -14,22 +14,7 @@
     <div class="my_calendar">
         {% include '::calendar.html.twig' %}
     </div>
-<ul>
-    <li>
-        {% include "@FOSUser/Profile/show_content.html.twig" %}
-    </li>
-    {%  if is_granted('ROLE_LEKARZ') %}
-        <li>
-            <p>Profil Lekarski: {{ user.idLekarz }} </p>
-        </li>
-    {% endif %}
-    {% if is_granted('ROLE_PACJENT') %}
-        <li>
-            <p>Profil Pacjenta: {{ user.idPacjent }}</p>
-        </li>
-    {% endif %}
 
-</ul>
 {% endblock fos_user_content %}
 {% block javascripts %}
     {{ parent() }}
