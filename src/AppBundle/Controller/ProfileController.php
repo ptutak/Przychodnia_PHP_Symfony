@@ -11,6 +11,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Group;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -35,11 +36,12 @@ class ProfileController extends BaseController
 {
 
     /**
-     * @Route("/admin_profile",name="admin_profile")
+     * @Route("/user_list",name="user_list")
      */
-    public function admin_profileAction(Request $request){
-        return $this->render(":Profile:admin.html.twig", array(
-
+    public function user_listAction(Request $request){
+        $um=$this->get('fos_user.user_manager');
+        return $this->render(":User:index.html.twig", array(
+            'users'=>$um->findUsers()
         ));
     }
 
@@ -47,8 +49,7 @@ class ProfileController extends BaseController
      * @Route("/pacjent_profile",name="pacjent_profile")
      */
     public function pacjent_profileAction(Request $request){
-        return $this->render(":Profile:pacjent.html.twig", array(
-
+        return $this->render("pacjent-menu.html.twig", array(
         ));
     }
 
@@ -56,7 +57,7 @@ class ProfileController extends BaseController
      * @Route("/lekarz_profile",name="lekarz_profile")
      */
     public function lekarz_profileAction(Request $request){
-        return $this->render(":Profile:lekarz.html.twig", array(
+        return $this->render("lekarz-menu.html.twig", array(
         ));
     }
 
@@ -94,6 +95,17 @@ class ProfileController extends BaseController
         $formFactory = $this->get('fos_user.profile.form.factory');
 
         $form = $formFactory->createForm();
+
+        $admins=$this->getDoctrine()->getRepository(Group::class)->findOneBy(['name'=>'admin']);
+        if ($admins){
+            foreach ($admins->getUsers() as $admin) {
+                if($this->getUser()===$admin){
+                    $form->add('idLekarz')->add('idPacjent')->add('roles');
+                    break;
+                }
+            }
+
+        }
         $form->setData($user);
 
         $form->handleRequest($request);

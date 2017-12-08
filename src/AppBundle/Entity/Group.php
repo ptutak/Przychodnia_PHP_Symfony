@@ -46,6 +46,14 @@ class Group extends BaseGroup
         return $this->users;
     }
 
+    public function hasUser($user){
+        foreach ($this->getUsers() as $u){
+            if($u===$user)
+                return true;
+        }
+        return false;
+    }
+
     public function __construct($name)
     {
         parent::__construct($name);

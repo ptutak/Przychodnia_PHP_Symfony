@@ -32,13 +32,13 @@
                             </li>
 
                                 {% if is_granted('ROLE_PACJENT') %}
-                                    {{ include('Profile/pacjent.html.twig') }}
+                                    {{ include('Profile/pacjent-menu.html.twig') }}
                                 {% endif %}
                                 {% if is_granted('ROLE_LEKARZ') %}
-                                    {{ include('Profile/lekarz.html.twig') }}
+                                    {{ include('Profile/lekarz-menu.html.twig') }}
                                 {% endif %}
                                 {% if is_granted('ROLE_ADMIN') %}
-                                    {{ include('Profile/admin.html.twig') }}
+                                    {{ include('Profile/admin-menu.html.twig') }}
                                 {% endif %}
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -53,69 +53,35 @@
                     </div>
                 </nav>
             {% endblock %}
+
         <div class="container-fluid" type="body">
-{#
-            {% block menu %}
-            <h1>Przychodnia pod Aniołem!</h1>
-            <ul>
-                <li><a href="{{ path('home') }}">Home</a></li>
-
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
-                    {% if is_granted('ROLE_ADMIN') %}
-                        {{ include('Profile/admin.html.twig') }}
-                    {% endif %}
-                    {% if is_granted('ROLE_LEKARZ') %}
-                        {{ include('Profile/lekarz.html.twig') }}
-                    {% endif %}
-                    {% if is_granted('ROLE_PACJENT') %}
-                        {{ include('Profile/pacjent.html.twig') }}
-                    {% endif %}
-                    <li>
-                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                        <a href="{{ path('fos_user_security_logout') }}">
-                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    </li>
-                {% else %}
-                    <li>
-                        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('fos_user_registration_register') }}">Registration</a>
-                    </li>
-                {% endif %}
-
-            </ul>
-            {% endblock %}
-#}
             {% block body %}{% endblock %}
-
-            {% block javascripts %}
-                <script src="{{ asset('js/jquery.js') }}"></script>
-                <script src="{{ asset('js/jquery-ui.js') }}"></script>
-                <script src="{{ asset('js/bootstrap.js') }}"></script>
-                <script>
-                    $("div[type='body']").find("table").addClass("table table-hover table-sm");
-                    $("div[type='body']").find("thead").addClass("thead-default");
-                    $("div[type='body']").find("ul").addClass("list-group");
-                    $("div[type='body']").find("li").addClass("list-group-item");
-                    $("div[type='body']").find("button").addClass("btn-primary");
-                    $("div[type='body']").find("div").addClass("form-group");
-                    $("div[type='body']").find("div").children("select").addClass("form-control");
-                    $("div[type='body']").find("div").children("input").addClass("form-control");
-                    $("div[type='body']").find("div").children("textarea").addClass("form-control");
-                    $("div[type='body']").find("input[type='submit']").addClass("btn-primary");
-                </script>
-
-                <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-                <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-                {#<script src="{{ asset('js/moment.min.js') }}"></script>#}
-                {#<script src="{{ asset('js/fullcalendar.js') }}"></script>#}
-                {#<script src="{{ asset('js/pl.js') }}"></script>#}
-                {#<script type="text/javascript" src="{{ asset('js/calendar-settings-odpowiedni-konfig-kalendarza.js') }}"></script>#}
-
-            {% endblock %}
         </div>
+
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery.js') }}"></script>
+            <script src="{{ asset('js/jquery-ui.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.js') }}"></script>
+            <script>
+                $("div[type='body']").find("table").addClass("table table-hover table-sm");
+                $("div[type='body']").find("thead").addClass("thead-default");
+                $("div[type='body']").find("ul").addClass("list-group");
+                $("div[type='body']").find("li").addClass("list-group-item");
+                $("div[type='body']").find("button").addClass("btn-primary");
+                $("div[type='body']").find("div").addClass("form-group");
+                $("div[type='body']").find("div").children("select").addClass("form-control");
+                $("div[type='body']").find("div").children("input").addClass("form-control");
+                $("div[type='body']").find("div").children("textarea").addClass("form-control");
+                $("div[type='body']").find("input[type='submit']").addClass("btn-primary");
+            </script>
+
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+            {#<script src="{{ asset('js/moment.min.js') }}"></script>#}
+            {#<script src="{{ asset('js/fullcalendar.js') }}"></script>#}
+            {#<script src="{{ asset('js/pl.js') }}"></script>#}
+            {#<script type="text/javascript" src="{{ asset('js/calendar-settings-odpowiedni-konfig-kalendarza.js') }}"></script>#}
+
+        {% endblock %}
     </body>
 </html>
