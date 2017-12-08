@@ -36,15 +36,13 @@
     </table>
     <ul>
         <li>
-            <a href="{{ path('wizyta_edit', { 'id': wizytum.id }) }}"><button>Edit</button></a>
-
+            <a href="{{ path('wizyta_edit', { 'id': wizytum.id }) }}">Edit</a>
+        </li>
+        <li>
+            <a href="{{ path('fos_user_profile_show') }}">Wróc do profilu</a>
         </li>
         <li>
             {{ form_start(delete_form) }}<input type="submit" value="Delete">{{ form_end(delete_form) }}
-        </li>
-
-        <li>
-            <a href="{{ path('fos_user_profile_show') }}"><button>Wróc do profilu</button></a>
         </li>
     </ul>
 

@@ -31,19 +31,19 @@
             </tr>
             <tr>
                 <th>Godziny przyjęć</th>
-                {% for godz in lekarz.godzPrzyj %}
-                    <td>
+                <td>
+                    {% set i = 0  %}
+
+                    {% for godz in lekarz.godzPrzyj %}
                         {{ godz.idGodzPrzyj }};
-                    </td>
-                {% endfor %}
-            </tr>
-            <tr>
-                <th>Urlopy</th>
-                {% for urlop in lekarz.urlopy %}
-                    <td>
-                        {{ urlop.data | date('Y-m-d') }};
-                    </td>
-                {% endfor %}
+                    <br>
+                    {% set i=i+1 %}
+                    {% if i==10  %}
+                </td>
+                <td>
+                    {% endif %}
+                    {% endfor %}
+                </td>
             </tr>
         </tbody>
     </table>

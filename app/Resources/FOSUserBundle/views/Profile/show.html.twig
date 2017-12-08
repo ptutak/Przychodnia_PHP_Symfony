@@ -1,29 +1,35 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
-<ul>
-    <li>
-        {% include "@FOSUser/Profile/show_content.html.twig" %}
-    </li>
-    {%  if is_granted('ROLE_LEKARZ') %}
-    <li>
-            <p>Profil Lekarski:{{ user.idLekarz}} </p>
-    </li>
+<h1>
+    {% if is_granted('ROLE_PACJENT') or is_granted('ROLE_LEKARZ') %}
+    Umówione wizyty
     {% endif %}
-    {% if is_granted('ROLE_PACJENT') %}
-    <li>
-            <p>Profil Pacjenta: {{ user.idPacjent }}</p>
-    </li>
+    {% if is_granted('ROLE_LEKARZ') %}
+        | Urlopy
     {% endif %}
-    <li>
-        <a href="{{ path('fos_user_profile_edit') }}"><button>Edit</button></a>
-    </li>
-</ul>
+</h1>
 
 
     <div class="my_calendar">
         {% include '::calendar.html.twig' %}
     </div>
+<ul>
+    <li>
+        {% include "@FOSUser/Profile/show_content.html.twig" %}
+    </li>
+    {%  if is_granted('ROLE_LEKARZ') %}
+        <li>
+            <p>Profil Lekarski: {{ user.idLekarz }} </p>
+        </li>
+    {% endif %}
+    {% if is_granted('ROLE_PACJENT') %}
+        <li>
+            <p>Profil Pacjenta: {{ user.idPacjent }}</p>
+        </li>
+    {% endif %}
+
+</ul>
 {% endblock fos_user_content %}
 {% block javascripts %}
     {{ parent() }}

@@ -4,5 +4,9 @@
 
     <h1>Lista grup:</h1>
 {% include "@FOSUser/Group/list_content.html.twig" %}
-    <a href="{{ path('fos_user_group_new') }}"><button>Nowa Grupa</button></a>
+    <ul>
+        <il>
+            <a href="{{ path('fos_user_group_new') }}"><button>Nowa Grupa</button></a>
+       </il>
+    </ul>
 {% endblock fos_user_content %}

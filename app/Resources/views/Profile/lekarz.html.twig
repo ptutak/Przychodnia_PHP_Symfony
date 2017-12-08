@@ -1,4 +1,9 @@
-<li><a href="{{ path('specjalizacja_index') }}">Specjalizacje</a></li>
-<li><a href="{{ path('lekarz_godz_przyj_index') }}">Godziny przyjęć</a></li>
-<li><a href="{{ path('data_urlop_index') }}">Urlopy</a></li>
-<li><a href="{{ path('leki_index') }}">Leki</a></li>
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Lekarz<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="{{ path('specjalizacja_index') }}">Specjalizacje</a></li>
+        <li><a href="{{ path('lekarz_godz_przyj_index') }}">Godziny przyjęć</a></li>
+        <li><a href="{{ path('data_urlop_index') }}">Urlopy</a></li>
+        <li><a href="{{ path('leki_index') }}">Leki</a></li>
+    </ul>
+</li>

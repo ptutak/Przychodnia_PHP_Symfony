@@ -15,24 +15,47 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <div class="container-fluid">
             {% block menu2 %}
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
+                <nav class="navbar navbar-inverse">
+                    <ul class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">WebSiteName</a>
+                            <a class="navbar-brand" href="{{ path('home') }}">Przychodnia pod Aniołem</a>
                         </div>
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Page 3</a></li>
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li><a href="{{ path('fos_user_profile_show') }}">Home</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('fos_user_profile_show') }}">Profil<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ path('fos_user_profile_edit') }}">Edytuj</a></li>
+                                </ul>
+                            </li>
+
+                                {% if is_granted('ROLE_PACJENT') %}
+                                    {{ include('Profile/pacjent.html.twig') }}
+                                {% endif %}
+                                {% if is_granted('ROLE_LEKARZ') %}
+                                    {{ include('Profile/lekarz.html.twig') }}
+                                {% endif %}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    {{ include('Profile/admin.html.twig') }}
+                                {% endif %}
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{ path('fos_user_security_logout') }}"> <span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+                            {% else %}
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{{ path('fos_user_registration_register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                          {% endif %}
                         </ul>
                     </div>
                 </nav>
             {% endblock %}
-
-        {% block menu %}
+        <div class="container-fluid" type="body">
+{#
+            {% block menu %}
             <h1>Przychodnia pod Aniołem!</h1>
             <ul>
                 <li><a href="{{ path('home') }}">Home</a></li>
@@ -64,32 +87,35 @@
                 {% endif %}
 
             </ul>
-        {% endblock %}
+            {% endblock %}
+#}
+            {% block body %}{% endblock %}
 
-        {% block body %}{% endblock %}
+            {% block javascripts %}
+                <script src="{{ asset('js/jquery.js') }}"></script>
+                <script src="{{ asset('js/jquery-ui.js') }}"></script>
+                <script src="{{ asset('js/bootstrap.js') }}"></script>
+                <script>
+                    $("div[type='body']").find("table").addClass("table table-hover table-sm");
+                    $("div[type='body']").find("thead").addClass("thead-default");
+                    $("div[type='body']").find("ul").addClass("list-group");
+                    $("div[type='body']").find("li").addClass("list-group-item");
+                    $("div[type='body']").find("button").addClass("btn-primary");
+                    $("div[type='body']").find("div").addClass("form-group");
+                    $("div[type='body']").find("div").children("select").addClass("form-control");
+                    $("div[type='body']").find("div").children("input").addClass("form-control");
+                    $("div[type='body']").find("div").children("textarea").addClass("form-control");
+                    $("div[type='body']").find("input[type='submit']").addClass("btn-primary");
+                </script>
 
-        {% block javascripts %}
-            <script src="{{ asset('js/jquery.js') }}"></script>
-            <script src="{{ asset('js/jquery-ui.js') }}"></script>
-            <script src="{{ asset('js/bootstrap.js') }}"></script>
-            <script>
-                $("table").addClass("table table-hover table-sm");
-                $("thead").addClass("thead-default");
-                $("ul").addClass("list-group");
-                $("li").addClass("list-group-item");
-                $("div").addClass("form-group");
-                $("div").children("select").addClass("form-control");
-                $("div").children("input").addClass("form-control");
-            </script>
+                <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+                <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+                {#<script src="{{ asset('js/moment.min.js') }}"></script>#}
+                {#<script src="{{ asset('js/fullcalendar.js') }}"></script>#}
+                {#<script src="{{ asset('js/pl.js') }}"></script>#}
+                {#<script type="text/javascript" src="{{ asset('js/calendar-settings-odpowiedni-konfig-kalendarza.js') }}"></script>#}
 
-            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-            {#<script src="{{ asset('js/moment.min.js') }}"></script>#}
-            {#<script src="{{ asset('js/fullcalendar.js') }}"></script>#}
-            {#<script src="{{ asset('js/pl.js') }}"></script>#}
-            {#<script type="text/javascript" src="{{ asset('js/calendar-settings-odpowiedni-konfig-kalendarza.js') }}"></script>#}
-
-        {% endblock %}
-            </div>
+            {% endblock %}
+        </div>
     </body>
 </html>

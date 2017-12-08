@@ -24,11 +24,12 @@
     </ul>
     <ul>
         <li>
-            <a href="{{ path('fos_user_group_edit', {'groupName':  group.getName()}) }}"><button>Edit</button></a>
+            <a href="{{ path('fos_user_group_list') }}">Spowrotem do listy</a>
         </li>
         <li>
-            <a href="{{ path('fos_user_group_list') }}"><button>Spowrotem do listy</button></a>
+            <a href="{{ path('fos_user_group_edit', {'groupName':  group.getName()}) }}"><button>Edit</button></a>
         </li>
+
     </ul>
 
 {% endblock fos_user_content %}

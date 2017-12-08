@@ -13,7 +13,7 @@ class UserProfileType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('idLekarz')->add('idPacjent')->add('roles');
+        $builder;
     }
 
     public function getParent()
