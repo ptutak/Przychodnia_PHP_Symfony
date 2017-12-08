@@ -2,7 +2,11 @@
 
 {{ form_start(form, { 'action': path('fos_user_group_edit', {'groupName': group_name}), 'attr': { 'class': 'fos_user_group_edit' } }) }}
     {{ form_widget(form) }}
-    <div>
+<ul>
+    <li>
         <input type="submit" value="{{ 'group.edit.submit'|trans }}" />
-    </div>
+
+    </li>
+</ul>
+
 {{ form_end(form) }}

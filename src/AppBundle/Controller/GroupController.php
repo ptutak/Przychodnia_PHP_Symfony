@@ -67,7 +67,6 @@ class GroupController extends BaseController
             'choices' => $this->getExistingRoles(),
             'data' => $group->getRoles(),
             'label' => 'Roles',
-            'expanded' => true,
             'multiple' => true,
             'mapped' => true,
         ));

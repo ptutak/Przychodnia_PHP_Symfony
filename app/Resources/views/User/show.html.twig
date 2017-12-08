@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>User</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ user.username }}</td>
+            </tr>
+        <tr>
+            <th>idLekarz</th>
+            <td>{{ user.idLekarz }}</td>
+        </tr>
+            <tr>
+                <th>idPacjent</th>
+                <td>{{ user.idPacjent }}</td>
+            </tr>
+            <tr>
+                <th>Groups</th>
+                <td>
+                <ul>
+                    {% for group in user.groups %}
+                        <li>
+                            {{ group.name }}
+                        </li>
+                    {% endfor %}
+
+                </ul>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('user_index') }}">Spowrotem do listy</a>
+        </li>
+        <li>
+            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

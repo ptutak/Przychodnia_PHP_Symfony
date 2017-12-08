@@ -59,4 +59,9 @@ class Group extends BaseGroup
         parent::__construct($name);
         $this->users = new ArrayCollection();
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

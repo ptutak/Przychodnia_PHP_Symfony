@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block menu2 %}
+{% endblock %}
+{% block body %}
+    <h1>Pacjent</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pacjent.id }}</td>
+            </tr>
+            <tr>
+                <th>Pesel</th>
+                <td>{{ pacjent.pesel }}</td>
+            </tr>
+            <tr>
+                <th>Imie</th>
+                <td>{{ pacjent.imie }}</td>
+            </tr>
+            <tr>
+                <th>Nazwisko</th>
+                <td>{{ pacjent.nazwisko }}</td>
+            </tr>
+            <tr>
+                <th>Ulica</th>
+                <td>{{ pacjent.ulica }}</td>
+            </tr>
+            <tr>
+                <th>Numer</th>
+                <td>{{ pacjent.numer }}</td>
+            </tr>
+            <tr>
+                <th>Miasto</th>
+                <td>{{ pacjent.miasto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pacjent_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('pacjent_edit', { 'id': pacjent.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -12,6 +12,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Group;
+use AppBundle\Entity\lekarz;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -35,31 +36,23 @@ use FOS\UserBundle\Controller\ProfileController as BaseController;
 class ProfileController extends BaseController
 {
 
-    /**
-     * @Route("/user_list",name="user_list")
+     /**
+     * @Route("/pacjent_profile_show",name="pacjent_profile_show")
      */
-    public function user_listAction(Request $request){
-        $um=$this->get('fos_user.user_manager');
-        return $this->render("list.html.twig", array(
-            'users'=>$um->findUsers()
+    public function pacjent_profile_showAction(Request $request){
+        return $this->render(":Profile:pacjent-show.html.twig", array(
         ));
     }
 
     /**
-     * @Route("/pacjent_profile",name="pacjent_profile")
+     * @Route("/pacjent_profile_edit",name="pacjent_profile_edit")
      */
-    public function pacjent_profileAction(Request $request){
-        return $this->render("pacjent-menu.html.twig", array(
+    public function pacjent_profile_editAction(Request $request){
+        return $this->render(":Profile:pacjent-edit.html.twig", array(
         ));
     }
 
-    /**
-     * @Route("/lekarz_profile",name="lekarz_profile")
-     */
-    public function lekarz_profileAction(Request $request){
-        return $this->render("lekarz-menu.html.twig", array(
-        ));
-    }
+
 
     /**
      * @Route("/user_profile",name="user_profile",options={"expose"=true})
@@ -131,6 +124,7 @@ class ProfileController extends BaseController
 
         return $this->render('@FOSUser/Profile/edit.html.twig', array(
             'form' => $form->createView(),
+            'user' => $this->getUser(),
             'idLekarz'=>$this->getUser()->getIdLekarz(),
             'idPacjent'=>$this->getUser()->getIdPacjent(),
         ));

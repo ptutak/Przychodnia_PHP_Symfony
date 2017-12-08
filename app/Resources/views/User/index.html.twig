@@ -10,6 +10,7 @@
                 <th>Username</th>
                 <th>idPacjent</th>
                 <th>idLekarz</th>
+                <th>Groups</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -17,6 +18,19 @@
         {% for user in users %}
             <tr>
                 <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.idPacjent }}</td>
+                <td>{{ user.idLekarz }}</td>
+                <td>
+                    <ul>
+                        {% for group in user.groups %}
+                        <li>
+                            {{ group }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+
+                </td>
                 <td>
                     <ul>
                         <li>
