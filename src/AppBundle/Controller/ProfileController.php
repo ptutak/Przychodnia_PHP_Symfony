@@ -40,7 +40,7 @@ class ProfileController extends BaseController
      */
     public function user_listAction(Request $request){
         $um=$this->get('fos_user.user_manager');
-        return $this->render(":User:index.html.twig", array(
+        return $this->render("list.html.twig", array(
             'users'=>$um->findUsers()
         ));
     }

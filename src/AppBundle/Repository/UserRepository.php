@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use FOS\UserBundle\Model\User;
 
 /**
  * UserRepository
@@ -10,5 +11,7 @@ namespace AppBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
-
+    public function abc(){
+        $this->getEntityManager()->getRepository(User::class)
+    }
 }
