@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Lekarz_godz_przyj</h1>
+    <h1>Godzina przyjęcia</h1>
     <h3>{{ lekarz_godz_przyj }}</h3>
     <table>
         <thead>
@@ -24,15 +24,27 @@
 
     <ul>
         <li>
-            <a href="{{ path('lekarz_godz_przyj_index') }}">Back to the list</a>
+            <a href="{{ path('lekarz_godz_przyj_index') }}">Do listy godzin</a>
         </li>
         <li>
             <a href="{{ path('lekarz_godz_przyj_edit', { 'id': lekarz_godz_przyj.id }) }}">Edit</a>
         </li>
+        {% if lekarz_godz_przyj.aktywna %}
+        <li>
+            <a href="{{ path('lekarz_godz_przyj_inactive',{'id':lekarz_godz_przyj.id}) }}">Dezaktywuj</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="{{ path('lekarz_godz_przyj_active',{'id':lekarz_godz_przyj.id}) }}">Aktywuj</a>
+        </li>
+        {% endif %}
         <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
+            <br>
+            Jeśli nie ma przypisanych wizyt - godzina zostanie usunięta.
+
         </li>
     </ul>
 {% endblock %}

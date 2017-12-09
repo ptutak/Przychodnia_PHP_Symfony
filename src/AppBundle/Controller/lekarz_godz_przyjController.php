@@ -112,12 +112,43 @@ class lekarz_godz_przyjController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($lekarz_godz_przyj);
+            if(!count($lekarz_godz_przyj->getWizyty()))
+                $em->remove($lekarz_godz_przyj);
+            else{
+                $lekarz_godz_przyj->setAktywna(false);
+                $em->persist($lekarz_godz_przyj);
+            }
             $em->flush();
         }
 
         return $this->redirectToRoute('lekarz_godz_przyj_index');
     }
+
+    /**
+     * @Route("/{id}/inactive", name="lekarz_godz_przyj_inactive")
+     * @Method("GET")
+     */
+    public function inactiveAction(Request $request, lekarz_godz_przyj $lekarz_godz_przyj){
+        $em=$this->getDoctrine()->getManager();
+        $lekarz_godz_przyj->setAktywna(false);
+        $em->persist($lekarz_godz_przyj);
+        $em->flush();
+
+        return $this->redirectToRoute('lekarz_godz_przyj_index');
+    }
+    /**
+     * @Route("/{id}/active", name="lekarz_godz_przyj_active")
+     * @Method("GET")
+     */
+    public function activeAction(Request $request, lekarz_godz_przyj $lekarz_godz_przyj){
+        $em=$this->getDoctrine()->getManager();
+        $lekarz_godz_przyj->setAktywna(true);
+        $em->persist($lekarz_godz_przyj);
+        $em->flush();
+
+        return $this->redirectToRoute('lekarz_godz_przyj_index');
+    }
+
 
     /**
      * Creates a form to delete a lekarz_godz_przyj entity.

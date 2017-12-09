@@ -8,8 +8,9 @@
         <input type="submit" value="Create" />
     {{ form_end(form) }}
 #}
+    <br>
     <div id="lekarzChoice"></div>
-
+    <br>
     <div id="calendar-holder"></div>
 
 {#
@@ -44,7 +45,7 @@
             url:  Routing.generate('get_lekarz_list')
         };
         var dataAdapter = new $.jqx.dataAdapter(sourceJson);
-        $("#lekarzChoice").jqxDropDownList({ source: dataAdapter, displayMember: "name", valueMember: "id", width: '300px', height: '25px'});
+        $("#lekarzChoice").jqxDropDownList({ source: dataAdapter,selectedIndex: 0, displayMember: "name", valueMember: "id", width: '300px', height: '25px'});
         $('#lekarzChoice').on('select', function (event){
             refetchDelay(150);
         });
