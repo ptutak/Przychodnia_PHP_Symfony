@@ -120,11 +120,11 @@ class lekarzController extends Controller
         ));
     }
     /**
-     * @Route("/lekarz_profile_edit",name="lekarz_profile_edit")
+     * @Route("/{id}/lekarz_profile_edit",name="lekarz_profile_edit")
      * @Method({"GET", "POST"})
      */
-    public function lekarz_profile_editAction(Request $request){
-        $lekarz=$this->getUser()->getIdLekarz();
+    public function lekarz_profile_editAction(Request $request,lekarz $lekarz){
+
         $deleteForm = $this->createDeleteForm($lekarz);
         $editForm = $this->createForm('AppBundle\Form\lekarzType', $lekarz);
         $editForm->handleRequest($request);
@@ -135,7 +135,7 @@ class lekarzController extends Controller
             return $this->redirectToRoute('fos_user_profile_show');
         }
 
-        return $this->render('Profile/lekarz-edit.html.twig', array(
+        return $this->render(':Profile:lekarz-edit.html.twig', array(
             'lekarz' => $lekarz,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
