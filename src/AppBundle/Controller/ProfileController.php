@@ -36,29 +36,21 @@ use FOS\UserBundle\Controller\ProfileController as BaseController;
 class ProfileController extends BaseController
 {
 
-     /**
-     * @Route("/pacjent_profile_show",name="pacjent_profile_show")
-     */
-    public function pacjent_profile_showAction(Request $request){
-        return $this->render(":Profile:pacjent-show.html.twig", array(
-        ));
-    }
 
     /**
-     * @Route("/pacjent_profile_edit",name="pacjent_profile_edit")
+     * @Route("/fos_user_profile_expose",name="fos_user_profile_expose",options={"expose"=true})
      */
-    public function pacjent_profile_editAction(Request $request){
-        return $this->render(":Profile:pacjent-edit.html.twig", array(
-        ));
+    public function fos_user_profile_exposeAction(Request $request){
+        return $this->redirectToRoute('fos_user_profile_show');
     }
-
-
 
     /**
      * @Route("/user_profile",name="user_profile",options={"expose"=true})
      */
     public function user_profileAction(){
-        return $this->redirectToRoute('fos_user_profile_show');
+        return $this->render('Profile/show.html.twig', array(
+            'user'=>$this->getUser(),
+        ));
     }
     /**
      * Edit the user.

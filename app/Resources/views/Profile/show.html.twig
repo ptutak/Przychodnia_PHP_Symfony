@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <ul>
+        <li>
+            {% include "@FOSUser/Profile/show_content.html.twig" %}
+        </li>
+        {%  if is_granted('ROLE_LEKARZ') %}
+            <li>
+            {{ render(controller('AppBundle:lekarz:lekarz_profile_show',{'id':user.idLekarz.id})) }}
+            </li>
+        {% endif %}
+        {% if is_granted('ROLE_PACJENT') %}
+            <li>
+                {{ render(controller('AppBundle:pacjent:pacjent_profile_show',{'id':user.idPacjent.id})) }}
+            </li>
+        {% endif %}
+    </ul>
+{% endblock %}

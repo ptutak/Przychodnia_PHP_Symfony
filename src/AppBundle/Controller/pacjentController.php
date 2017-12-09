@@ -32,6 +32,9 @@ class pacjentController extends Controller
         ));
     }
 
+
+
+
     /**
      * Creates a new pacjent entity.
      *
@@ -96,6 +99,42 @@ class pacjentController extends Controller
             'pacjent' => $pacjent,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+
+    /**
+     * @Route("/{id}/pacjent_profile_show",name="pacjent_profile_show")
+     * @Method("GET")
+     */
+    public function pacjent_profile_showAction(Request $request, pacjent $pacjent){
+        $deleteForm = $this->createDeleteForm($pacjent);
+        return $this->render(":Profile:pacjent-show.html.twig", array(
+            'pacjent' => $pacjent,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * @Route("/{id}/pacjent_profile_edit",name="pacjent_profile_edit")
+     * @Method({"GET", "POST"})
+     */
+    public function pacjent_profile_editAction(Request $request,pacjent $pacjent){
+        $deleteForm = $this->createDeleteForm($pacjent);
+        $editForm = $this->createForm('AppBundle\Form\pacjentType', $pacjent);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('pacjent_profile_show',array('id'=>$pacjent->getId()));
+        }
+
+        return $this->render(':Profile:pacjent-edit.html.twig', array(
+            'pacjent' => $pacjent,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+            'user'=>$this->getUser()
         ));
     }
 

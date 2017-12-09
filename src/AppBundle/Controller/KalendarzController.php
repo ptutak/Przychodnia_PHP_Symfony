@@ -273,7 +273,7 @@ class KalendarzController extends Controller
                         'title'=>'Indeks: '.$wizyta->getIndeks(),
                         'start'=>$wizyta->getData()->format('Y-m-d ').$wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getGodzPoczatek()->format('H:i:m'),
                         'end'=>$wizyta->getData()->format('Y-m-d ').$wizyta->getIdLekarzGodzPrzyj()->getIdGodzPrzyj()->getGodzKoniec()->format('H:i:m'),
-                        'url'=>$this->generateUrl('wizyta_show',array('id'=>$wizyta->getId())),
+                        'url'=>$this->generateUrl('wizyta_show_regular',array('id'=>$wizyta->getId())),
                         'className'=>'wizyta_list'
                         );
                     $eventArray[]=$event;

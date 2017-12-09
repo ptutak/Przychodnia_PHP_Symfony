@@ -2,7 +2,7 @@
 {% block menu2 %}
 {% endblock %}
 {% block body %}
-    <h1>Pacjent</h1>
+    <h1>Profil Pacjenta:</h1>
 
     <table>
         <tbody>
@@ -39,15 +39,13 @@
 
     <ul>
         <li>
-            <a href="{{ path('pacjent_index') }}">Back to the list</a>
+            <a href="{{ path('pacjent_profile_edit', { 'id': pacjent.id }) }}">Edytuj</a>
         </li>
-        <li>
-            <a href="{{ path('pacjent_edit', { 'id': pacjent.id }) }}">Edit</a>
-        </li>
-        <li>
+ {#       <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
+#}
     </ul>
 {% endblock %}

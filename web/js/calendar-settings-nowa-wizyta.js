@@ -27,7 +27,7 @@ $(function () {
                 _:Date.now()
             }));
 //            refetchDelay(150);
-            window.location.replace(Routing.generate('user_profile'));
+            window.location.replace(Routing.generate('fos_user_profile_expose'));
         },
         events: function(start, end, timezone, callback) {
             var item=$('#lekarzChoice').jqxDropDownList('getSelectedItem');

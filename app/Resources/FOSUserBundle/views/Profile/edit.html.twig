@@ -4,12 +4,12 @@
 {% include "@FOSUser/Profile/edit_content.html.twig" %}
     {%  if is_granted('ROLE_LEKARZ') %}
         <li>
-            <a href="{{  path('lekarz_profile_edit',{id:user.idLekarz.id}) }}">Profil Lekarski</a>
+            <a href="{{  path('lekarz_profile_edit',{id:user.idLekarz.id}) }}">Profil Lekarza</a>
         </li>
     {% endif %}
     {% if is_granted('ROLE_PACJENT') %}
     <li>
-        <p>Profil Pacjenta: {{ user.idPacjent }}</p>
+        <a href="{{ path('pacjent_profile_edit',{id:user.idPacjent.id}) }}">Profil Pacjenta</a>
     </li>
     {% endif %}
 {% endblock fos_user_content %}

@@ -32,17 +32,21 @@
             <tr>
                 <th>Godziny przyjęć</th>
                 <td>
-                    {% set i = 0  %}
-
-                    {% for godz in lekarz.godzPrzyj %}
+                    <ul>
+                        {% set i = 0  %}
+                        {% for godz in lekarz.godzPrzyj %}
+                        <li>
                         {{ godz.idGodzPrzyj }};
-                    <br>
-                    {% set i=i+1 %}
-                    {% if i==10  %}
+                        </li>
+                        {% set i=i+1 %}
+                        {% if i==10  %}
+                    </ul>
                 </td>
                 <td>
-                    {% endif %}
-                    {% endfor %}
+                    <ul>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
                 </td>
             </tr>
         </tbody>

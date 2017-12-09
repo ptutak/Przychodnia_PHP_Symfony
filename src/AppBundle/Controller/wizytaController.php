@@ -102,6 +102,22 @@ class wizytaController extends Controller
     }
 
     /**
+     * Finds and displays a wizytum entity.
+     *
+     * @Route("/{id}/show_regular", name="wizyta_show_regular",options={"expose"=true})
+     * @Method("GET")
+     */
+    public function show_regularAction(wizyta $wizytum)
+    {
+        $deleteForm = $this->createDeleteForm($wizytum);
+
+        return $this->render('wizyta/show-regular.html.twig', array(
+            'wizytum' => $wizytum,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
      * Displays a form to edit an existing wizytum entity.
      *
      * @Route("/{id}/edit", name="wizyta_edit")

@@ -132,24 +132,30 @@ class lekarzController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('fos_user_profile_show');
+            return $this->redirectToRoute('user_profile');
         }
 
         return $this->render(':Profile:lekarz-edit.html.twig', array(
             'lekarz' => $lekarz,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'user'=>$this->getUser()
         ));
     }
 
     /**
-     * @Route("/lekarz_profile_show",name="lekarz_profile_show")
+     * @Route("/{id}/lekarz_profile_show",name="lekarz_profile_show")
+     * @Method("GET")
      */
-    public function lekarz_profile_showAction(Request $request){
-        return $this->render("Profile/lekarz-show.html.twig", array(
+    public function lekarz_profile_showAction(Request $request, lekarz $lekarz){
+
+        $deleteForm = $this->createDeleteForm($lekarz);
+
+        return $this->render(':Profile:lekarz-show.html.twig', array(
+            'lekarz' => $lekarz,
+            'delete_form' => $deleteForm->createView(),
         ));
     }
-
     /**
      * Deletes a lekarz entity.
      *

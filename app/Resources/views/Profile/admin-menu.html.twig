@@ -1,11 +1,14 @@
 <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin<span class="caret"></span></a>
     <ul class="dropdown-menu">
+        <li><a href="{{ path('user_index') }}">Użytkownicy</a></li>
+        <li><a href="{{ path('fos_user_group_list') }}">Grupy</a></li>
         <li><a href="{{ path('pacjent_index') }}">Pacjenci</a></li>
         <li><a href="{{ path('lekarz_index') }}">Lekarze</a></li>
         <li><a href="{{ path('wizyta_index') }}">Wizyty</a></li>
-        <li><a href="{{ path('fos_user_group_list') }}">Grupy</a></li>
-        <li><a href="{{ path('user_index') }}">Użytkownicy</a></li>
+        <li><a href="{{ path('leki_index') }}">Leki</a></li>
+        <li><a href="{{ path('specjalizacja_index') }}">Specjalizacje</a></li>
+
     </ul>
 </li>
 

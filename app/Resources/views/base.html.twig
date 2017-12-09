@@ -27,6 +27,7 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('fos_user_profile_show') }}">Profil<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
+                                    <li><a href="{{ path('user_profile') }}">Pokaż</a></li>
                                     <li><a href="{{ path('fos_user_profile_edit') }}">Edytuj</a></li>
 
                                 </ul>
@@ -69,7 +70,7 @@
                 $("div[type='body']").find("ul").addClass("list-group");
                 $("div[type='body']").find("li").addClass("list-group-item");
                 $("div[type='body']").find("button").addClass("btn-primary");
-                $("div[type='body']").find("div").addClass("form-group");
+                $("div[type='body']").find("div[type!='no-form-group']").addClass("form-group");
                 $("div[type='body']").find("div").children("select").addClass("form-control");
                 $("div[type='body']").find("div").children("input").addClass("form-control");
                 $("div[type='body']").find("div").children("textarea").addClass("form-control");

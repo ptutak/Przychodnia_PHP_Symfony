@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Wizyta</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ wizytum.id }}</td>
+            </tr>
+            <tr>
+                <th>Indeks</th>
+                <td>{{ wizytum.indeks }}</td>
+            </tr>
+            <tr>
+                <th>Data</th>
+                <td>{% if wizytum.data %}{{ wizytum.data|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Diagnoza</th>
+                <td>{{ wizytum.diagnoza }}</td>
+            </tr>
+            <tr>
+                <th>Pacjent</th>
+                <td>{{ wizytum.idPacjent }}</td>
+            </tr>
+
+            <tr>
+                <th>
+                    Lekarz - Godzina
+                </th>
+                <td>{{ wizytum.idLekarzGodzPrzyj }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li>
+            <a href="{{ path('wizyta_edit', { 'id': wizytum.id }) }}">Edit</a>
+        </li>
+        <li>
+            <a href="{{ path('wizyta_index') }}">Do listy wizyt</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}<input type="submit" value="Delete">{{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+
+{% endblock %}
+
+

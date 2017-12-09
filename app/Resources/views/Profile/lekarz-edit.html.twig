@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h2>Profil lekarski:</h2>
+    <h1>Profil lekarza</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -9,13 +9,18 @@
     {{ form_end(edit_form) }}
 
     <ul>
+        {% if is_granted('ROLE_PACJENT') %}
         <li>
-            <a href="{{ path('lekarz_index') }}">Back to the list</a>
+            <a href="{{ path('pacjent_profile_edit',{'id':user.idPacjent.id}) }}">Profil pacjenta</a>
         </li>
+        {% endif %}
         <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+            <a href="{{ path('user_profile') }}">Do profilu</a>
         </li>
+        {#<li>#}
+            {#{{ form_start(delete_form) }}#}
+                {#<input type="submit" value="Delete">#}
+            {#{{ form_end(delete_form) }}#}
+        {#</li>#}
     </ul>
 {% endblock %}
